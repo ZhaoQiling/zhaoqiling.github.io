@@ -1,19 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>Hexo</title>
-  
+  <title>Zhao70&#39;s Blog</title>
+  <subtitle>记录，造轮子，进步</subtitle>
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2016-11-04T13:50:35.163Z</updated>
+  <updated>2016-11-06T03:02:03.960Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
-    <name>John Doe</name>
+    <name>Zhao70</name>
     
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>我的第一篇文章</title>
+    <link href="http://yoursite.com/2016/11/06/my-new-post/"/>
+    <id>http://yoursite.com/2016/11/06/my-new-post/</id>
+    <published>2016-11-06T01:44:12.000Z</published>
+    <updated>2016-11-06T03:02:03.960Z</updated>
+    
+    <content type="html"><![CDATA[<p>使用markdown</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;使用markdown&lt;/p&gt;
+
+    
+    </summary>
+    
+    
+      <category term="markdown" scheme="http://yoursite.com/tags/markdown/"/>
+    
+  </entry>
   
   <entry>
     <title>Hello World</title>

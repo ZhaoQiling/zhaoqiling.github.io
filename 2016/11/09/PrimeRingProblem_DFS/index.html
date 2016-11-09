@@ -3,45 +3,42 @@
 <head>
   <meta charset="utf-8">
   
-  <title>POJ3278 Catch That Cow | Zhao70&#39;s Blog</title>
+  <title>HDU1016 Prime Ring Problem | Zhao70&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="BFS搜索
-题目描述POJ3278 Catch That Cow
+  <meta name="description" content="简单的DFS搜索
+题目描述HDU1016 Prime Ring Problem
 
-遇到的坑：
+需要注意的地方
 
-统计步数的BFS题，建一个结构体数组，其中的step统计步数
-每走一步的步数，新的节点的步数，一定是head节点的步数 +1 ！！！,切记不是自己的步数自增1， 被这个坑了好长时间
-尝试三种不同方式可以使用一个for循环嵌套三个if
-巨坑0: 考虑 开始时 农夫和牛在同一位置的情况
-巨坑1：在poj上数组不能开到10">
+最后一个环和 1 的和 也为 素数
+输出的数字之间有空格，第一次就是因为这个报错
+
+我的代码: github">
 <meta property="og:type" content="article">
-<meta property="og:title" content="POJ3278 Catch That Cow">
-<meta property="og:url" content="http://yoursite.com/2016/11/09/CatchThatCow_BFS/index.html">
+<meta property="og:title" content="HDU1016 Prime Ring Problem">
+<meta property="og:url" content="http://yoursite.com/2016/11/09/PrimeRingProblem_DFS/index.html">
 <meta property="og:site_name" content="Zhao70's Blog">
-<meta property="og:description" content="BFS搜索
-题目描述POJ3278 Catch That Cow
+<meta property="og:description" content="简单的DFS搜索
+题目描述HDU1016 Prime Ring Problem
 
-遇到的坑：
+需要注意的地方
 
-统计步数的BFS题，建一个结构体数组，其中的step统计步数
-每走一步的步数，新的节点的步数，一定是head节点的步数 +1 ！！！,切记不是自己的步数自增1， 被这个坑了好长时间
-尝试三种不同方式可以使用一个for循环嵌套三个if
-巨坑0: 考虑 开始时 农夫和牛在同一位置的情况
-巨坑1：在poj上数组不能开到10">
-<meta property="og:updated_time" content="2016-11-09T06:17:03.000Z">
+最后一个环和 1 的和 也为 素数
+输出的数字之间有空格，第一次就是因为这个报错
+
+我的代码: github">
+<meta property="og:updated_time" content="2016-11-09T08:07:56.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="POJ3278 Catch That Cow">
-<meta name="twitter:description" content="BFS搜索
-题目描述POJ3278 Catch That Cow
+<meta name="twitter:title" content="HDU1016 Prime Ring Problem">
+<meta name="twitter:description" content="简单的DFS搜索
+题目描述HDU1016 Prime Ring Problem
 
-遇到的坑：
+需要注意的地方
 
-统计步数的BFS题，建一个结构体数组，其中的step统计步数
-每走一步的步数，新的节点的步数，一定是head节点的步数 +1 ！！！,切记不是自己的步数自增1， 被这个坑了好长时间
-尝试三种不同方式可以使用一个for循环嵌套三个if
-巨坑0: 考虑 开始时 农夫和牛在同一位置的情况
-巨坑1：在poj上数组不能开到10">
+最后一个环和 1 的和 也为 素数
+输出的数字之间有空格，第一次就是因为这个报错
+
+我的代码: github">
   
     <link rel="alternate" href="/atom.xml" title="Zhao70&#39;s Blog" type="application/atom+xml">
   
@@ -94,10 +91,10 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-CatchThatCow_BFS" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-PrimeRingProblem_DFS" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2016/11/09/CatchThatCow_BFS/" class="article-date">
-  <time datetime="2016-11-09T06:06:14.000Z" itemprop="datePublished">2016-11-09</time>
+    <a href="/2016/11/09/PrimeRingProblem_DFS/" class="article-date">
+  <time datetime="2016-11-09T08:02:28.000Z" itemprop="datePublished">2016-11-09</time>
 </a>
     
   </div>
@@ -108,7 +105,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      POJ3278 Catch That Cow
+      HDU1016 Prime Ring Problem
     </h1>
   
 
@@ -116,26 +113,23 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="BFS搜索"><a href="#BFS搜索" class="headerlink" title="BFS搜索"></a>BFS搜索</h2><blockquote>
-<p>题目描述<br><a href="http://poj.org/problem?id=3278" target="_blank" rel="external">POJ3278 Catch That Cow</a></p>
+        <h2 id="简单的DFS搜索"><a href="#简单的DFS搜索" class="headerlink" title="简单的DFS搜索"></a>简单的DFS搜索</h2><blockquote>
+<p>题目描述<br><a href="http://acm.hdu.edu.cn/showproblem.php?pid=1016" target="_blank" rel="external">HDU1016 Prime Ring Problem</a></p>
 </blockquote>
-<p>遇到的坑：</p>
+<p>需要注意的地方</p>
 <ol>
-<li>统计步数的BFS题，建一个<strong>结构体数组</strong>，其中的step统计<em>步数</em></li>
-<li>每走一步的步数，新的节点的步数，一定是<strong>head节点的步数 +1 ！！</strong>！,切记不是自己的步数自增1， 被这个坑了好长时间</li>
-<li>尝试三种不同方式可以使用<em>一个for循环嵌套三个if</em></li>
-<li><strong>巨坑0</strong>: 考虑 开始时 农夫和牛在同一位置的情况</li>
-<li><strong>巨坑1</strong>：在poj上数组不能开到100000， 也不能开到100001要不会报错， 考虑了半天改成了100010，AC。</li>
+<li><em>最后一个环</em>和 <em>1</em> 的和 也为 <strong>素数</strong></li>
+<li>输出的数字之间有空格，第一次就是因为这个报错</li>
 </ol>
-<p>我的代码: <a href="https://github.com/ZhaoQiling/Algorithm/blob/master/POJ/3278.cpp" target="_blank" rel="external">github</a></p>
+<p>我的代码: <a href="https://github.com/ZhaoQiling/Algorithm/blob/master/HDU/1016.cpp" target="_blank" rel="external">github</a></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/11/09/CatchThatCow_BFS/" data-id="civan8kmi0001xgur917lsu7k" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/11/09/PrimeRingProblem_DFS/" data-id="civan8kme0000xgur2xtdkat6" class="article-share-link">Share</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/BFS/">BFS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/POJ/">POJ</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/DFS/">DFS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/HDU/">HDU</a></li></ul>
 
     </footer>
   </div>
@@ -143,19 +137,10 @@
     
 <nav id="article-nav">
   
-    <a href="/2016/11/09/PrimeRingProblem_DFS/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          HDU1016 Prime Ring Problem
-        
-      </div>
-    </a>
   
-  
-    <a href="/2016/11/09/再解炸弹人_BFS/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2016/11/09/CatchThatCow_BFS/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">再解炸弹人</div>
+      <div class="article-nav-title">POJ3278 Catch That Cow</div>
     </a>
   
 </nav>

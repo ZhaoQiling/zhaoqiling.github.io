@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2016-11-09T06:17:03.000Z</updated>
+  <updated>2016-11-09T08:07:56.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -14,6 +14,38 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>HDU1016 Prime Ring Problem</title>
+    <link href="http://yoursite.com/2016/11/09/PrimeRingProblem_DFS/"/>
+    <id>http://yoursite.com/2016/11/09/PrimeRingProblem_DFS/</id>
+    <published>2016-11-09T08:02:28.000Z</published>
+    <updated>2016-11-09T08:07:56.000Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="简单的DFS搜索"><a href="#简单的DFS搜索" class="headerlink" title="简单的DFS搜索"></a>简单的DFS搜索</h2><blockquote>
+<p>题目描述<br><a href="http://acm.hdu.edu.cn/showproblem.php?pid=1016" target="_blank" rel="external">HDU1016 Prime Ring Problem</a></p>
+</blockquote>
+<p>需要注意的地方</p>
+<ol>
+<li><em>最后一个环</em>和 <em>1</em> 的和 也为 <strong>素数</strong></li>
+<li>输出的数字之间有空格，第一次就是因为这个报错</li>
+</ol>
+<p>我的代码: <a href="https://github.com/ZhaoQiling/Algorithm/blob/master/HDU/1016.cpp" target="_blank" rel="external">github</a></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;简单的DFS搜索&quot;&gt;&lt;a href=&quot;#简单的DFS搜索&quot; class=&quot;headerlink&quot; title=&quot;简单的DFS搜索&quot;&gt;&lt;/a&gt;简单的DFS搜索&lt;/h2&gt;&lt;blockquote&gt;
+&lt;p&gt;题目描述&lt;br&gt;&lt;a href=&quot;http://acm.hdu.e
+    
+    </summary>
+    
+    
+      <category term="DFS" scheme="http://yoursite.com/tags/DFS/"/>
+    
+      <category term="HDU" scheme="http://yoursite.com/tags/HDU/"/>
+    
+  </entry>
   
   <entry>
     <title>POJ3278 Catch That Cow</title>
@@ -113,9 +145,9 @@
     </summary>
     
     
-      <category term="aha" scheme="http://yoursite.com/tags/aha/"/>
-    
       <category term="DFS" scheme="http://yoursite.com/tags/DFS/"/>
+    
+      <category term="aha" scheme="http://yoursite.com/tags/aha/"/>
     
   </entry>
   

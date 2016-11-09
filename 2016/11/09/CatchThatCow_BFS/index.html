@@ -3,18 +3,45 @@
 <head>
   <meta charset="utf-8">
   
-  <title>我的第一篇文章 | Zhao70&#39;s Blog</title>
+  <title>POJ3278 Catch That Cow | Zhao70&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="使用markdown">
+  <meta name="description" content="BFS搜索
+题目描述POJ3278 Catch That Cow
+
+遇到的坑：
+
+统计步数的BFS题，建一个结构体数组，其中的step统计步数
+每走一步的步数，新的节点的步数，一定是head节点的步数 +1 ！！！,切记不是自己的步数自增1， 被这个坑了好长时间
+尝试三种不同方式可以使用一个for循环嵌套三个if
+巨坑0: 考虑 开始时 农夫和牛在同一位置的情况
+巨坑1：在poj上数组不能开到10">
 <meta property="og:type" content="article">
-<meta property="og:title" content="我的第一篇文章">
-<meta property="og:url" content="http://yoursite.com/2016/11/06/my-new-post/index.html">
+<meta property="og:title" content="POJ3278 Catch That Cow">
+<meta property="og:url" content="http://yoursite.com/2016/11/09/CatchThatCow_BFS/index.html">
 <meta property="og:site_name" content="Zhao70's Blog">
-<meta property="og:description" content="使用markdown">
-<meta property="og:updated_time" content="2016-11-06T03:02:03.960Z">
+<meta property="og:description" content="BFS搜索
+题目描述POJ3278 Catch That Cow
+
+遇到的坑：
+
+统计步数的BFS题，建一个结构体数组，其中的step统计步数
+每走一步的步数，新的节点的步数，一定是head节点的步数 +1 ！！！,切记不是自己的步数自增1， 被这个坑了好长时间
+尝试三种不同方式可以使用一个for循环嵌套三个if
+巨坑0: 考虑 开始时 农夫和牛在同一位置的情况
+巨坑1：在poj上数组不能开到10">
+<meta property="og:updated_time" content="2016-11-09T06:17:03.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="我的第一篇文章">
-<meta name="twitter:description" content="使用markdown">
+<meta name="twitter:title" content="POJ3278 Catch That Cow">
+<meta name="twitter:description" content="BFS搜索
+题目描述POJ3278 Catch That Cow
+
+遇到的坑：
+
+统计步数的BFS题，建一个结构体数组，其中的step统计步数
+每走一步的步数，新的节点的步数，一定是head节点的步数 +1 ！！！,切记不是自己的步数自增1， 被这个坑了好长时间
+尝试三种不同方式可以使用一个for循环嵌套三个if
+巨坑0: 考虑 开始时 农夫和牛在同一位置的情况
+巨坑1：在poj上数组不能开到10">
   
     <link rel="alternate" href="/atom.xml" title="Zhao70&#39;s Blog" type="application/atom+xml">
   
@@ -67,10 +94,10 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-my-new-post" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-CatchThatCow_BFS" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2016/11/06/my-new-post/" class="article-date">
-  <time datetime="2016-11-06T01:44:12.000Z" itemprop="datePublished">2016-11-06</time>
+    <a href="/2016/11/09/CatchThatCow_BFS/" class="article-date">
+  <time datetime="2016-11-09T06:06:14.000Z" itemprop="datePublished">2016-11-09</time>
 </a>
     
   </div>
@@ -81,7 +108,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      我的第一篇文章
+      POJ3278 Catch That Cow
     </h1>
   
 
@@ -89,15 +116,26 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>使用markdown</p>
+        <h2 id="BFS搜索"><a href="#BFS搜索" class="headerlink" title="BFS搜索"></a>BFS搜索</h2><blockquote>
+<p>题目描述<br><a href="http://poj.org/problem?id=3278" target="_blank" rel="external">POJ3278 Catch That Cow</a></p>
+</blockquote>
+<p>遇到的坑：</p>
+<ol>
+<li>统计步数的BFS题，建一个<strong>结构体数组</strong>，其中的step统计<em>步数</em></li>
+<li>每走一步的步数，新的节点的步数，一定是<strong>head节点的步数 +1 ！！</strong>！,切记不是自己的步数自增1， 被这个坑了好长时间</li>
+<li>尝试三种不同方式可以使用<em>一个for循环嵌套三个if</em></li>
+<li><strong>巨坑0</strong>: 考虑 开始时 农夫和牛在同一位置的情况</li>
+<li><strong>巨坑1</strong>：在poj上数组不能开到100000， 也不能开到100001要不会报错， 考虑了半天改成了100010，AC。</li>
+</ol>
+<p>我的代码: <a href="https://github.com/ZhaoQiling/Algorithm/blob/master/POJ/3278.cpp" target="_blank" rel="external">github</a></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/11/06/my-new-post/" data-id="civaja2nu000394uryduj0kny" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/11/09/CatchThatCow_BFS/" data-id="civaja2ni000094urrwspc0l4" class="article-share-link">Share</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/markdown/">markdown</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/BFS/">BFS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/POJ/">POJ</a></li></ul>
 
     </footer>
   </div>
@@ -105,19 +143,10 @@
     
 <nav id="article-nav">
   
-    <a href="/2016/11/07/拯救小哈_DFS/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          解救小哈
-        
-      </div>
-    </a>
   
-  
-    <a href="/2016/11/04/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2016/11/09/再解炸弹人_BFS/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">Hello World</div>
+      <div class="article-nav-title">再解炸弹人</div>
     </a>
   
 </nav>

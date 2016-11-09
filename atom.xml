@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2016-11-08T12:51:04.000Z</updated>
+  <updated>2016-11-09T01:15:54.664Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -20,9 +20,9 @@
     <link href="http://yoursite.com/2016/11/07/save/"/>
     <id>http://yoursite.com/2016/11/07/save/</id>
     <published>2016-11-07T05:42:43.000Z</published>
-    <updated>2016-11-08T12:51:04.000Z</updated>
+    <updated>2016-11-09T01:15:54.664Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="解救小哈"><a href="#解救小哈" class="headerlink" title="解救小哈"></a>解救小哈</h1><h2 id="简单的dfs搜索"><a href="#简单的dfs搜索" class="headerlink" title="简单的dfs搜索"></a>简单的dfs搜索</h2><hr>
+    <content type="html"><![CDATA[<h2 id="简单的dfs搜索"><a href="#简单的dfs搜索" class="headerlink" title="简单的dfs搜索"></a>简单的dfs搜索</h2><hr>
 <blockquote>
 <p>题目描述：<br><a href="http://www.tianchai.org/problem-12032.html" target="_blank" rel="external">添柴，拯救小哈</a></p>
 </blockquote>
@@ -35,7 +35,9 @@
     
     <summary type="html">
     
-      &lt;h1 id=&quot;解救小哈&quot;&gt;&lt;a href=&quot;#解救小哈&quot; class=&quot;headerlink&quot; title=&quot;解救小哈&quot;&gt;&lt;/a&gt;解救小哈&lt;/h1&gt;&lt;h2 id=&quot;简单的dfs搜索&quot;&gt;&lt;a href=&quot;#简单的dfs搜索&quot; class=&quot;headerlink&quot; title=&quot;简
+      &lt;h2 id=&quot;简单的dfs搜索&quot;&gt;&lt;a href=&quot;#简单的dfs搜索&quot; class=&quot;headerlink&quot; title=&quot;简单的dfs搜索&quot;&gt;&lt;/a&gt;简单的dfs搜索&lt;/h2&gt;&lt;hr&gt;
+&lt;blockquote&gt;
+&lt;p&gt;题目描述：&lt;br&gt;&lt;a href=&quot;http://www
     
     </summary>
     

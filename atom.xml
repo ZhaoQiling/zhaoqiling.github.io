@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2016-11-09T01:15:54.664Z</updated>
+  <updated>2016-11-09T02:47:11.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -14,6 +14,41 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>再解炸弹人</title>
+    <link href="http://yoursite.com/2016/11/09/%E5%86%8D%E8%A7%A3%E7%82%B8%E5%BC%B9%E4%BA%BA/"/>
+    <id>http://yoursite.com/2016/11/09/再解炸弹人/</id>
+    <published>2016-11-09T02:32:29.000Z</published>
+    <updated>2016-11-09T02:47:11.000Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="简单的BFS搜索"><a href="#简单的BFS搜索" class="headerlink" title="简单的BFS搜索"></a>简单的BFS搜索</h2><blockquote>
+<p>题目描述<br><a href="http://www.tianchai.org/problem-12034.html" target="_blank" rel="external">再解炸弹人</a></p>
+</blockquote>
+<p>心得：</p>
+<ol>
+<li>利用一个结构体数组，对每个点进行出入队列操作</li>
+<li>编写getNum时, 按照向<strong>四个</strong>不同方向扩展的思路，而不是<em>两条</em>交叉的直线</li>
+<li>对每个head点的<em>四个方向</em>进行扩展，并且<strong>先判断</strong>是否可以加入队列，<strong>然后再</strong>加入队列</li>
+<li>每有一个点加入队列后便<strong>tail++</strong>每判断四个点后便<strong>head++</strong></li>
+<li>在对startX 和 startY 进行<strong>加入第一个节点</strong>操作时，虽然head 和 tail都可以进行相同的操作，但是<strong>入队操作需要使用tail</strong></li>
+</ol>
+<p>我的代码: <a href="https://github.com/ZhaoQiling/Algorithm/blob/master/%E5%95%8A%E5%93%88%E7%AE%97%E6%B3%95/%E5%86%8D%E8%A7%A3%E7%82%B8%E5%BC%B9%E4%BA%BA.cpp" target="_blank" rel="external">github</a></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;简单的BFS搜索&quot;&gt;&lt;a href=&quot;#简单的BFS搜索&quot; class=&quot;headerlink&quot; title=&quot;简单的BFS搜索&quot;&gt;&lt;/a&gt;简单的BFS搜索&lt;/h2&gt;&lt;blockquote&gt;
+&lt;p&gt;题目描述&lt;br&gt;&lt;a href=&quot;http://www.tianc
+    
+    </summary>
+    
+    
+      <category term="BFS" scheme="http://yoursite.com/tags/BFS/"/>
+    
+      <category term="aha" scheme="http://yoursite.com/tags/aha/"/>
+    
+  </entry>
   
   <entry>
     <title>解救小哈</title>
@@ -42,9 +77,9 @@
     </summary>
     
     
-      <category term="DFS" scheme="http://yoursite.com/tags/DFS/"/>
-    
       <category term="aha" scheme="http://yoursite.com/tags/aha/"/>
+    
+      <category term="DFS" scheme="http://yoursite.com/tags/DFS/"/>
     
   </entry>
   

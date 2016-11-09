@@ -3,14 +3,45 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Mot-clé: markdown | Zhao70&#39;s Blog</title>
+  <title>再解炸弹人 | Zhao70&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Zhao70's Blog">
-<meta property="og:url" content="http://yoursite.com/tags/markdown/index.html">
+  <meta name="description" content="简单的BFS搜索
+题目描述再解炸弹人
+
+心得：
+
+利用一个结构体数组，对每个点进行出入队列操作
+编写getNum时, 按照向四个不同方向扩展的思路，而不是两条交叉的直线
+对每个head点的四个方向进行扩展，并且先判断是否可以加入队列，然后再加入队列
+每有一个点加入队列后便tail++每判断四个点后便head++
+在对startX 和 startY 进行加入第一个节点操作时，虽然head 和 tai">
+<meta property="og:type" content="article">
+<meta property="og:title" content="再解炸弹人">
+<meta property="og:url" content="http://yoursite.com/2016/11/09/再解炸弹人/index.html">
 <meta property="og:site_name" content="Zhao70's Blog">
+<meta property="og:description" content="简单的BFS搜索
+题目描述再解炸弹人
+
+心得：
+
+利用一个结构体数组，对每个点进行出入队列操作
+编写getNum时, 按照向四个不同方向扩展的思路，而不是两条交叉的直线
+对每个head点的四个方向进行扩展，并且先判断是否可以加入队列，然后再加入队列
+每有一个点加入队列后便tail++每判断四个点后便head++
+在对startX 和 startY 进行加入第一个节点操作时，虽然head 和 tai">
+<meta property="og:updated_time" content="2016-11-09T02:47:11.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Zhao70's Blog">
+<meta name="twitter:title" content="再解炸弹人">
+<meta name="twitter:description" content="简单的BFS搜索
+题目描述再解炸弹人
+
+心得：
+
+利用一个结构体数组，对每个点进行出入队列操作
+编写getNum时, 按照向四个不同方向扩展的思路，而不是两条交叉的直线
+对每个head点的四个方向进行扩展，并且先判断是否可以加入队列，然后再加入队列
+每有一个点加入队列后便tail++每判断四个点后便head++
+在对startX 和 startY 进行加入第一个节点操作时，虽然head 和 tai">
   
     <link rel="alternate" href="/atom.xml" title="Zhao70&#39;s Blog" type="application/atom+xml">
   
@@ -63,39 +94,65 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main">
-  
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2016" class="archive-year">2016</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2016/11/06/my-new-post/" class="archive-article-date">
-  <time datetime="2016-11-06T01:44:12.000Z" itemprop="datePublished">Nov 6</time>
+        <section id="main"><article id="post-再解炸弹人" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/11/09/再解炸弹人/" class="article-date">
+  <time datetime="2016-11-09T02:32:29.000Z" itemprop="datePublished">2016-11-09</time>
 </a>
-      
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/11/06/my-new-post/">我的第一篇文章</a>
+    <h1 class="article-title" itemprop="name">
+      再解炸弹人
     </h1>
   
 
-    </header>
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="简单的BFS搜索"><a href="#简单的BFS搜索" class="headerlink" title="简单的BFS搜索"></a>简单的BFS搜索</h2><blockquote>
+<p>题目描述<br><a href="http://www.tianchai.org/problem-12034.html" target="_blank" rel="external">再解炸弹人</a></p>
+</blockquote>
+<p>心得：</p>
+<ol>
+<li>利用一个结构体数组，对每个点进行出入队列操作</li>
+<li>编写getNum时, 按照向<strong>四个</strong>不同方向扩展的思路，而不是<em>两条</em>交叉的直线</li>
+<li>对每个head点的<em>四个方向</em>进行扩展，并且<strong>先判断</strong>是否可以加入队列，<strong>然后再</strong>加入队列</li>
+<li>每有一个点加入队列后便<strong>tail++</strong>每判断四个点后便<strong>head++</strong></li>
+<li>在对startX 和 startY 进行<strong>加入第一个节点</strong>操作时，虽然head 和 tail都可以进行相同的操作，但是<strong>入队操作需要使用tail</strong></li>
+</ol>
+<p>我的代码: <a href="https://github.com/ZhaoQiling/Algorithm/blob/master/%E5%95%8A%E5%93%88%E7%AE%97%E6%B3%95/%E5%86%8D%E8%A7%A3%E7%82%B8%E5%BC%B9%E4%BA%BA.cpp" target="_blank" rel="external">github</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/11/09/再解炸弹人/" data-id="civabs88a00006kur1ihsbcew" class="article-share-link">Partager</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/BFS/">BFS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/aha/">aha</a></li></ul>
+
+    </footer>
   </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2016/11/07/save/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Ancien</strong>
+      <div class="article-nav-title">解救小哈</div>
+    </a>
+  
+</nav>
+
+  
 </article>
-  
-  
-    </div></section>
-  
 
 </section>
         

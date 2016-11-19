@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yoursite.com/2016/11/19/pta%E2%80%94-part-0/</loc>
+    
+    <lastmod>2016-11-19T04:26:35.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/2016/11/09/PrimeRingProblem_DFS/</loc>
     
     <lastmod>2016-11-09T08:07:56.000Z</lastmod>

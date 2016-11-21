@@ -2,37 +2,51 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://yoursite.com/2016/11/19/pta%E2%80%94-part-0/</loc>
+    <loc>http://yoursite.com/tags/index.html</loc>
     
-    <lastmod>2016-11-19T04:26:35.000Z</lastmod>
+    <lastmod>2016-11-21T13:32:46.170Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://yoursite.com/2016/11/09/PrimeRingProblem_DFS/</loc>
+    <loc>http://yoursite.com/categories/index.html</loc>
     
-    <lastmod>2016-11-09T08:07:56.000Z</lastmod>
+    <lastmod>2016-11-21T13:32:16.869Z</lastmod>
     
   </url>
   
   <url>
     <loc>http://yoursite.com/2016/11/09/CatchThatCow_BFS/</loc>
     
-    <lastmod>2016-11-09T06:17:03.000Z</lastmod>
+    <lastmod>2016-11-21T13:09:55.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://yoursite.com/2016/11/07/%E6%8B%AF%E6%95%91%E5%B0%8F%E5%93%88_DFS/</loc>
+    <loc>http://yoursite.com/2016/11/19/pta%E2%80%94-part-0/</loc>
     
-    <lastmod>2016-11-09T02:52:46.000Z</lastmod>
+    <lastmod>2016-11-21T13:09:50.316Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2016/11/09/PrimeRingProblem_DFS/</loc>
+    
+    <lastmod>2016-11-21T13:09:46.822Z</lastmod>
     
   </url>
   
   <url>
     <loc>http://yoursite.com/2016/11/09/%E5%86%8D%E8%A7%A3%E7%82%B8%E5%BC%B9%E4%BA%BA_BFS/</loc>
     
-    <lastmod>2016-11-09T02:47:11.000Z</lastmod>
+    <lastmod>2016-11-21T13:09:43.271Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2016/11/07/%E6%8B%AF%E6%95%91%E5%B0%8F%E5%93%88_DFS/</loc>
+    
+    <lastmod>2016-11-21T08:57:18.000Z</lastmod>
     
   </url>
   
@@ -40,13 +54,6 @@
     <loc>http://yoursite.com/2016/11/06/my-new-post/</loc>
     
     <lastmod>2016-11-06T03:02:03.960Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/2016/11/04/hello-world/</loc>
-    
-    <lastmod>2016-11-04T13:50:35.163Z</lastmod>
     
   </url>
   

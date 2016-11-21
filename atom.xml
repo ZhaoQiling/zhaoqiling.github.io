@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2016-11-19T04:26:35.000Z</updated>
+  <updated>2016-11-21T13:09:50.316Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://yoursite.com/2016/11/19/pta%E2%80%94-part-0/"/>
     <id>http://yoursite.com/2016/11/19/pta—-part-0/</id>
     <published>2016-11-19T03:14:30.000Z</published>
-    <updated>2016-11-19T04:26:35.000Z</updated>
+    <updated>2016-11-21T13:09:50.316Z</updated>
     
     <content type="html"><![CDATA[<h2 id="part1-1-7-题"><a href="#part1-1-7-题" class="headerlink" title="part1: 1 - 7 题"></a>part1: 1 - 7 题</h2><h3 id="路漫漫其修远兮，汝应上下而刷题-——-强哥-（论水题的重要性"><a href="#路漫漫其修远兮，汝应上下而刷题-——-强哥-（论水题的重要性" class="headerlink" title="路漫漫其修远兮，汝应上下而刷题 —— 强哥 （论水题的重要性"></a>路漫漫其修远兮，汝应上下而刷题 —— 强哥 （论水题的重要性</h3><blockquote>
 <p>题目描述<br><a href="https://pta.patest.cn/pta/test/2199/exam/3" target="_blank" rel="external">PTA 1 - 7题</a></p>
@@ -41,6 +41,8 @@
     
     </summary>
     
+      <category term="algorithm" scheme="http://yoursite.com/categories/algorithm/"/>
+    
     
       <category term="base" scheme="http://yoursite.com/tags/base/"/>
     
@@ -51,7 +53,7 @@
     <link href="http://yoursite.com/2016/11/09/PrimeRingProblem_DFS/"/>
     <id>http://yoursite.com/2016/11/09/PrimeRingProblem_DFS/</id>
     <published>2016-11-09T08:02:28.000Z</published>
-    <updated>2016-11-09T08:07:56.000Z</updated>
+    <updated>2016-11-21T13:09:46.822Z</updated>
     
     <content type="html"><![CDATA[<h2 id="简单的DFS搜索"><a href="#简单的DFS搜索" class="headerlink" title="简单的DFS搜索"></a>简单的DFS搜索</h2><blockquote>
 <p>题目描述<br><a href="http://acm.hdu.edu.cn/showproblem.php?pid=1016" target="_blank" rel="external">HDU1016 Prime Ring Problem</a></p>
@@ -71,6 +73,8 @@
     
     </summary>
     
+      <category term="algorithm" scheme="http://yoursite.com/categories/algorithm/"/>
+    
     
       <category term="DFS" scheme="http://yoursite.com/tags/DFS/"/>
     
@@ -83,7 +87,7 @@
     <link href="http://yoursite.com/2016/11/09/CatchThatCow_BFS/"/>
     <id>http://yoursite.com/2016/11/09/CatchThatCow_BFS/</id>
     <published>2016-11-09T06:06:14.000Z</published>
-    <updated>2016-11-09T06:17:03.000Z</updated>
+    <updated>2016-11-21T13:09:55.000Z</updated>
     
     <content type="html"><![CDATA[<h2 id="BFS搜索"><a href="#BFS搜索" class="headerlink" title="BFS搜索"></a>BFS搜索</h2><blockquote>
 <p>题目描述<br><a href="http://poj.org/problem?id=3278" target="_blank" rel="external">POJ3278 Catch That Cow</a></p>
@@ -106,6 +110,8 @@
     
     </summary>
     
+      <category term="algorithm" scheme="http://yoursite.com/categories/algorithm/"/>
+    
     
       <category term="BFS" scheme="http://yoursite.com/tags/BFS/"/>
     
@@ -118,7 +124,7 @@
     <link href="http://yoursite.com/2016/11/09/%E5%86%8D%E8%A7%A3%E7%82%B8%E5%BC%B9%E4%BA%BA_BFS/"/>
     <id>http://yoursite.com/2016/11/09/再解炸弹人_BFS/</id>
     <published>2016-11-09T02:32:29.000Z</published>
-    <updated>2016-11-09T02:47:11.000Z</updated>
+    <updated>2016-11-21T13:09:43.271Z</updated>
     
     <content type="html"><![CDATA[<h2 id="简单的BFS搜索"><a href="#简单的BFS搜索" class="headerlink" title="简单的BFS搜索"></a>简单的BFS搜索</h2><blockquote>
 <p>题目描述<br><a href="http://www.tianchai.org/problem-12034.html" target="_blank" rel="external">再解炸弹人</a></p>
@@ -141,6 +147,8 @@
     
     </summary>
     
+      <category term="algorithm" scheme="http://yoursite.com/categories/algorithm/"/>
+    
     
       <category term="BFS" scheme="http://yoursite.com/tags/BFS/"/>
     
@@ -153,7 +161,7 @@
     <link href="http://yoursite.com/2016/11/07/%E6%8B%AF%E6%95%91%E5%B0%8F%E5%93%88_DFS/"/>
     <id>http://yoursite.com/2016/11/07/拯救小哈_DFS/</id>
     <published>2016-11-07T05:42:43.000Z</published>
-    <updated>2016-11-09T02:52:46.000Z</updated>
+    <updated>2016-11-21T08:57:18.000Z</updated>
     
     <content type="html"><![CDATA[<h2 id="简单的dfs搜索"><a href="#简单的dfs搜索" class="headerlink" title="简单的dfs搜索"></a>简单的dfs搜索</h2><hr>
 <blockquote>
@@ -174,6 +182,8 @@
 &lt;p&gt;题目描述：&lt;br&gt;&lt;a href=&quot;http://www
     
     </summary>
+    
+      <category term="Algorithm" scheme="http://yoursite.com/categories/Algorithm/"/>
     
     
       <category term="DFS" scheme="http://yoursite.com/tags/DFS/"/>
@@ -201,33 +211,6 @@
     
     
       <category term="markdown" scheme="http://yoursite.com/tags/markdown/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Hello World</title>
-    <link href="http://yoursite.com/2016/11/04/hello-world/"/>
-    <id>http://yoursite.com/2016/11/04/hello-world/</id>
-    <published>2016-11-04T13:50:35.147Z</published>
-    <updated>2016-11-04T13:50:35.163Z</updated>
-    
-    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.
-    
-    </summary>
-    
     
   </entry>
   

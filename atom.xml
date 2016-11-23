@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2016-11-21T13:09:50.316Z</updated>
+  <updated>2016-11-23T01:57:56.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -14,6 +14,39 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>邻接表的数组实现</title>
+    <link href="http://yoursite.com/2016/11/23/adjacencyListByArray/"/>
+    <id>http://yoursite.com/2016/11/23/adjacencyListByArray/</id>
+    <published>2016-11-23T01:23:24.000Z</published>
+    <updated>2016-11-23T01:57:56.000Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="书没有博客详细系列"><a href="#书没有博客详细系列" class="headerlink" title="书没有博客详细系列"></a>书没有博客详细系列</h3><blockquote>
+<p><a href="http://www.cnblogs.com/ahalei/p/3651334.html" target="_blank" rel="external">啊哈磊的博客园</a></p>
+</blockquote>
+<p>比较难以理解的部分</p>
+<ol>
+<li>利用<strong>i给各个边编号</strong>。</li>
+<li>first存储了每个<em>点</em>第一条<strong>边</strong>的序号(i)</li>
+<li>next存储第i<em>边</em>的下一条<strong>边</strong>的序号(i)</li>
+<li>因为是<em>有向图</em>，每条边<strong>只能</strong>在一个邻接表中</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div></pre></td><td class="code"><pre><div class="line">#include &lt;iostream&gt;</div><div class="line">using namespace std;</div><div class="line">int main()</div><div class="line">&#123;</div><div class="line">    int nPoint, nSide;</div><div class="line">    cin &gt;&gt; nPoint &gt;&gt; nSide;</div><div class="line">    int u[10], v[10], w[10];</div><div class="line">    int first[10], next[10];</div><div class="line">    for(int i = 1; i &lt;= nPoint; i++)</div><div class="line">    &#123;</div><div class="line">        first[i] = -1;</div><div class="line">    &#125;</div><div class="line">    // i 是每条边的序号</div><div class="line">    //first存储了每个点第一条 边的序号</div><div class="line">    //next存储了第i边下一条边的序号</div><div class="line">    //因为是有向图， 所以每一边的只可能是一个点的第一条边或者下一条边</div><div class="line">    for(int i = 1; i &lt;= nSide; i++)</div><div class="line">    &#123;</div><div class="line">        cin &gt;&gt; u[i] &gt;&gt; v[i] &gt;&gt; w[i];</div><div class="line">        next[i] = first[u[i]];</div><div class="line">        first[u[i]] = i;</div><div class="line">    &#125;</div><div class="line">    for(int i = 1; i &lt;= nPoint; i++)</div><div class="line">    &#123;</div><div class="line">        int k = first[i];</div><div class="line">        while(k != -1)</div><div class="line">        &#123;</div><div class="line">            cout &lt;&lt; u[k] &lt;&lt; v[k] &lt;&lt; w[k] &lt;&lt; endl;</div><div class="line">            k = next[k];</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    return 0;</div><div class="line">&#125;</div></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;书没有博客详细系列&quot;&gt;&lt;a href=&quot;#书没有博客详细系列&quot; class=&quot;headerlink&quot; title=&quot;书没有博客详细系列&quot;&gt;&lt;/a&gt;书没有博客详细系列&lt;/h3&gt;&lt;blockquote&gt;
+&lt;p&gt;&lt;a href=&quot;http://www.cnblogs.c
+    
+    </summary>
+    
+      <category term="algorithm" scheme="http://yoursite.com/categories/algorithm/"/>
+    
+    
+      <category term="aha" scheme="http://yoursite.com/tags/aha/"/>
+    
+  </entry>
   
   <entry>
     <title>推“一起开心团队_C语言基础习题“有感 part 0</title>
@@ -150,9 +183,9 @@
       <category term="algorithm" scheme="http://yoursite.com/categories/algorithm/"/>
     
     
-      <category term="BFS" scheme="http://yoursite.com/tags/BFS/"/>
-    
       <category term="aha" scheme="http://yoursite.com/tags/aha/"/>
+    
+      <category term="BFS" scheme="http://yoursite.com/tags/BFS/"/>
     
   </entry>
   
@@ -186,9 +219,9 @@
       <category term="Algorithm" scheme="http://yoursite.com/categories/Algorithm/"/>
     
     
-      <category term="DFS" scheme="http://yoursite.com/tags/DFS/"/>
-    
       <category term="aha" scheme="http://yoursite.com/tags/aha/"/>
+    
+      <category term="DFS" scheme="http://yoursite.com/tags/DFS/"/>
     
   </entry>
   

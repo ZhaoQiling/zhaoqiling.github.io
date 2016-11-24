@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2016-11-24T06:13:29.000Z</updated>
+  <updated>2016-11-24T06:16:20.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -16,11 +16,11 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>POJ 2551 BFS</title>
+    <title>POJ2551 Dungeon Master</title>
     <link href="http://yoursite.com/2016/11/24/POJ-2551-BFS/"/>
     <id>http://yoursite.com/2016/11/24/POJ-2551-BFS/</id>
     <published>2016-11-24T06:07:54.000Z</published>
-    <updated>2016-11-24T06:13:29.000Z</updated>
+    <updated>2016-11-24T06:16:20.000Z</updated>
     
     <content type="html"><![CDATA[<h2 id="3D-BFS"><a href="#3D-BFS" class="headerlink" title="3D BFS"></a>3D BFS</h2><blockquote>
 <p>题目描述<br><a href="http://poj.org/problem?id=2251" target="_blank" rel="external">POJ2551 Dungeon Master</a><br>感受：</p>
@@ -251,9 +251,9 @@
       <category term="Algorithm" scheme="http://yoursite.com/categories/Algorithm/"/>
     
     
-      <category term="DFS" scheme="http://yoursite.com/tags/DFS/"/>
-    
       <category term="aha" scheme="http://yoursite.com/tags/aha/"/>
+    
+      <category term="DFS" scheme="http://yoursite.com/tags/DFS/"/>
     
   </entry>
   

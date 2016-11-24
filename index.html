@@ -228,6 +228,154 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/11/24/POJ-2551-BFS/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="Zhao70">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/uploads/avatar.png">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="Zhao70's Blog">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="Zhao70's Blog" src="">
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/11/24/POJ-2551-BFS/" itemprop="url">
+                  POJ 2551 BFS
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-11-24T14:07:54+08:00">
+                2016-11-24
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+              <span class="post-meta-divider">|</span>
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/algorithm/" itemprop="url" rel="index">
+                    <span itemprop="name">algorithm</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <a href="/2016/11/24/POJ-2551-BFS/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/11/24/POJ-2551-BFS/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="3D-BFS"><a href="#3D-BFS" class="headerlink" title="3D BFS"></a>3D BFS</h2><blockquote>
+<p>题目描述<br><a href="http://poj.org/problem?id=2251" target="_blank" rel="external">POJ2551 Dungeon Master</a><br>感受：</p>
+<ol>
+<li>比图上的BFS多了一个维度， 多考虑一下就可以了， 就是代码量有点宏大</li>
+<li>ACM是<em>多组输入输出</em>， <strong>一定记得清空 isVisit </strong>之类具有标记和存储功能的数组!!!!!<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"><span class="keyword">struct</span> Node&#123;</div><div class="line">    <span class="keyword">int</span> <span class="built_in">floor</span>;</div><div class="line">    <span class="keyword">int</span> row;</div><div class="line">    <span class="keyword">int</span> col;</div><div class="line">    <span class="keyword">int</span> step;</div><div class="line">&#125;;</div><div class="line"><span class="keyword">char</span> dungeon[<span class="number">35</span>][<span class="number">35</span>][<span class="number">35</span>];</div><div class="line"><span class="keyword">bool</span> isVisit[<span class="number">35</span>][<span class="number">35</span>][<span class="number">35</span>];</div><div class="line">Node que[<span class="number">27100</span>];</div><div class="line"><span class="keyword">int</span> next[<span class="number">6</span>][<span class="number">3</span>] = &#123; &#123;<span class="number">1</span>, <span class="number">0</span>, <span class="number">0</span>&#125;, &#123;<span class="number">-1</span>, <span class="number">0</span>, <span class="number">0</span>&#125;, &#123;<span class="number">0</span>, <span class="number">0</span>, <span class="number">1</span>&#125;, &#123;<span class="number">0</span>, <span class="number">0</span>, <span class="number">-1</span>&#125;,&#123;<span class="number">0</span>, <span class="number">1</span>, <span class="number">0</span>&#125;, &#123;<span class="number">0</span>, <span class="number">-1</span>, <span class="number">0</span>&#125; &#125;;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">char</span> **argv)</span></span></div><div class="line">&#123;</div><div class="line">    <span class="keyword">int</span> nFloor, nRow, nCol;</div><div class="line">    <span class="built_in">cin</span> &gt;&gt; nFloor &gt;&gt; nRow &gt;&gt; nCol;</div><div class="line">    <span class="keyword">int</span> start[<span class="number">3</span>];</div><div class="line">    </div><div class="line">    <span class="keyword">while</span>(nFloor != <span class="number">0</span>)</div><div class="line">    &#123;</div><div class="line">        <span class="keyword">int</span> sum = <span class="number">-1</span>;</div><div class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= nFloor; i++)</div><div class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">1</span>; j &lt;= nRow; j++)</div><div class="line">                <span class="keyword">for</span>(<span class="keyword">int</span> k = <span class="number">1</span>; k &lt;= nCol; k++)</div><div class="line">                &#123;</div><div class="line">                    isVisit[i][j][k] = <span class="literal">false</span>;</div><div class="line">                    <span class="built_in">cin</span> &gt;&gt; dungeon[i][j][k];</div><div class="line">                    <span class="keyword">if</span>(dungeon[i][j][k] == <span class="string">'S'</span>)</div><div class="line">                    &#123;</div><div class="line">                        start[<span class="number">0</span>] = i;</div><div class="line">                        start[<span class="number">1</span>] = j;</div><div class="line">                        start[<span class="number">2</span>] = k;</div><div class="line">                    &#125;</div><div class="line">                &#125;</div><div class="line">                    </div><div class="line">        <span class="keyword">int</span> head = <span class="number">1</span>;</div><div class="line">        <span class="keyword">int</span> tail = <span class="number">1</span>;</div><div class="line">        que[head].step = <span class="number">0</span>;</div><div class="line">        que[tail].<span class="built_in">floor</span> = start[<span class="number">0</span>];</div><div class="line">        que[tail].row = start[<span class="number">1</span>];</div><div class="line">        que[tail].col = start[<span class="number">2</span>];</div><div class="line">        isVisit[start[<span class="number">0</span>]][start[<span class="number">1</span>]][start[<span class="number">2</span>]] = <span class="literal">true</span>;</div><div class="line">        tail++;</div><div class="line">        <span class="keyword">while</span>(head &lt; tail)</div><div class="line">        &#123;</div><div class="line">            <span class="keyword">int</span> <span class="built_in">floor</span> = que[head].<span class="built_in">floor</span>;</div><div class="line">            <span class="keyword">int</span> row = que[head].row;</div><div class="line">            <span class="keyword">int</span> col = que[head].col;</div><div class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">6</span>; i++) <span class="comment">//向上下左右前后扩展</span></div><div class="line">            &#123;</div><div class="line">                <span class="keyword">int</span> dFloor = next[i][<span class="number">0</span>];</div><div class="line">                <span class="keyword">int</span> dRow = next[i][<span class="number">1</span>];</div><div class="line">                <span class="keyword">int</span> dCol = next[i][<span class="number">2</span>];</div><div class="line">                <span class="keyword">if</span>(dFloor + <span class="built_in">floor</span> &lt;= <span class="number">0</span> || dFloor + <span class="built_in">floor</span> &gt; nFloor || dRow + row &lt;= <span class="number">0</span> || dRow + row &gt; nRow || dCol + col &lt;= <span class="number">0</span> || dCol + col &gt; nCol)</div><div class="line">                    <span class="keyword">continue</span>;</div><div class="line">                <span class="keyword">if</span>(isVisit[dFloor + <span class="built_in">floor</span>][dRow + row][dCol + col] == <span class="literal">true</span> || dungeon[dFloor + <span class="built_in">floor</span>][dRow + row][dCol + col] == <span class="string">'#'</span>)</div><div class="line">                    <span class="keyword">continue</span>;</div><div class="line">    <span class="comment">//            cout &lt;&lt; dFloor + floor &lt;&lt; dRow + row &lt;&lt; dCol + col &lt;&lt; endl;</span></div><div class="line">                isVisit[dFloor + <span class="built_in">floor</span>][dRow + row][dCol + col] = <span class="literal">true</span>;</div><div class="line">                que[tail].<span class="built_in">floor</span> = dFloor + <span class="built_in">floor</span>;</div><div class="line">                que[tail].row = dRow + row;</div><div class="line">                que[tail].col = dCol + col;</div><div class="line">                que[tail].step = que[head].step + <span class="number">1</span>;</div><div class="line">                <span class="keyword">if</span>(dungeon[dFloor + <span class="built_in">floor</span>][dRow + row][dCol + col] == <span class="string">'E'</span>)</div><div class="line">                    sum = que[tail].step;</div><div class="line">                tail++;</div><div class="line">            &#125;</div><div class="line">            head++;</div><div class="line">        &#125;</div><div class="line">        </div><div class="line">        <span class="keyword">if</span>(sum &lt; <span class="number">0</span>) <span class="built_in">cout</span> &lt;&lt; <span class="string">"Trapped!"</span> &lt;&lt; <span class="built_in">endl</span>;</div><div class="line">        <span class="keyword">else</span> <span class="built_in">cout</span> &lt;&lt; <span class="string">"Escaped in "</span>&lt;&lt; sum &lt;&lt;<span class="string">" minute(s)."</span> &lt;&lt; <span class="built_in">endl</span>;</div><div class="line">        </div><div class="line">        <span class="built_in">cin</span> &gt;&gt; nFloor &gt;&gt; nRow &gt;&gt; nCol;</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure></li>
+</ol>
+</blockquote>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
   <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/11/23/adjacencyListByArray/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1294,7 +1442,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">7</span>
+              <span class="site-state-item-count">8</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>

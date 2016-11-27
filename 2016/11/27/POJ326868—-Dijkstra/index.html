@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="Dijkstra," />
 
 
 
@@ -86,12 +86,37 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="Zhao70's Blog">
-<meta property="og:url" content="http://yoursite.com/archives/index.html">
+<meta name="description" content="带有反向图的Dijkstra
+题目描述POJ3268 Silver Cow Party
+
+知识点:
+
+求其他cow到目标cow， 再返回原本所在位置的本质： 正向求目标cow到其他cow的距离 加 反向图后目标cow到其他cow的距离
+反向图时，关于对角线对称的操作， 第二个for循环开始 j = i， 否则一个点被倒置两次，又回到了开始状态。
+isVisit数组中的要求的点partyPlace，">
+<meta property="og:type" content="article">
+<meta property="og:title" content="POJ3268 Silver Cow Party">
+<meta property="og:url" content="http://yoursite.com/2016/11/27/POJ326868—-Dijkstra/index.html">
 <meta property="og:site_name" content="Zhao70's Blog">
+<meta property="og:description" content="带有反向图的Dijkstra
+题目描述POJ3268 Silver Cow Party
+
+知识点:
+
+求其他cow到目标cow， 再返回原本所在位置的本质： 正向求目标cow到其他cow的距离 加 反向图后目标cow到其他cow的距离
+反向图时，关于对角线对称的操作， 第二个for循环开始 j = i， 否则一个点被倒置两次，又回到了开始状态。
+isVisit数组中的要求的点partyPlace，">
+<meta property="og:updated_time" content="2016-11-27T05:30:41.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Zhao70's Blog">
+<meta name="twitter:title" content="POJ3268 Silver Cow Party">
+<meta name="twitter:description" content="带有反向图的Dijkstra
+题目描述POJ3268 Silver Cow Party
+
+知识点:
+
+求其他cow到目标cow， 再返回原本所在位置的本质： 正向求目标cow到其他cow的距离 加 反向图后目标cow到其他cow的距离
+反向图时，关于对角线对称的操作， 第二个for循环开始 j = i， 否则一个点被倒置两次，又回到了开始状态。
+isVisit数组中的要求的点partyPlace，">
 
 
 
@@ -119,13 +144,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/archives/"/>
+  <link rel="canonical" href="http://yoursite.com/2016/11/27/POJ326868—-Dijkstra/"/>
 
 
 
 
 
-  <title> 归档 | Zhao70's Blog </title>
+  <title> POJ3268 Silver Cow Party | Zhao70's Blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -146,7 +171,7 @@
     
   
 
-  <div class="container one-collumn sidebar-position-left  page-archive  ">
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -236,362 +261,181 @@
           <div id="content" class="content">
             
 
-  <section id="posts" class="posts-collapse">
-    <span class="archive-move-on"></span>
-
-    <span class="archive-page-counter">
-      
-      
-      
-        
-      
-      嗯..! 目前共计 9 篇日志。 继续努力。
-    </span>
-
+  <div id="posts" class="posts-expand">
     
-
-      
-      
-      
-
-      
-        
-        <div class="collection-title">
-          <h2 class="archive-year motion-element" id="archive-year-2016">2016</h2>
-        </div>
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/2016/11/27/POJ326868—-Dijkstra/" itemprop="url">
-              
-                <span itemprop="name">POJ3268 Silver Cow Party</span>
-              
-            </a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2016-11-27T12:38:52+08:00"
-              content="2016-11-27" >
-          11-27
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-      
-      
-      
-
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/2016/11/24/POJ-2551-BFS/" itemprop="url">
-              
-                <span itemprop="name">POJ2551 Dungeon Master</span>
-              
-            </a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2016-11-24T14:07:54+08:00"
-              content="2016-11-24" >
-          11-24
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-      
-      
-      
-
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/2016/11/23/adjacencyListByArray/" itemprop="url">
-              
-                <span itemprop="name">邻接表的数组实现</span>
-              
-            </a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2016-11-23T09:23:24+08:00"
-              content="2016-11-23" >
-          11-23
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-      
-      
-      
-
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/2016/11/19/pta—-part-0/" itemprop="url">
-              
-                <span itemprop="name">推“一起开心团队_C语言基础习题“有感 part 0</span>
-              
-            </a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2016-11-19T11:14:30+08:00"
-              content="2016-11-19" >
-          11-19
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-      
-      
-      
-
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/2016/11/09/PrimeRingProblem_DFS/" itemprop="url">
-              
-                <span itemprop="name">HDU1016 Prime Ring Problem</span>
-              
-            </a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2016-11-09T16:02:28+08:00"
-              content="2016-11-09" >
-          11-09
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-      
-      
-      
-
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/2016/11/09/CatchThatCow_BFS/" itemprop="url">
-              
-                <span itemprop="name">POJ3278 Catch That Cow</span>
-              
-            </a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2016-11-09T14:06:14+08:00"
-              content="2016-11-09" >
-          11-09
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-      
-      
-      
-
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/2016/11/09/再解炸弹人_BFS/" itemprop="url">
-              
-                <span itemprop="name">再解炸弹人</span>
-              
-            </a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2016-11-09T10:32:29+08:00"
-              content="2016-11-09" >
-          11-09
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-      
-      
-      
-
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/2016/11/07/拯救小哈_DFS/" itemprop="url">
-              
-                <span itemprop="name">解救小哈</span>
-              
-            </a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2016-11-07T13:42:43+08:00"
-              content="2016-11-07" >
-          11-07
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-      
-      
-      
-
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/2016/11/06/my-new-post/" itemprop="url">
-              
-                <span itemprop="name">我的第一篇文章</span>
-              
-            </a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2016-11-06T09:44:12+08:00"
-              content="2016-11-06" >
-          11-06
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-  </section>
 
   
 
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/11/27/POJ326868—-Dijkstra/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="Zhao70">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/uploads/avatar.png">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="Zhao70's Blog">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="Zhao70's Blog" src="">
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                POJ3268 Silver Cow Party
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-11-27T12:38:52+08:00">
+                2016-11-27
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+              <span class="post-meta-divider">|</span>
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/algorithm/" itemprop="url" rel="index">
+                    <span itemprop="name">algorithm</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <a href="/2016/11/27/POJ326868—-Dijkstra/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/11/27/POJ326868—-Dijkstra/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="带有反向图的Dijkstra"><a href="#带有反向图的Dijkstra" class="headerlink" title="带有反向图的Dijkstra"></a>带有反向图的Dijkstra</h2><blockquote>
+<p>题目描述<br><a href="http://poj.org/problem?id=3268" target="_blank" rel="external">POJ3268 Silver Cow Party</a></p>
+</blockquote>
+<p>知识点:</p>
+<ol>
+<li>求<em>其他cow</em>到<em>目标cow</em>， 再返回原本所在位置的本质： 正向求<strong>目标cow到其他cow</strong>的距离 加 <strong>反向图</strong>后<strong>目标cow到其他cow</strong>的距离</li>
+<li>反向图时，关于<em>对角线对称</em>的操作， 第二个for循环开始 <strong>j = i</strong>， 否则一个点被<strong>倒置两次</strong>，又<strong>回到</strong>了<strong>开始</strong>状态。</li>
+<li>isVisit数组中的<em>要求的点partyPlace</em>， <strong>在开始dijkstra前设置为true</strong></li>
+</ol>
+<p>我的代码: <a href="https://github.com/ZhaoQiling/Algorithm/blob/master/POJ/3268.cpp" target="_blank" rel="external">github</a></p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Dijkstra/" rel="tag"># Dijkstra</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/11/24/POJ-2551-BFS/" rel="next" title="POJ2551 Dungeon Master">
+                <i class="fa fa-chevron-left"></i> POJ2551 Dungeon Master
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -599,6 +443,14 @@
 
 
           
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/11/27/POJ326868—-Dijkstra/"
+           data-title="POJ3268 Silver Cow Party" data-url="http://yoursite.com/2016/11/27/POJ326868—-Dijkstra/">
+      </div>
+    
+  </div>
+
 
         </div>
         
@@ -618,8 +470,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/uploads/avatar.png"
@@ -679,6 +540,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#带有反向图的Dijkstra"><span class="nav-number">1.</span> <span class="nav-text">带有反向图的Dijkstra</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
     </div>
@@ -784,11 +661,9 @@
 
 
   
-  
-    <script type="text/javascript" id="motion.page.archive">
-      $('.archive-year').velocity('transition.slideLeftIn');
-    </script>
-  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
 
 
   

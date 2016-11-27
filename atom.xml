@@ -252,9 +252,9 @@
       <category term="Algorithm" scheme="http://yoursite.com/categories/Algorithm/"/>
     
     
-      <category term="DFS" scheme="http://yoursite.com/tags/DFS/"/>
-    
       <category term="aha" scheme="http://yoursite.com/tags/aha/"/>
+    
+      <category term="DFS" scheme="http://yoursite.com/tags/DFS/"/>
     
   </entry>
   

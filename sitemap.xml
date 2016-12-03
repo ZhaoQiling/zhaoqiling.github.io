@@ -2,6 +2,27 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yoursite.com/2016/12/03/cmd-and-functionPoint/</loc>
+    
+    <lastmod>2016-12-03T03:01:23.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/CPP/index.html</loc>
+    
+    <lastmod>2016-12-03T02:43:45.904Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/algorithm/index.html</loc>
+    
+    <lastmod>2016-12-03T02:41:35.810Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/2016/11/27/POJ326868%E2%80%94-Dijkstra/</loc>
     
     <lastmod>2016-11-27T05:34:58.000Z</lastmod>

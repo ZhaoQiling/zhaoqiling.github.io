@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-02-11T01:25:47.616Z</updated>
+  <updated>2017-02-11T04:06:03.049Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -14,6 +14,36 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>const关键字及使用</title>
+    <link href="http://yoursite.com/2017/02/11/const%E5%85%B3%E9%94%AE%E5%AD%97%E5%8F%8A%E4%BD%BF%E7%94%A8/"/>
+    <id>http://yoursite.com/2017/02/11/const关键字及使用/</id>
+    <published>2017-02-11T03:26:39.000Z</published>
+    <updated>2017-02-11T04:06:03.049Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="定义常量"><a href="#定义常量" class="headerlink" title="定义常量"></a>定义常量</h2><ul>
+<li>const int MAX_VAL = 23;</li>
+<li>const string SCHOOL_NAME = “QDU”;</li>
+</ul>
+<h2 id="定义常量指针"><a href="#定义常量指针" class="headerlink" title="定义常量指针"></a>定义常量指针</h2><blockquote>
+<p>不可通过常量指针修改其所指向的内容</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">int n, m;</div><div class="line">const int *p = &amp;n;</div><div class="line">*p = 5;//error</div><div class="line">n = 4; // ok</div><div class="line">p = &amp;m; //ok</div><div class="line">//常量指针可通过强制类型转化 转化为非常量指针</div><div class="line">int * p1 = (int *)p;//ok</div></pre></td></tr></table></figure>
+<h2 id="定义常应用"><a href="#定义常应用" class="headerlink" title="定义常应用"></a>定义常应用</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">int n;</div><div class="line">const int &amp;r = n;</div><div class="line">r = 5;</div><div class="line">n = 4;</div></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;定义常量&quot;&gt;&lt;a href=&quot;#定义常量&quot; class=&quot;headerlink&quot; title=&quot;定义常量&quot;&gt;&lt;/a&gt;定义常量&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;const int MAX_VAL = 23;&lt;/li&gt;
+&lt;li&gt;const string SCHOOL_NAM
+    
+    </summary>
+    
+      <category term="CPP" scheme="http://yoursite.com/categories/CPP/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>位运算Part2</title>
@@ -351,9 +381,9 @@
       <category term="algorithm" scheme="http://yoursite.com/categories/algorithm/"/>
     
     
-      <category term="POJ" scheme="http://yoursite.com/tags/POJ/"/>
-    
       <category term="Dijkstra" scheme="http://yoursite.com/tags/Dijkstra/"/>
+    
+      <category term="POJ" scheme="http://yoursite.com/tags/POJ/"/>
     
   </entry>
   
@@ -384,9 +414,9 @@
       <category term="algorithm" scheme="http://yoursite.com/categories/algorithm/"/>
     
     
-      <category term="BFS" scheme="http://yoursite.com/tags/BFS/"/>
-    
       <category term="POJ" scheme="http://yoursite.com/tags/POJ/"/>
+    
+      <category term="BFS" scheme="http://yoursite.com/tags/BFS/"/>
     
   </entry>
   
@@ -521,9 +551,9 @@
       <category term="algorithm" scheme="http://yoursite.com/categories/algorithm/"/>
     
     
-      <category term="BFS" scheme="http://yoursite.com/tags/BFS/"/>
-    
       <category term="POJ" scheme="http://yoursite.com/tags/POJ/"/>
+    
+      <category term="BFS" scheme="http://yoursite.com/tags/BFS/"/>
     
   </entry>
   
@@ -594,9 +624,9 @@
       <category term="algorithm" scheme="http://yoursite.com/categories/algorithm/"/>
     
     
-      <category term="aha" scheme="http://yoursite.com/tags/aha/"/>
-    
       <category term="DFS" scheme="http://yoursite.com/tags/DFS/"/>
+    
+      <category term="aha" scheme="http://yoursite.com/tags/aha/"/>
     
   </entry>
   

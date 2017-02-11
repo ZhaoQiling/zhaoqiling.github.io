@@ -594,9 +594,9 @@
       <category term="algorithm" scheme="http://yoursite.com/categories/algorithm/"/>
     
     
-      <category term="DFS" scheme="http://yoursite.com/tags/DFS/"/>
-    
       <category term="aha" scheme="http://yoursite.com/tags/aha/"/>
+    
+      <category term="DFS" scheme="http://yoursite.com/tags/DFS/"/>
     
   </entry>
   

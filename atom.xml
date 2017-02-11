@@ -381,9 +381,9 @@
       <category term="algorithm" scheme="http://yoursite.com/categories/algorithm/"/>
     
     
-      <category term="Dijkstra" scheme="http://yoursite.com/tags/Dijkstra/"/>
-    
       <category term="POJ" scheme="http://yoursite.com/tags/POJ/"/>
+    
+      <category term="Dijkstra" scheme="http://yoursite.com/tags/Dijkstra/"/>
     
   </entry>
   
@@ -414,9 +414,9 @@
       <category term="algorithm" scheme="http://yoursite.com/categories/algorithm/"/>
     
     
-      <category term="POJ" scheme="http://yoursite.com/tags/POJ/"/>
-    
       <category term="BFS" scheme="http://yoursite.com/tags/BFS/"/>
+    
+      <category term="POJ" scheme="http://yoursite.com/tags/POJ/"/>
     
   </entry>
   
@@ -551,9 +551,9 @@
       <category term="algorithm" scheme="http://yoursite.com/categories/algorithm/"/>
     
     
-      <category term="POJ" scheme="http://yoursite.com/tags/POJ/"/>
-    
       <category term="BFS" scheme="http://yoursite.com/tags/BFS/"/>
+    
+      <category term="POJ" scheme="http://yoursite.com/tags/POJ/"/>
     
   </entry>
   

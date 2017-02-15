@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-02-11T04:06:03.049Z</updated>
+  <updated>2017-02-15T01:09:30.472Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -14,6 +14,34 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>内联成员函数</title>
+    <link href="http://yoursite.com/2017/02/15/%E5%86%85%E8%81%94%E6%88%90%E5%91%98%E5%87%BD%E6%95%B0/"/>
+    <id>http://yoursite.com/2017/02/15/内联成员函数/</id>
+    <published>2017-02-15T00:54:09.000Z</published>
+    <updated>2017-02-15T01:09:30.472Z</updated>
+    
+    <content type="html"><![CDATA[<p>##内联成员函数</p>
+<ul>
+<li>inline + 成员函数</li>
+<li>整个函数体出现在类定义内部<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">class B&#123;</div><div class="line">	inline void func1();</div><div class="line">	void func2()</div><div class="line">	&#123;</div><div class="line">	&#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure></li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;##内联成员函数&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;inline + 成员函数&lt;/li&gt;
+&lt;li&gt;整个函数体出现在类定义内部&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;
+    
+    </summary>
+    
+      <category term="CPP" scheme="http://yoursite.com/categories/CPP/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>const关键字及使用</title>
@@ -624,9 +652,9 @@
       <category term="algorithm" scheme="http://yoursite.com/categories/algorithm/"/>
     
     
-      <category term="DFS" scheme="http://yoursite.com/tags/DFS/"/>
-    
       <category term="aha" scheme="http://yoursite.com/tags/aha/"/>
+    
+      <category term="DFS" scheme="http://yoursite.com/tags/DFS/"/>
     
   </entry>
   

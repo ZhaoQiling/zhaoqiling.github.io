@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="base," />
+  <meta name="keywords" content="Hexo, NexT" />
 
 
 
@@ -86,31 +86,40 @@
 
 
 
-<meta name="description" content="part1: 1 - 7 题路漫漫其修远兮，汝应上下而刷题 —— 强哥 （论水题的重要性
-题目描述PTA 1 - 7题
+<meta name="description" content="stringstream及其用法
+包含在头文件 sstream 中
 
-需要注意的地方
 
-（第三题， 素数对猜想）要求N是否为素数， 没有必要遍历(1, N)所有的整数, 因为N若不是素数，必由两个属于(1, N)数相乘的得到， 而这两个数字肯定一个大于等于sqrt(N), 一个小于等于sqrt(N)，所以只需要求(1, sqrt[N]]即可， 可">
+声明stringstream
+1stringstream ss;
+
+给stringstream对象赋值
+123456789101112//可以在定义时赋值string s;cin &amp;gt;&amp;gt; s;stirngstream ss(s);//利用stringstream::str()进行赋值stringstream ss;s">
 <meta property="og:type" content="article">
-<meta property="og:title" content="推“一起开心团队_C语言基础习题“有感 part 0">
-<meta property="og:url" content="http://yoursite.com/2016/11/19/pta—-part-0/index.html">
+<meta property="og:title" content="STLPart1">
+<meta property="og:url" content="http://yoursite.com/2017/02/19/STLPart1/index.html">
 <meta property="og:site_name" content="Zhao70's Blog">
-<meta property="og:description" content="part1: 1 - 7 题路漫漫其修远兮，汝应上下而刷题 —— 强哥 （论水题的重要性
-题目描述PTA 1 - 7题
+<meta property="og:description" content="stringstream及其用法
+包含在头文件 sstream 中
 
-需要注意的地方
 
-（第三题， 素数对猜想）要求N是否为素数， 没有必要遍历(1, N)所有的整数, 因为N若不是素数，必由两个属于(1, N)数相乘的得到， 而这两个数字肯定一个大于等于sqrt(N), 一个小于等于sqrt(N)，所以只需要求(1, sqrt[N]]即可， 可">
-<meta property="og:updated_time" content="2016-11-21T13:09:50.316Z">
+声明stringstream
+1stringstream ss;
+
+给stringstream对象赋值
+123456789101112//可以在定义时赋值string s;cin &amp;gt;&amp;gt; s;stirngstream ss(s);//利用stringstream::str()进行赋值stringstream ss;s">
+<meta property="og:updated_time" content="2017-02-18T15:57:48.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="推“一起开心团队_C语言基础习题“有感 part 0">
-<meta name="twitter:description" content="part1: 1 - 7 题路漫漫其修远兮，汝应上下而刷题 —— 强哥 （论水题的重要性
-题目描述PTA 1 - 7题
+<meta name="twitter:title" content="STLPart1">
+<meta name="twitter:description" content="stringstream及其用法
+包含在头文件 sstream 中
 
-需要注意的地方
 
-（第三题， 素数对猜想）要求N是否为素数， 没有必要遍历(1, N)所有的整数, 因为N若不是素数，必由两个属于(1, N)数相乘的得到， 而这两个数字肯定一个大于等于sqrt(N), 一个小于等于sqrt(N)，所以只需要求(1, sqrt[N]]即可， 可">
+声明stringstream
+1stringstream ss;
+
+给stringstream对象赋值
+123456789101112//可以在定义时赋值string s;cin &amp;gt;&amp;gt; s;stirngstream ss(s);//利用stringstream::str()进行赋值stringstream ss;s">
 
 
 
@@ -138,13 +147,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2016/11/19/pta—-part-0/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/02/19/STLPart1/"/>
 
 
 
 
 
-  <title> 推“一起开心团队_C语言基础习题“有感 part 0 | Zhao70's Blog </title>
+  <title> STLPart1 | Zhao70's Blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -265,7 +274,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/11/19/pta—-part-0/">
+  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/02/19/STLPart1/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <meta itemprop="name" content="Zhao70">
@@ -289,7 +298,7 @@
             
             
               
-                推“一起开心团队_C语言基础习题“有感 part 0
+                STLPart1
               
             
           </h1>
@@ -302,8 +311,8 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-11-19T11:14:30+08:00">
-                2016-11-19
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-02-19T15:15:41+08:00">
+                2017-02-19
               </time>
             
 
@@ -321,8 +330,8 @@
               <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/algorithm/" itemprop="url" rel="index">
-                    <span itemprop="name">algorithm</span>
+                  <a href="/categories/CPP/" itemprop="url" rel="index">
+                    <span itemprop="name">CPP</span>
                   </a>
                 </span>
 
@@ -356,18 +365,64 @@
       
 
       
-        <h2 id="part1-1-7-题"><a href="#part1-1-7-题" class="headerlink" title="part1: 1 - 7 题"></a>part1: 1 - 7 题</h2><h3 id="路漫漫其修远兮，汝应上下而刷题-——-强哥-（论水题的重要性"><a href="#路漫漫其修远兮，汝应上下而刷题-——-强哥-（论水题的重要性" class="headerlink" title="路漫漫其修远兮，汝应上下而刷题 —— 强哥 （论水题的重要性"></a>路漫漫其修远兮，汝应上下而刷题 —— 强哥 （论水题的重要性</h3><blockquote>
-<p>题目描述<br><a href="https://pta.patest.cn/pta/test/2199/exam/3" target="_blank" rel="external">PTA 1 - 7题</a></p>
+        <h2 id="stringstream及其用法"><a href="#stringstream及其用法" class="headerlink" title="stringstream及其用法"></a>stringstream及其用法</h2><blockquote>
+<p>包含在头文件 sstream 中</p>
 </blockquote>
-<p>需要注意的地方</p>
 <ol>
-<li>（第三题， 素数对猜想）要求N是否为素数， <em>没有必要遍历(1, N)所有的整数</em>, 因为N若不是素数，必由两个属于(1, N)数相乘的得到， 而这两个数字肯定一个大于等于sqrt(N), 一个小于等于sqrt(N)，所以只需要求<strong>(1, sqrt[N]]</strong>即可， 可将10000降至100，大大提高效率，也可以计算<strong>[sqrt(N), N]</strong>, 效果相同。</li>
-<li>（第四题，数组右移） 注意<strong>数组整体</strong>移动方向和<strong>top</strong>移动方向<strong>相反</strong>， 因为数组整体右移，所以相对于top移动方向为向左。</li>
-<li>（第六题，找出不是两个数组共有的元素）我的思路是先求交集， 再求出不是交集的部分， 结果分没的全， 挖个坑， 以后再填。</li>
-<li>（第七题, 矩阵运算) 输入的时候顺便就可求出各种和， 然后再<strong>加上</strong>被减了两次的元素。<br>PS： PTA的分数机制有点坑人啊， 明明不是一个难度的题， 分数却一样。 还有， 排名榜格式混乱是什么鬼Orz。</li>
+<li><p>声明stringstream</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">stringstream</span> ss;</div></pre></td></tr></table></figure>
+</li>
+<li><p>给stringstream对象赋值</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//可以在定义时赋值</span></div><div class="line"><span class="built_in">string</span> s;</div><div class="line"><span class="built_in">cin</span> &gt;&gt; s;</div><div class="line"><span class="function">stirngstream <span class="title">ss</span><span class="params">(s)</span></span>;</div><div class="line"><span class="comment">//利用stringstream::str()进行赋值</span></div><div class="line"><span class="built_in">stringstream</span> ss;</div><div class="line">ss.str(<span class="string">"hello stringstream"</span>);</div><div class="line"><span class="comment">//利用流</span></div><div class="line"><span class="built_in">string</span> s;</div><div class="line"><span class="built_in">stringstream</span> ss;</div><div class="line"><span class="built_in">cin</span> &gt;&gt; s;</div><div class="line">ss &lt;&lt;　ｓ;</div></pre></td></tr></table></figure>
+</li>
+<li><p>stringstream的清空</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">stringstream ss;</div><div class="line">ss.str(&quot;&quot;);//right</div><div class="line">ss.clear; //error</div></pre></td></tr></table></figure>
+</li>
 </ol>
-<p>我的代码： <a href="https://github.com/ZhaoQiling/Algorithm/tree/master/PTA/%E4%B8%80%E8%B5%B7%E5%BC%80%E5%BF%83C%E8%AF%AD%E8%A8%80%E5%9F%BA%E7%A1%80%E9%A2%98" target="_blank" rel="external">github</a></p>
-
+<h2 id="std-lower-bound-和std-lower-bound"><a href="#std-lower-bound-和std-lower-bound" class="headerlink" title="std::lower_bound()和std::lower_bound()"></a>std::lower_bound()和std::lower_bound()</h2><blockquote>
+<p>ForwardIter lower_bound(ForwardIter first, ForwardIter last,const _Tp&amp; val)算法返回一个非递减序列[first, last)中的第一个<strong>大于等于</strong>值val的位置。<br>ForwardIter upper_bound(ForwardIter first, ForwardIter last, const _Tp&amp; val)算法返回一个非递减序列[first, last)中第一个<strong>大于</strong>val的位置。</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>1</th>
+<th>2</th>
+<th>2</th>
+<th>3</th>
+<th>4</th>
+<th>4</th>
+<th>4</th>
+<th>5</th>
+<th>6</th>
+<th>7</th>
+<th>9</th>
+<th>9</th>
+<th>10</th>
+<th>&nbsp;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>first</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>lower_bound(first, last, 4)</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>upper_bound(first, last, 4)</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>last</td>
+</tr>
+</tbody>
+</table>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//查找相应的值的位置</span></div><div class="line"><span class="keyword">int</span> loc = lower_bound(first, last, <span class="number">4</span>) - first;</div></pre></td></tr></table></figure>
+<h2 id="不定长数组：-vector"><a href="#不定长数组：-vector" class="headerlink" title="不定长数组： vector()"></a>不定长数组： vector()</h2><p>若a是一个vector，可以用a.size( )读取它的大小，a.resize( )改变大小，a.push_back( )向尾部添加元素，a.pop_back( )删除最后一个元素</p>
+<h2 id="set-用法"><a href="#set-用法" class="headerlink" title="set()用法"></a>set()用法</h2>
       
     </div>
 
@@ -388,19 +443,13 @@
 
     <footer class="post-footer">
       
-        <div class="post-tags">
-          
-            <a href="/tags/base/" rel="tag"># base</a>
-          
-        </div>
-      
 
       
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/11/09/PrimeRingProblem_DFS/" rel="next" title="HDU1016 Prime Ring Problem">
-                <i class="fa fa-chevron-left"></i> HDU1016 Prime Ring Problem
+              <a href="/2017/02/15/内联成员函数/" rel="next" title="内联成员函数">
+                <i class="fa fa-chevron-left"></i> 内联成员函数
               </a>
             
           </div>
@@ -408,10 +457,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/11/23/adjacencyListByArray/" rel="prev" title="邻接表的数组实现">
-                邻接表的数组实现 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -538,7 +583,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#part1-1-7-题"><span class="nav-number">1.</span> <span class="nav-text">part1: 1 - 7 题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#路漫漫其修远兮，汝应上下而刷题-——-强哥-（论水题的重要性"><span class="nav-number">1.1.</span> <span class="nav-text">路漫漫其修远兮，汝应上下而刷题 —— 强哥 （论水题的重要性</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#stringstream及其用法"><span class="nav-number">1.</span> <span class="nav-text">stringstream及其用法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#std-lower-bound-和std-lower-bound"><span class="nav-number">2.</span> <span class="nav-text">std::lower_bound()和std::lower_bound()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#不定长数组：-vector"><span class="nav-number">3.</span> <span class="nav-text">不定长数组： vector()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#set-用法"><span class="nav-number">4.</span> <span class="nav-text">set()用法</span></a></li></ol></div>
             
 
           </div>

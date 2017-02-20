@@ -100,7 +100,7 @@
 将变量某些位清0且同时保持其他位不变  example: 将int变量n的低8位全置成0， 而其余位不变, n = n &amp;amp; 0xffffff00;
 获取变量中的某一位  example: 判断一个int类型变量第n位是否是1(从右往左， 从0开始数), n &amp;amp; 0x80 是否等于 0x80(即1000 0000)
 判断一个数字的奇偶  exam">
-<meta property="og:updated_time" content="2017-02-11T00:36:07.793Z">
+<meta property="og:updated_time" content="2017-02-19T10:48:29.231Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="位运算Part1">
 <meta name="twitter:description" content="六种位运算符
@@ -374,7 +374,7 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">0000 0000 1111 1111</div><div class="line">^</div><div class="line">0010 1110 1001 0000</div><div class="line">==</div><div class="line">0010 1110 0110 1111</div></pre></td></tr></table></figure>
 </li>
 <li><p>不使用中间变量交换a, b的值</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">a = a ^ b;</div><div class="line">b = a ^ b;</div><div class="line">a = a ^ b;</div></pre></td></tr></table></figure>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">a = a ^ b;</div><div class="line">b = a ^ b;</div><div class="line">a = a ^ b;</div></pre></td></tr></table></figure>
 </li>
 </ul>
 <h2 id="按位非（单目）"><a href="#按位非（单目）" class="headerlink" title="~ 按位非（单目）"></a>~ 按位非（单目）</h2><h2 id="lt-lt-左移"><a href="#lt-lt-左移" class="headerlink" title="&lt;&lt; 左移"></a>&lt;&lt; 左移</h2><h3 id="规则-1"><a href="#规则-1" class="headerlink" title="规则"></a>规则</h3><ul>
@@ -490,7 +490,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">16</span>
+              <span class="site-state-item-count">17</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>

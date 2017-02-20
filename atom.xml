@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-02-15T01:09:30.472Z</updated>
+  <updated>2017-02-18T15:57:48.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -16,16 +16,94 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>STLPart1</title>
+    <link href="http://yoursite.com/2017/02/19/STLPart1/"/>
+    <id>http://yoursite.com/2017/02/19/STLPart1/</id>
+    <published>2017-02-19T07:15:41.000Z</published>
+    <updated>2017-02-18T15:57:48.000Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="stringstream及其用法"><a href="#stringstream及其用法" class="headerlink" title="stringstream及其用法"></a>stringstream及其用法</h2><blockquote>
+<p>包含在头文件 sstream 中</p>
+</blockquote>
+<ol>
+<li><p>声明stringstream</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">stringstream</span> ss;</div></pre></td></tr></table></figure>
+</li>
+<li><p>给stringstream对象赋值</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//可以在定义时赋值</span></div><div class="line"><span class="built_in">string</span> s;</div><div class="line"><span class="built_in">cin</span> &gt;&gt; s;</div><div class="line"><span class="function">stirngstream <span class="title">ss</span><span class="params">(s)</span></span>;</div><div class="line"><span class="comment">//利用stringstream::str()进行赋值</span></div><div class="line"><span class="built_in">stringstream</span> ss;</div><div class="line">ss.str(<span class="string">"hello stringstream"</span>);</div><div class="line"><span class="comment">//利用流</span></div><div class="line"><span class="built_in">string</span> s;</div><div class="line"><span class="built_in">stringstream</span> ss;</div><div class="line"><span class="built_in">cin</span> &gt;&gt; s;</div><div class="line">ss &lt;&lt;　ｓ;</div></pre></td></tr></table></figure>
+</li>
+<li><p>stringstream的清空</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">stringstream ss;</div><div class="line">ss.str(&quot;&quot;);//right</div><div class="line">ss.clear; //error</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<h2 id="std-lower-bound-和std-lower-bound"><a href="#std-lower-bound-和std-lower-bound" class="headerlink" title="std::lower_bound()和std::lower_bound()"></a>std::lower_bound()和std::lower_bound()</h2><blockquote>
+<p>ForwardIter lower_bound(ForwardIter first, ForwardIter last,const _Tp&amp; val)算法返回一个非递减序列[first, last)中的第一个<strong>大于等于</strong>值val的位置。<br>ForwardIter upper_bound(ForwardIter first, ForwardIter last, const _Tp&amp; val)算法返回一个非递减序列[first, last)中第一个<strong>大于</strong>val的位置。</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>1</th>
+<th>2</th>
+<th>2</th>
+<th>3</th>
+<th>4</th>
+<th>4</th>
+<th>4</th>
+<th>5</th>
+<th>6</th>
+<th>7</th>
+<th>9</th>
+<th>9</th>
+<th>10</th>
+<th>&nbsp;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>first</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>lower_bound(first, last, 4)</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>upper_bound(first, last, 4)</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>last</td>
+</tr>
+</tbody>
+</table>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//查找相应的值的位置</span></div><div class="line"><span class="keyword">int</span> loc = lower_bound(first, last, <span class="number">4</span>) - first;</div></pre></td></tr></table></figure>
+<h2 id="不定长数组：-vector"><a href="#不定长数组：-vector" class="headerlink" title="不定长数组： vector()"></a>不定长数组： vector()</h2><p>若a是一个vector，可以用a.size( )读取它的大小，a.resize( )改变大小，a.push_back( )向尾部添加元素，a.pop_back( )删除最后一个元素</p>
+<h2 id="set-用法"><a href="#set-用法" class="headerlink" title="set()用法"></a>set()用法</h2>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;stringstream及其用法&quot;&gt;&lt;a href=&quot;#stringstream及其用法&quot; class=&quot;headerlink&quot; title=&quot;stringstream及其用法&quot;&gt;&lt;/a&gt;stringstream及其用法&lt;/h2&gt;&lt;blockquote&gt;
+&lt;p&gt;包
+    
+    </summary>
+    
+      <category term="CPP" scheme="http://yoursite.com/categories/CPP/"/>
+    
+    
+  </entry>
+  
+  <entry>
     <title>内联成员函数</title>
     <link href="http://yoursite.com/2017/02/15/%E5%86%85%E8%81%94%E6%88%90%E5%91%98%E5%87%BD%E6%95%B0/"/>
     <id>http://yoursite.com/2017/02/15/内联成员函数/</id>
     <published>2017-02-15T00:54:09.000Z</published>
-    <updated>2017-02-15T01:09:30.472Z</updated>
+    <updated>2017-02-19T10:48:05.071Z</updated>
     
     <content type="html"><![CDATA[<p>##内联成员函数</p>
 <ul>
 <li>inline + 成员函数</li>
-<li>整个函数体出现在类定义内部<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">class B&#123;</div><div class="line">	inline void func1();</div><div class="line">	void func2()</div><div class="line">	&#123;</div><div class="line">	&#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure></li>
+<li>整个函数体出现在类定义内部<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">class</span> B&#123;</div><div class="line">	<span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">func1</span><span class="params">()</span></span>;</div><div class="line">	<span class="function"><span class="keyword">void</span> <span class="title">func2</span><span class="params">()</span></span></div><div class="line">	&#123;</div><div class="line">	&#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure></li>
 </ul>
 ]]></content>
     
@@ -34,7 +112,7 @@
       &lt;p&gt;##内联成员函数&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;inline + 成员函数&lt;/li&gt;
-&lt;li&gt;整个函数体出现在类定义内部&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;
+&lt;li&gt;整个函数体出现在类定义内部&lt;figure class=&quot;highlight c++&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;li
     
     </summary>
     
@@ -48,7 +126,7 @@
     <link href="http://yoursite.com/2017/02/11/const%E5%85%B3%E9%94%AE%E5%AD%97%E5%8F%8A%E4%BD%BF%E7%94%A8/"/>
     <id>http://yoursite.com/2017/02/11/const关键字及使用/</id>
     <published>2017-02-11T03:26:39.000Z</published>
-    <updated>2017-02-11T04:06:03.049Z</updated>
+    <updated>2017-02-19T10:48:13.465Z</updated>
     
     <content type="html"><![CDATA[<h2 id="定义常量"><a href="#定义常量" class="headerlink" title="定义常量"></a>定义常量</h2><ul>
 <li>const int MAX_VAL = 23;</li>
@@ -58,7 +136,7 @@
 <p>不可通过常量指针修改其所指向的内容</p>
 </blockquote>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">int n, m;</div><div class="line">const int *p = &amp;n;</div><div class="line">*p = 5;//error</div><div class="line">n = 4; // ok</div><div class="line">p = &amp;m; //ok</div><div class="line">//常量指针可通过强制类型转化 转化为非常量指针</div><div class="line">int * p1 = (int *)p;//ok</div></pre></td></tr></table></figure>
-<h2 id="定义常应用"><a href="#定义常应用" class="headerlink" title="定义常应用"></a>定义常应用</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">int n;</div><div class="line">const int &amp;r = n;</div><div class="line">r = 5;</div><div class="line">n = 4;</div></pre></td></tr></table></figure>]]></content>
+<h2 id="定义常应用"><a href="#定义常应用" class="headerlink" title="定义常应用"></a>定义常应用</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">int</span> n;</div><div class="line"><span class="keyword">const</span> <span class="keyword">int</span> &amp;r = n;</div><div class="line">r = <span class="number">5</span>;</div><div class="line">n = <span class="number">4</span>;</div></pre></td></tr></table></figure>]]></content>
     
     <summary type="html">
     
@@ -207,7 +285,7 @@
     <link href="http://yoursite.com/2017/02/10/%E4%BD%8D%E8%BF%90%E7%AE%97/"/>
     <id>http://yoursite.com/2017/02/10/位运算/</id>
     <published>2017-02-10T01:29:13.000Z</published>
-    <updated>2017-02-11T00:36:07.793Z</updated>
+    <updated>2017-02-19T10:48:29.231Z</updated>
     
     <content type="html"><![CDATA[<h1 id="六种位运算符"><a href="#六种位运算符" class="headerlink" title="六种位运算符"></a>六种位运算符</h1><hr>
 <h2 id="amp-按位与"><a href="#amp-按位与" class="headerlink" title="&amp; 按位与"></a>&amp; 按位与</h2><h3 id="用处"><a href="#用处" class="headerlink" title="用处"></a>用处</h3><ul>
@@ -230,7 +308,7 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">0000 0000 1111 1111</div><div class="line">^</div><div class="line">0010 1110 1001 0000</div><div class="line">==</div><div class="line">0010 1110 0110 1111</div></pre></td></tr></table></figure>
 </li>
 <li><p>不使用中间变量交换a, b的值</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">a = a ^ b;</div><div class="line">b = a ^ b;</div><div class="line">a = a ^ b;</div></pre></td></tr></table></figure>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">a = a ^ b;</div><div class="line">b = a ^ b;</div><div class="line">a = a ^ b;</div></pre></td></tr></table></figure>
 </li>
 </ul>
 <h2 id="按位非（单目）"><a href="#按位非（单目）" class="headerlink" title="~ 按位非（单目）"></a>~ 按位非（单目）</h2><h2 id="lt-lt-左移"><a href="#lt-lt-左移" class="headerlink" title="&lt;&lt; 左移"></a>&lt;&lt; 左移</h2><h3 id="规则-1"><a href="#规则-1" class="headerlink" title="规则"></a>规则</h3><ul>
@@ -652,9 +730,9 @@
       <category term="algorithm" scheme="http://yoursite.com/categories/algorithm/"/>
     
     
-      <category term="aha" scheme="http://yoursite.com/tags/aha/"/>
-    
       <category term="DFS" scheme="http://yoursite.com/tags/DFS/"/>
+    
+      <category term="aha" scheme="http://yoursite.com/tags/aha/"/>
     
   </entry>
   

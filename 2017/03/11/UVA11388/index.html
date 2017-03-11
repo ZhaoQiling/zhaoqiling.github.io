@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="STL,low_bound," />
+  <meta name="keywords" content="Hexo, NexT" />
 
 
 
@@ -86,49 +86,28 @@
 
 
 
-<meta name="description" content="题目链接: Uva10474 Where is the Marble?
-涉及的知识点
-lower_bound
+<meta name="description" content="题目链接 Uva11388
 
-分析典型的水题， lower_bound()返回的是一个有序的非递减数列第一个大于等于查询值的位置。
-如果要在
-
-1, 2, 2, 3, 3, 3, 4, 5, 7
-
-找寻2, 则返回所在的位置，检查该位置的数值是否为2
-找寻6, 返回7所在位置
-我的代码github">
+题目大意已知两个数的最大公约数(GCD)和最小公倍数(LCM), 求两个数字, 要求第一个数字最小， 第二个数字最大
+解题思路1234567由GCD和LCD的性质得，LCM * GCD == a * b,a = xG;b = yG;L / G == x * y;若L / G != 0; 则说明 x * y 中存在小数 即无解若有解， 最小为G 另一个为L
+代码123">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Uva10474 Where is the Marble?">
-<meta property="og:url" content="http://yoursite.com/2017/02/20/Uva10474-Where-is-the-Marble/index.html">
+<meta property="og:title" content="UVA11388">
+<meta property="og:url" content="http://yoursite.com/2017/03/11/UVA11388/index.html">
 <meta property="og:site_name" content="Zhao70's Blog">
-<meta property="og:description" content="题目链接: Uva10474 Where is the Marble?
-涉及的知识点
-lower_bound
+<meta property="og:description" content="题目链接 Uva11388
 
-分析典型的水题， lower_bound()返回的是一个有序的非递减数列第一个大于等于查询值的位置。
-如果要在
-
-1, 2, 2, 3, 3, 3, 4, 5, 7
-
-找寻2, 则返回所在的位置，检查该位置的数值是否为2
-找寻6, 返回7所在位置
-我的代码github">
-<meta property="og:updated_time" content="2017-02-20T12:14:33.774Z">
+题目大意已知两个数的最大公约数(GCD)和最小公倍数(LCM), 求两个数字, 要求第一个数字最小， 第二个数字最大
+解题思路1234567由GCD和LCD的性质得，LCM * GCD == a * b,a = xG;b = yG;L / G == x * y;若L / G != 0; 则说明 x * y 中存在小数 即无解若有解， 最小为G 另一个为L
+代码123">
+<meta property="og:updated_time" content="2017-03-11T01:14:15.834Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Uva10474 Where is the Marble?">
-<meta name="twitter:description" content="题目链接: Uva10474 Where is the Marble?
-涉及的知识点
-lower_bound
+<meta name="twitter:title" content="UVA11388">
+<meta name="twitter:description" content="题目链接 Uva11388
 
-分析典型的水题， lower_bound()返回的是一个有序的非递减数列第一个大于等于查询值的位置。
-如果要在
-
-1, 2, 2, 3, 3, 3, 4, 5, 7
-
-找寻2, 则返回所在的位置，检查该位置的数值是否为2
-找寻6, 返回7所在位置
-我的代码github">
+题目大意已知两个数的最大公约数(GCD)和最小公倍数(LCM), 求两个数字, 要求第一个数字最小， 第二个数字最大
+解题思路1234567由GCD和LCD的性质得，LCM * GCD == a * b,a = xG;b = yG;L / G == x * y;若L / G != 0; 则说明 x * y 中存在小数 即无解若有解， 最小为G 另一个为L
+代码123">
 
 
 
@@ -156,13 +135,13 @@ lower_bound
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/02/20/Uva10474-Where-is-the-Marble/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/03/11/UVA11388/"/>
 
 
 
 
 
-  <title> Uva10474 Where is the Marble? | Zhao70's Blog </title>
+  <title> UVA11388 | Zhao70's Blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -283,7 +262,7 @@ lower_bound
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/02/20/Uva10474-Where-is-the-Marble/">
+  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/11/UVA11388/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <meta itemprop="name" content="Zhao70">
@@ -307,7 +286,7 @@ lower_bound
             
             
               
-                Uva10474 Where is the Marble?
+                UVA11388
               
             
           </h1>
@@ -320,8 +299,8 @@ lower_bound
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-02-20T19:56:20+08:00">
-                2017-02-20
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-03-11T09:00:31+08:00">
+                2017-03-11
               </time>
             
 
@@ -330,6 +309,24 @@ lower_bound
             
           </span>
 
+          
+            <span class="post-category" >
+              <span class="post-meta-divider">|</span>
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/algorithm/" itemprop="url" rel="index">
+                    <span itemprop="name">algorithm</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -356,19 +353,12 @@ lower_bound
       
 
       
-        <p>题目链接: <a href="https://vjudge.net/problem/UVA-10474" target="_blank" rel="external">Uva10474 Where is the Marble?</a></p>
-<h2 id="涉及的知识点"><a href="#涉及的知识点" class="headerlink" title="涉及的知识点"></a>涉及的知识点</h2><ul>
-<li>lower_bound</li>
-</ul>
-<h2 id="分析"><a href="#分析" class="headerlink" title="分析"></a>分析</h2><p>典型的水题， lower_bound()返回的是一个有序的非递减数列第一个大于等于查询值的位置。</p>
-<p>如果要在</p>
-<blockquote>
-<p>1, 2, 2, 3, 3, 3, 4, 5, 7</p>
+        <blockquote>
+<p>题目链接 <a href="https://uva.onlinejudge.org/index.php?option=com_onlinejudge&amp;Itemid=8&amp;page=show_problem&amp;problem=2383" target="_blank" rel="external">Uva11388</a></p>
 </blockquote>
-<p>找寻2, 则返回所在的位置，检查该位置的数值是否为2</p>
-<p>找寻6, 返回7所在位置</p>
-<h2 id="我的代码"><a href="#我的代码" class="headerlink" title="我的代码"></a>我的代码</h2><p><a href="https://github.com/ZhaoQiling/CplusplusLearn/blob/master/STL/Uva10474.cpp" target="_blank" rel="external">github</a></p>
-
+<h2 id="题目大意"><a href="#题目大意" class="headerlink" title="题目大意"></a>题目大意</h2><p>已知两个数的最大公约数(GCD)和最小公倍数(LCM), 求两个数字, 要求第一个数字最小， 第二个数字最大</p>
+<h2 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">由GCD和LCD的性质得，</div><div class="line">LCM * GCD == a * b,</div><div class="line">a = xG;</div><div class="line">b = yG;</div><div class="line">L / G == x * y;</div><div class="line">若L / G != <span class="number">0</span>; 则说明 x * y 中存在小数 即无解</div><div class="line">若有解， 最小为G 另一个为L</div></pre></td></tr></table></figure>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">gcd</span><span class="params">(<span class="keyword">int</span>, <span class="keyword">int</span>)</span></span>;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">lcm</span><span class="params">(<span class="keyword">int</span>, <span class="keyword">int</span>)</span></span>;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></div><div class="line">&#123;</div><div class="line">    <span class="keyword">int</span> nTest;</div><div class="line">    <span class="built_in">cin</span> &gt;&gt; nTest;</div><div class="line">    <span class="keyword">while</span>(nTest)</div><div class="line">    &#123;</div><div class="line">        <span class="keyword">int</span> G, L;</div><div class="line">        <span class="built_in">cin</span> &gt;&gt; G &gt;&gt; L;</div><div class="line">        <span class="keyword">if</span>(L % G != <span class="number">0</span>)</div><div class="line">        &#123;</div><div class="line">            <span class="built_in">cout</span> &lt;&lt; <span class="number">-1</span> &lt;&lt; <span class="built_in">endl</span>;</div><div class="line">            nTest--;</div><div class="line">            <span class="keyword">continue</span>;</div><div class="line">        &#125;</div><div class="line">        <span class="built_in">cout</span> &lt;&lt; G &lt;&lt; <span class="string">" "</span> &lt;&lt; L &lt;&lt; <span class="built_in">endl</span>;</div><div class="line">        nTest--;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">gcd</span><span class="params">(<span class="keyword">int</span> a, <span class="keyword">int</span> b)</span></span></div><div class="line">&#123;</div><div class="line">    <span class="keyword">while</span>(b ^= a ^= b ^= a %= b);</div><div class="line">    <span class="keyword">return</span> b;</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">lcm</span><span class="params">(<span class="keyword">int</span> a, <span class="keyword">int</span> b)</span></span></div><div class="line">&#123;</div><div class="line">    <span class="keyword">return</span> (a * b) / gcd(a, b);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
       
     </div>
 
@@ -389,21 +379,13 @@ lower_bound
 
     <footer class="post-footer">
       
-        <div class="post-tags">
-          
-            <a href="/tags/STL/" rel="tag"># STL</a>
-          
-            <a href="/tags/low-bound/" rel="tag"># low_bound</a>
-          
-        </div>
-      
 
       
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/02/19/STLPart1/" rel="next" title="STLPart1">
-                <i class="fa fa-chevron-left"></i> STLPart1
+              <a href="/2017/03/09/GCD-LCM/" rel="next" title="GCD&LCM">
+                <i class="fa fa-chevron-left"></i> GCD&LCM
               </a>
             
           </div>
@@ -411,10 +393,6 @@ lower_bound
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/03/09/生物芯片/" rel="prev" title="生物芯片">
-                生物芯片 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -541,7 +519,7 @@ lower_bound
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#涉及的知识点"><span class="nav-number">1.</span> <span class="nav-text">涉及的知识点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#分析"><span class="nav-number">2.</span> <span class="nav-text">分析</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#我的代码"><span class="nav-number">3.</span> <span class="nav-text">我的代码</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#题目大意"><span class="nav-number">1.</span> <span class="nav-text">题目大意</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#解题思路"><span class="nav-number">2.</span> <span class="nav-text">解题思路</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#代码"><span class="nav-number">3.</span> <span class="nav-text">代码</span></a></li></ol></div>
             
 
           </div>

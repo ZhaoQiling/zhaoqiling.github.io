@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-03-09T14:31:25.037Z</updated>
+  <updated>2017-03-11T01:14:15.834Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -16,11 +16,37 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>UVA11388</title>
+    <link href="http://yoursite.com/2017/03/11/UVA11388/"/>
+    <id>http://yoursite.com/2017/03/11/UVA11388/</id>
+    <published>2017-03-11T01:00:31.000Z</published>
+    <updated>2017-03-11T01:14:15.834Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote>
+<p>题目链接 <a href="https://uva.onlinejudge.org/index.php?option=com_onlinejudge&amp;Itemid=8&amp;page=show_problem&amp;problem=2383" target="_blank" rel="external">Uva11388</a></p>
+</blockquote>
+<h2 id="题目大意"><a href="#题目大意" class="headerlink" title="题目大意"></a>题目大意</h2><p>已知两个数的最大公约数(GCD)和最小公倍数(LCM), 求两个数字, 要求第一个数字最小， 第二个数字最大</p>
+<h2 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">由GCD和LCD的性质得，</div><div class="line">LCM * GCD == a * b,</div><div class="line">a = xG;</div><div class="line">b = yG;</div><div class="line">L / G == x * y;</div><div class="line">若L / G != <span class="number">0</span>; 则说明 x * y 中存在小数 即无解</div><div class="line">若有解， 最小为G 另一个为L</div></pre></td></tr></table></figure>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">gcd</span><span class="params">(<span class="keyword">int</span>, <span class="keyword">int</span>)</span></span>;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">lcm</span><span class="params">(<span class="keyword">int</span>, <span class="keyword">int</span>)</span></span>;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></div><div class="line">&#123;</div><div class="line">    <span class="keyword">int</span> nTest;</div><div class="line">    <span class="built_in">cin</span> &gt;&gt; nTest;</div><div class="line">    <span class="keyword">while</span>(nTest)</div><div class="line">    &#123;</div><div class="line">        <span class="keyword">int</span> G, L;</div><div class="line">        <span class="built_in">cin</span> &gt;&gt; G &gt;&gt; L;</div><div class="line">        <span class="keyword">if</span>(L % G != <span class="number">0</span>)</div><div class="line">        &#123;</div><div class="line">            <span class="built_in">cout</span> &lt;&lt; <span class="number">-1</span> &lt;&lt; <span class="built_in">endl</span>;</div><div class="line">            nTest--;</div><div class="line">            <span class="keyword">continue</span>;</div><div class="line">        &#125;</div><div class="line">        <span class="built_in">cout</span> &lt;&lt; G &lt;&lt; <span class="string">" "</span> &lt;&lt; L &lt;&lt; <span class="built_in">endl</span>;</div><div class="line">        nTest--;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">gcd</span><span class="params">(<span class="keyword">int</span> a, <span class="keyword">int</span> b)</span></span></div><div class="line">&#123;</div><div class="line">    <span class="keyword">while</span>(b ^= a ^= b ^= a %= b);</div><div class="line">    <span class="keyword">return</span> b;</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">lcm</span><span class="params">(<span class="keyword">int</span> a, <span class="keyword">int</span> b)</span></span></div><div class="line">&#123;</div><div class="line">    <span class="keyword">return</span> (a * b) / gcd(a, b);</div><div class="line">&#125;</div></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;题目链接 &lt;a href=&quot;https://uva.onlinejudge.org/index.php?option=com_onlinejudge&amp;amp;Itemid=8&amp;amp;page=show_problem&amp;amp;problem=23
+    
+    </summary>
+    
+      <category term="algorithm" scheme="http://yoursite.com/categories/algorithm/"/>
+    
+    
+  </entry>
+  
+  <entry>
     <title>GCD&amp;LCM</title>
     <link href="http://yoursite.com/2017/03/09/GCD-LCM/"/>
     <id>http://yoursite.com/2017/03/09/GCD-LCM/</id>
     <published>2017-03-09T14:10:59.000Z</published>
-    <updated>2017-03-09T14:31:25.037Z</updated>
+    <updated>2017-03-11T00:59:45.145Z</updated>
     
     <content type="html"><![CDATA[<h2 id="GCD最大公约数"><a href="#GCD最大公约数" class="headerlink" title="GCD最大公约数"></a>GCD最大公约数</h2><h3 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h3><blockquote>
 <p>最大公因数，也称最大公约数、最大公因子，指两个或多个整数共有约数中最大的一个。</p>
@@ -30,7 +56,6 @@
 <p>几个数共有的倍数叫做这几个数的公倍数，其中除0以外最小的一个公倍数，叫做这几个数的最小公倍数。</p>
 </blockquote>
 <h3 id="求法-1"><a href="#求法-1" class="headerlink" title="求法"></a>求法</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">LCM</span><span class="params">(<span class="keyword">int</span> a,<span class="keyword">int</span> b)</span></span></div><div class="line">&#123;</div><div class="line">	<span class="keyword">int</span> temp_lcm;</div><div class="line">	 <span class="comment">//最小公倍数等于两数之积除以最大公约数</span></div><div class="line">	temp_lcm = a * b /GCD(a,b);</div><div class="line">	<span class="keyword">return</span> temp_lcm;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h2 id="例题"><a href="#例题" class="headerlink" title="例题"></a>例题</h2><p>1.</p>
 ]]></content>
     
     <summary type="html">
@@ -825,28 +850,6 @@
       <category term="DFS" scheme="http://yoursite.com/tags/DFS/"/>
     
       <category term="aha" scheme="http://yoursite.com/tags/aha/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>我的第一篇文章</title>
-    <link href="http://yoursite.com/2016/11/06/my-new-post/"/>
-    <id>http://yoursite.com/2016/11/06/my-new-post/</id>
-    <published>2016-11-06T01:44:12.000Z</published>
-    <updated>2016-11-06T03:02:03.960Z</updated>
-    
-    <content type="html"><![CDATA[<p>使用markdown</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;使用markdown&lt;/p&gt;
-
-    
-    </summary>
-    
-    
-      <category term="markdown" scheme="http://yoursite.com/tags/markdown/"/>
     
   </entry>
   

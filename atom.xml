@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-03-11T01:14:15.834Z</updated>
+  <updated>2017-03-11T02:03:10.761Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -14,6 +14,44 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>出栈顺序</title>
+    <link href="http://yoursite.com/2017/03/11/%E5%87%BA%E6%A0%88%E9%A1%BA%E5%BA%8F/"/>
+    <id>http://yoursite.com/2017/03/11/出栈顺序/</id>
+    <published>2017-03-11T01:46:10.000Z</published>
+    <updated>2017-03-11T02:03:10.761Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>我们把n个元素的出栈个数的记为f(n), 那么对于1,2,3, 我们很容易得出：</p>
+<pre><code>f(1) = 1     //即 1
+f(2) = 2     //即 12、21
+f(3) = 5     //即 123、132、213、321、231
+</code></pre><p>然后我们来考虑f(4), 我们给4个元素编号为a,b,c,d, 那么考虑：元素a只可能出现在1号位置，2号位置，3号位置和4号位置(很容易理解，一共就4个位置，比如abcd,元素a就在1号位置)。</p>
+<h2 id="方法一"><a href="#方法一" class="headerlink" title="方法一"></a>方法一</h2><ol>
+<li>如果元素a在1号位置，那么只可能a进栈，马上出栈，此时还剩元素b、c、d等待操作，就是子问题f(3)；</li>
+<li>如果元素a在2号位置，那么一定有一个元素比a先出栈，即有f(1)种可能顺序（只能是b），还剩c、d，即f(2)，根据乘法原理，一共的顺序个数为f(1) * f(2)；</li>
+<li>如果元素a在3号位置，那么一定有两个元素比1先出栈，即有f(2)种可能顺序（只能是b、c），还剩d，即f(1)，根据乘法原理，一共的顺序个数为f(2) * f(1)；</li>
+<li>如果元素a在4号位置，那么一定是a先进栈，最后出栈，那么元素b、c、d的出栈顺序即是此小问题的解，即         f(3)；</li>
+</ol>
+<ul>
+<li>结合所有情况，即<figure class="highlight plain"><figcaption><span>= f(3) + f(2) * f(1) + f(1) * f(2) + f(3);```为了规整化，我们定义f(0) = 1；于是f(4)可以重新写为：```f(4) = f(0)*f(3) + f(1)*f(2) + f(2) * f(1) + f(3)*f(0)```</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">* 然后我们推广到n，推广思路和n=4时完全一样，于是我们可以得到：```f(n) = f(0)*f(n-1) + f(1)*f(n-2) + ... + f(n-1)*f(0)</div></pre></td></tr></table></figure></li>
+</ul>
+<h2 id="方法二"><a href="#方法二" class="headerlink" title="方法二"></a>方法二</h2><p>递推式满足Catalan数 <code>h(n) = C(2n, n) / (n + 1)</code></p>
+<p>//(n = 0,1,2,…) h(0)=1,h(1)=1</p>
+<h2 id="补充"><a href="#补充" class="headerlink" title="补充"></a>补充</h2><p><code>C(m, n) = m! / (n! * (m - n)!)</code></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;题目描述&quot;&gt;&lt;a href=&quot;#题目描述&quot; class=&quot;headerlink&quot; title=&quot;题目描述&quot;&gt;&lt;/a&gt;题目描述&lt;/h2&gt;&lt;p&gt;我们把n个元素的出栈个数的记为f(n), 那么对于1,2,3, 我们很容易得出：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;f(1) =
+    
+    </summary>
+    
+    
+      <category term="stack" scheme="http://yoursite.com/tags/stack/"/>
+    
+  </entry>
   
   <entry>
     <title>UVA11388</title>
@@ -812,42 +850,6 @@
     
     
       <category term="BFS" scheme="http://yoursite.com/tags/BFS/"/>
-    
-      <category term="aha" scheme="http://yoursite.com/tags/aha/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>解救小哈</title>
-    <link href="http://yoursite.com/2016/11/07/%E6%8B%AF%E6%95%91%E5%B0%8F%E5%93%88_DFS/"/>
-    <id>http://yoursite.com/2016/11/07/拯救小哈_DFS/</id>
-    <published>2016-11-07T05:42:43.000Z</published>
-    <updated>2016-11-27T05:17:59.000Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="简单的dfs搜索"><a href="#简单的dfs搜索" class="headerlink" title="简单的dfs搜索"></a>简单的dfs搜索</h2><hr>
-<blockquote>
-<p>题目描述：<br><a href="http://www.tianchai.org/problem-12032.html" target="_blank" rel="external">添柴，拯救小哈</a></p>
-</blockquote>
-<pre><code>一道比较水的DFS搜索题目，需要注意的是
-</code></pre><ol>
-<li>运用next数组进行下一步的加减，与八皇后问题可以<em>斜着走</em>的问题区别开，只能上下左右运动的需要定义一个next[4][2]的数组进行保存。</li>
-<li>编写DFS只关心当前这一步要做什么，并且注意边界条件的判断，如此题的是否出界和是否有障碍物</li>
-<li>标记数组的处理，为了防止死递归，所以需要标记数组，而下一步的决策取决于上面的标记，但是不能影响其他平行的决策，所以标记数组要<strong>及时</strong>复原。<br>我的代码： <a href="https://github.com/ZhaoQiling/Algorithm/blob/master/%E5%95%8A%E5%93%88%E7%AE%97%E6%B3%95/%E8%A7%A3%E6%95%91%E5%B0%8F%E5%93%88.cpp" target="_blank" rel="external">github</a></li>
-</ol>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;简单的dfs搜索&quot;&gt;&lt;a href=&quot;#简单的dfs搜索&quot; class=&quot;headerlink&quot; title=&quot;简单的dfs搜索&quot;&gt;&lt;/a&gt;简单的dfs搜索&lt;/h2&gt;&lt;hr&gt;
-&lt;blockquote&gt;
-&lt;p&gt;题目描述：&lt;br&gt;&lt;a href=&quot;http://www
-    
-    </summary>
-    
-      <category term="algorithm" scheme="http://yoursite.com/categories/algorithm/"/>
-    
-    
-      <category term="DFS" scheme="http://yoursite.com/tags/DFS/"/>
     
       <category term="aha" scheme="http://yoursite.com/tags/aha/"/>
     

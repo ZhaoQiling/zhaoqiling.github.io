@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-03-12T03:28:27.222Z</updated>
+  <updated>2017-03-12T13:24:46.253Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://yoursite.com/2017/03/12/CatalanNumber/"/>
     <id>http://yoursite.com/2017/03/12/CatalanNumber/</id>
     <published>2017-03-12T03:00:10.000Z</published>
-    <updated>2017-03-12T03:28:27.222Z</updated>
+    <updated>2017-03-12T13:24:46.253Z</updated>
     
     <content type="html"><![CDATA[<h2 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h2><p>令 h(0) = 1, h(1) = 1, catalan数满足<br>h(n)= h(0)&times;h(n-1)+h(1)&times;h(n-2) + … + h(n-1)&times;h(0) (n&gt;=2)</p>
 <h2 id="通项公式"><a href="#通项公式" class="headerlink" title="通项公式"></a>通项公式</h2><p>h(n) =<strong> C(2n, n) / (n + 1)</strong> = <strong>(2n)! / ((n + 1)! &times; n!)</strong></p>
@@ -30,7 +30,7 @@
 <p>如((())) ()(()) ()()() (())() (()())</p>
 </blockquote>
 <h3 id="出栈次序"><a href="#出栈次序" class="headerlink" title="出栈次序"></a>出栈次序</h3><blockquote>
-<p>感觉此应用和括号化类似。<br>省区不表，详情见上篇博文。</p>
+<p>感觉此应用和括号化类似。<br>省去不表，详情见上篇博文。</p>
 </blockquote>
 <h3 id="构建二叉树和满二叉树"><a href="#构建二叉树和满二叉树" class="headerlink" title="构建二叉树和满二叉树"></a>构建二叉树和满二叉树</h3><p>h(n)表示<strong>n个节点</strong>构建<strong>二叉树</strong>的方案数<br>h(n)表示<strong>2n + 1个节点</strong>构建**满二叉树的方案数</p>
 <h3 id="凸多边形的划分"><a href="#凸多边形的划分" class="headerlink" title="凸多边形的划分"></a>凸多边形的划分</h3><blockquote>

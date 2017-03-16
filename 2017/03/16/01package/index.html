@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="DP," />
 
 
 
@@ -86,19 +86,25 @@
 
 
 
-<meta name="description" content="题目
-标题：生物芯片X博士正在研究一种生物芯片，其逻辑密集度、容量都远远高于普通的半导体芯片。博士在芯片中设计了 n 个微型光源，每个光源操作一次就会改变其状态，即：点亮转为关闭，或关闭转为点亮。这些光源的编号从 1 到 n，开始的时候所有光源都是关闭的。博士计划在芯片上执行如下动作：所有编号为2的倍数的光源操作一次，也就是把 2 4 6 8 … 等序号光源打开所有编号为3的倍数的光源操作一次,">
+<meta name="description" content="题目描述题目链接: POJ3624很经典的01背包问题，不累述了。
+理解01背包问题本身代码并不复杂，很难理解的是状态的转移，引用Tanky Woo的一句话
+
+首先说下动态规划，动态规划这东西就和递归一样，只能找局部关系，若想全部列出来，是很难的，比如汉诺塔。你可以说先把除最后一层的其他所有层都移动到2，再把最后一层移动到3，最后再把其余的从2移动到3，这是一个直观的关系，但是想列举出来是很难的，">
 <meta property="og:type" content="article">
-<meta property="og:title" content="生物芯片">
-<meta property="og:url" content="http://yoursite.com/2017/03/09/生物芯片/index.html">
+<meta property="og:title" content="01package">
+<meta property="og:url" content="http://yoursite.com/2017/03/16/01package/index.html">
 <meta property="og:site_name" content="Zhao70's Blog">
-<meta property="og:description" content="题目
-标题：生物芯片X博士正在研究一种生物芯片，其逻辑密集度、容量都远远高于普通的半导体芯片。博士在芯片中设计了 n 个微型光源，每个光源操作一次就会改变其状态，即：点亮转为关闭，或关闭转为点亮。这些光源的编号从 1 到 n，开始的时候所有光源都是关闭的。博士计划在芯片上执行如下动作：所有编号为2的倍数的光源操作一次，也就是把 2 4 6 8 … 等序号光源打开所有编号为3的倍数的光源操作一次,">
-<meta property="og:updated_time" content="2017-03-09T14:04:51.121Z">
+<meta property="og:description" content="题目描述题目链接: POJ3624很经典的01背包问题，不累述了。
+理解01背包问题本身代码并不复杂，很难理解的是状态的转移，引用Tanky Woo的一句话
+
+首先说下动态规划，动态规划这东西就和递归一样，只能找局部关系，若想全部列出来，是很难的，比如汉诺塔。你可以说先把除最后一层的其他所有层都移动到2，再把最后一层移动到3，最后再把其余的从2移动到3，这是一个直观的关系，但是想列举出来是很难的，">
+<meta property="og:updated_time" content="2017-03-16T14:44:44.856Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="生物芯片">
-<meta name="twitter:description" content="题目
-标题：生物芯片X博士正在研究一种生物芯片，其逻辑密集度、容量都远远高于普通的半导体芯片。博士在芯片中设计了 n 个微型光源，每个光源操作一次就会改变其状态，即：点亮转为关闭，或关闭转为点亮。这些光源的编号从 1 到 n，开始的时候所有光源都是关闭的。博士计划在芯片上执行如下动作：所有编号为2的倍数的光源操作一次，也就是把 2 4 6 8 … 等序号光源打开所有编号为3的倍数的光源操作一次,">
+<meta name="twitter:title" content="01package">
+<meta name="twitter:description" content="题目描述题目链接: POJ3624很经典的01背包问题，不累述了。
+理解01背包问题本身代码并不复杂，很难理解的是状态的转移，引用Tanky Woo的一句话
+
+首先说下动态规划，动态规划这东西就和递归一样，只能找局部关系，若想全部列出来，是很难的，比如汉诺塔。你可以说先把除最后一层的其他所有层都移动到2，再把最后一层移动到3，最后再把其余的从2移动到3，这是一个直观的关系，但是想列举出来是很难的，">
 
 
 
@@ -126,13 +132,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/03/09/生物芯片/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/03/16/01package/"/>
 
 
 
 
 
-  <title> 生物芯片 | Zhao70's Blog </title>
+  <title> 01package | Zhao70's Blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -253,7 +259,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/09/生物芯片/">
+  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/16/01package/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <meta itemprop="name" content="Zhao70">
@@ -277,7 +283,7 @@
             
             
               
-                生物芯片
+                01package
               
             
           </h1>
@@ -290,8 +296,8 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-03-09T21:56:06+08:00">
-                2017-03-09
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-03-16T22:04:45+08:00">
+                2017-03-16
               </time>
             
 
@@ -344,16 +350,18 @@
       
 
       
-        <h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><blockquote>
-<p>标题：生物芯片<br>X博士正在研究一种生物芯片，其逻辑密集度、容量都远远高于普通的半导体芯片。<br>博士在芯片中设计了 n 个微型光源，每个光源操作一次就会改变其状态，即：点亮转为关闭，或关闭转为点亮。<br>这些光源的编号从 1 到 n，开始的时候所有光源都是关闭的。<br>博士计划在芯片上执行如下动作：<br>所有编号为2的倍数的光源操作一次，也就是把 2 4 6 8 … 等序号光源打开<br>所有编号为3的倍数的光源操作一次, 也就是对 3 6 9 … 等序号光源操作，注意此时6号光源又关闭了。<br>所有编号为4的倍数的光源操作一次。<br>…..<br>直到编号为 n 的倍数的光源操作一次。<br>X博士想知道：经过这些操作后，某个区间中的哪些光源是点亮的。<br>【输入格式】<br>3个用空格分开的整数：N L R (L&lt;R&lt;N&lt;10^15) N表示光源数，L表示区间的左边界，R表示区间的右边界。<br>【输出格式】<br>输出1个整数，表示经过所有操作后，[L,R] 区间中有多少个光源是点亮的。<br>例如：<br>输入：<br>5 2 3<br>程序应该输出：<br>2<br>再例如：<br>输入：<br>10 3 6<br>程序应该输出：<br>3</p>
-</blockquote>
-<h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><p>这道题如果用纯暴力肯定GG，涉及到了2个知识点</p>
+        <h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>题目链接: <a href="http://poj.org/?id=3624" target="_blank" rel="external">POJ3624</a><br>很经典的01背包问题，不累述了。</p>
+<h2 id="理解"><a href="#理解" class="headerlink" title="理解"></a>理解</h2><p>01背包问题本身代码并不复杂，很难理解的是<strong>状态的转移</strong>，引用Tanky Woo的一句话</p>
 <blockquote>
-<p>完全平方即用一个整数乘以自己例如1<em>1，2</em>2，3*3等，依此类推。若一个数能表示成某个整数的平方的形式，则称这个数为完全平方数。完全平方数是非负数，而一个完全平方数的根有两个。</p>
-<p>一个正整数n是完全平方数的充分必要条件是n有奇数个因数（包括1和n本身）。</p>
+<p>首先说下动态规划，动态规划这东西就和递归一样，只能找局部关系，若想全部列出来，是很难的，比如汉诺塔。你可以说先把除最后一层的其他所有层都移动到2，再把最后一层移动到3，最后再把其余的从2移动到3，这是一个直观的关系，但是想列举出来是很难的，也许当层数n=3时还可以模拟下，再大一些就不可能了，所以，诸如递归，动态规划之类的，不能细想，只能找局部关系。</p>
 </blockquote>
-<p>从 <strong>左边界</strong>的二次根号下 枚举 i 直到 i 的平方等于 <strong>右边界</strong></p>
-<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cmath&gt;</span></span></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></div><div class="line">&#123;</div><div class="line">    <span class="keyword">long</span> <span class="keyword">long</span> nLight, left, right;</div><div class="line">    <span class="built_in">cin</span> &gt;&gt; nLight &gt;&gt; left &gt;&gt; right;</div><div class="line">    <span class="keyword">long</span> <span class="keyword">long</span> ans = right - left + <span class="number">1</span>;</div><div class="line">    <span class="keyword">for</span>(<span class="keyword">long</span> <span class="keyword">long</span> i = <span class="built_in">sqrt</span>(left); i * i &lt;= right; i++)</div><div class="line">    &#123;</div><div class="line">		<span class="comment">//此处注意这个if, 若left进行开方运算后可能向下取整， 导致ans多自减1</span></div><div class="line">        <span class="keyword">if</span>(i * i &gt;= left &amp;&amp; i * i &lt;= right)</div><div class="line">            ans--;</div><div class="line">    &#125;</div><div class="line">    <span class="built_in">cout</span> &lt;&lt; ans;</div><div class="line">    <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>使用01背包问题这类简单的问题来学习动态规划是新手友好的。</p>
+<p>其次，对于01背包进行<strong>一维数组的优化</strong>，以及和<strong>完全背包问题</strong>及其<strong>一维数组优化</strong>的对比， 能够更好的理解<strong>状态</strong>这个概念。</p>
+<h2 id="原始版本"><a href="#原始版本" class="headerlink" title="原始版本"></a>原始版本</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= nItem; i++)</div><div class="line">&#123;</div><div class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">1</span>; j &lt;= nWeight; j++)</div><div class="line">    &#123;</div><div class="line">        <span class="comment">//如果不选一件物品有两种可能：</span></div><div class="line">        <span class="comment">//1. 装不下</span></div><div class="line">        <span class="comment">//2. 不想装</span></div><div class="line">        <span class="keyword">if</span>(j &lt; weight[i])</div><div class="line">            dp[i][j] = dp[i - <span class="number">1</span>][j];</div><div class="line">        <span class="keyword">else</span>&#123;</div><div class="line">            <span class="comment">//注意此处max函数中dp数组无论拿还是不拿都是从[i - 1]的状态转移而来的</span></div><div class="line">            <span class="comment">//[i - 1]保证此处为01背包问题</span></div><div class="line">            <span class="comment">//即保证每个物品只有一个</span></div><div class="line">            dp[i][j] = max(dp[i - <span class="number">1</span>][j], dp[i - <span class="number">1</span>][j - weight[i]] + value[i]);</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="使用一维数据进行优化"><a href="#使用一维数据进行优化" class="headerlink" title="使用一维数据进行优化"></a>使用一维数据进行优化</h2><p>当nItem比较小(例如在1000以内)时，使用二维数组是可以使用的，但当nItem偏大(n为10000)时， 使用二维数组时不可行的， 所以学会使用一维数组是必须的。<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">  <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= nItem; i++)</div><div class="line">  &#123;</div><div class="line"><span class="comment">//此处的j为逆序</span></div><div class="line"><span class="comment">//说明每次计算得出的dp[j]都是从nItem - 1转移(保证每件物品只选一次)而来的</span></div><div class="line"><span class="comment">//完全背包与这个有微小的区别</span></div><div class="line"><span class="comment">//即从nItem转移而来的(每件物品可选任意次)</span></div><div class="line">      <span class="keyword">for</span>(<span class="keyword">int</span> j = nWeight; j &gt;= <span class="number">1</span>; j--)</div><div class="line">      &#123;</div><div class="line">          <span class="keyword">if</span>(weight[i] &gt; j)</div><div class="line">              <span class="keyword">continue</span>;</div><div class="line">          dp[j] = max(dp[j], dp[j - weight[i]] + value[i]);</div><div class="line">      &#125;</div><div class="line">  &#125;</div></pre></td></tr></table></figure></p>
+<h2 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h2><p><a href="http://www.wutianqi.com/?p=539" target="_blank" rel="external">Tanky Woo’s Blog</a><br><a href="https://github.com/tianyicui/pack" target="_blank" rel="external">DD大牛的背包九讲</a><br><a href="http://www.icst.pku.edu.cn/course/cpp/cpp.htm" target="_blank" rel="external">北大动归相关课件</a></p>
+<p>本人文笔略拙，觉得本文晦涩难懂可参考以上大牛的相关文档。</p>
+
       
     </div>
 
@@ -374,13 +382,19 @@
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/DP/" rel="tag"># DP</a>
+          
+        </div>
+      
 
       
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/02/20/Uva10474-Where-is-the-Marble/" rel="next" title="Uva10474 Where is the Marble?">
-                <i class="fa fa-chevron-left"></i> Uva10474 Where is the Marble?
+              <a href="/2017/03/12/next-permutaion-perv-permutation/" rel="next" title="next_permutaion&perv_permutation">
+                <i class="fa fa-chevron-left"></i> next_permutaion&perv_permutation
               </a>
             
           </div>
@@ -388,10 +402,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/03/09/GCD-LCM/" rel="prev" title="GCD&LCM">
-                GCD&LCM <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -518,7 +528,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#题目"><span class="nav-number">1.</span> <span class="nav-text">题目</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#思路"><span class="nav-number">2.</span> <span class="nav-text">思路</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#代码"><span class="nav-number">3.</span> <span class="nav-text">代码</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#题目描述"><span class="nav-number">1.</span> <span class="nav-text">题目描述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#理解"><span class="nav-number">2.</span> <span class="nav-text">理解</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#原始版本"><span class="nav-number">3.</span> <span class="nav-text">原始版本</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用一维数据进行优化"><span class="nav-number">4.</span> <span class="nav-text">使用一维数据进行优化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考链接"><span class="nav-number">5.</span> <span class="nav-text">参考链接</span></a></li></ol></div>
             
 
           </div>

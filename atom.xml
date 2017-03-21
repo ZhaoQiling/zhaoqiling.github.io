@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-03-19T12:03:02.925Z</updated>
+  <updated>2017-03-21T13:26:29.852Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -14,6 +14,45 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>printf和scanf的一些用法</title>
+    <link href="http://yoursite.com/2017/03/21/printf%E5%92%8Cscanf%E7%9A%84%E4%B8%80%E4%BA%9B%E7%94%A8%E6%B3%95/"/>
+    <id>http://yoursite.com/2017/03/21/printf和scanf的一些用法/</id>
+    <published>2017-03-21T11:50:25.000Z</published>
+    <updated>2017-03-21T13:26:29.852Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="printf-函数"><a href="#printf-函数" class="headerlink" title="printf()函数"></a>printf()函数</h2><blockquote>
+<p>%%打印一个百分号<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">printf</span>(<span class="string">"%%\n"</span>);</div><div class="line">\\输出结果</div><div class="line">\\%</div></pre></td></tr></table></figure></p>
+</blockquote>
+<h2 id="printf-的转换说明修饰符"><a href="#printf-的转换说明修饰符" class="headerlink" title="printf()的转换说明修饰符"></a>printf()的转换说明修饰符</h2><h3 id="数字"><a href="#数字" class="headerlink" title=".数字"></a>.数字</h3><p>%5.2f打印一个浮点数， 字段宽度为5， 其中小数点后有两位<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">double</span> per = <span class="number">4.23</span>;</div><div class="line"><span class="built_in">printf</span>(<span class="string">"%5.2f\n"</span>, per);</div></pre></td></tr></table></figure></p>
+<h3 id=""><a href="#" class="headerlink" title="-"></a>-</h3><p>待打印项向左对齐<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">printf</span>(<span class="string">"%-10d"</span>, val);</div></pre></td></tr></table></figure></p>
+<h3 id="-1"><a href="#-1" class="headerlink" title="+"></a>+</h3><p>若符号值为正， 则在值前面显示加号; 若为负，则在值前面显示减号<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">    <span class="built_in">printf</span>(<span class="string">"%+5.2f\n"</span>, per);</div><div class="line">    <span class="built_in">printf</span>(<span class="string">"%+5.2f\n"</span>, <span class="number">-1</span> * per);</div><div class="line">\\output</div><div class="line">\\+<span class="number">4.23</span></div><div class="line">\\<span class="number">-4.23</span></div></pre></td></tr></table></figure></p>
+<h3 id="空格"><a href="#空格" class="headerlink" title="空格"></a>空格</h3><p>若符号值为正，则显示前导空格; 若为负，则在值前面显示减号<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">    <span class="built_in">printf</span>(<span class="string">"% 5.2f\n"</span>, per);</div><div class="line">    <span class="built_in">printf</span>(<span class="string">"% 5.2f\n"</span>, <span class="number">-1</span> * per);</div><div class="line">\\output</div><div class="line">\\ <span class="number">4.23</span></div><div class="line">\\<span class="number">-4.23</span></div></pre></td></tr></table></figure></p>
+<h2 id="printf-的返回值"><a href="#printf-的返回值" class="headerlink" title="printf()的返回值"></a>printf()的返回值</h2><blockquote>
+<p>printf()的返回值为打印字符的个数<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">    <span class="keyword">int</span> num = <span class="built_in">printf</span>(<span class="string">"Hello World\n"</span>);</div><div class="line">    <span class="built_in">printf</span>(<span class="string">"%d\n"</span>, num);</div><div class="line">\\output</div><div class="line">\\<span class="number">12</span></div></pre></td></tr></table></figure></p>
+</blockquote>
+<h2 id="scanf-的返回值"><a href="#scanf-的返回值" class="headerlink" title="scanf()的返回值"></a>scanf()的返回值</h2><blockquote>
+<p>scanf()函数返回成功读取的项数</p>
+</blockquote>
+<h2 id="printf-和scanf-的-修饰符"><a href="#printf-和scanf-的-修饰符" class="headerlink" title="printf()和scanf()的*修饰符"></a>printf()和scanf()的*修饰符</h2><h3 id="printf-中的"><a href="#printf-中的" class="headerlink" title="printf()中的*"></a>printf()中的*</h3><blockquote>
+<p>用 * 修饰符代替字符宽度</p>
+</blockquote>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">double</span> per = <span class="number">4.23</span>;</div><div class="line">   <span class="keyword">int</span> width = <span class="number">5</span>;</div><div class="line">   <span class="keyword">int</span> percent = <span class="number">2</span>;</div><div class="line">   <span class="built_in">printf</span>(<span class="string">"%*.*f\n"</span>, width, percent, per);</div></pre></td></tr></table></figure>
+<h3 id="scanf-中的"><a href="#scanf-中的" class="headerlink" title="scanf()中的*"></a>scanf()中的*</h3><blockquote>
+<p>将 * 放在% 和 转换字符之间会使得scanf()跳过相应的输入项</p>
+</blockquote>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">    <span class="built_in">scanf</span>(<span class="string">"%*d%*d%d"</span>, &amp;val);</div><div class="line">    <span class="built_in">printf</span>(<span class="string">"%d\n"</span>, val);</div><div class="line">\\input</div><div class="line">\\<span class="number">4</span> <span class="number">5</span> <span class="number">6</span></div><div class="line">\\output</div><div class="line">\\<span class="number">6</span></div></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;printf-函数&quot;&gt;&lt;a href=&quot;#printf-函数&quot; class=&quot;headerlink&quot; title=&quot;printf()函数&quot;&gt;&lt;/a&gt;printf()函数&lt;/h2&gt;&lt;blockquote&gt;
+&lt;p&gt;%%打印一个百分号&lt;br&gt;&lt;figure class=
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>开学一个月总结</title>
@@ -807,39 +846,6 @@ f(3) = 5     //即 123、132、213、321、231
       <category term="BFS" scheme="http://yoursite.com/tags/BFS/"/>
     
       <category term="POJ" scheme="http://yoursite.com/tags/POJ/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>邻接表的数组实现</title>
-    <link href="http://yoursite.com/2016/11/23/adjacencyListByArray/"/>
-    <id>http://yoursite.com/2016/11/23/adjacencyListByArray/</id>
-    <published>2016-11-23T01:23:24.000Z</published>
-    <updated>2016-11-23T01:59:40.000Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="书没有博客详细系列"><a href="#书没有博客详细系列" class="headerlink" title="书没有博客详细系列"></a>书没有博客详细系列</h3><blockquote>
-<p><a href="http://www.cnblogs.com/ahalei/p/3651334.html" target="_blank" rel="external">啊哈磊的博客园</a></p>
-</blockquote>
-<p>比较难以理解的部分</p>
-<ol>
-<li>利用<strong>i给各个边编号</strong>。</li>
-<li>first存储了每个<em>点</em>第一条<strong>边</strong>的序号(i)</li>
-<li>next存储第i<em>边</em>的下一条<strong>边</strong>的序号(i)</li>
-<li>因为是<em>有向图</em>，每条边<strong>只能</strong>在一个邻接表中</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div></pre></td><td class="code"><pre><div class="line">#include &lt;iostream&gt;</div><div class="line">using namespace std;</div><div class="line">int main()</div><div class="line">&#123;</div><div class="line">    int nPoint, nSide;</div><div class="line">    cin &gt;&gt; nPoint &gt;&gt; nSide;</div><div class="line">    int u[10], v[10], w[10];</div><div class="line">    int first[10], next[10];</div><div class="line">    for(int i = 1; i &lt;= nPoint; i++)</div><div class="line">    &#123;</div><div class="line">        first[i] = -1;</div><div class="line">    &#125;</div><div class="line">    // i 是每条边的序号</div><div class="line">    //first存储了每个点第一条 边的序号</div><div class="line">    //next存储了第i边下一条边的序号</div><div class="line">    //因为是有向图， 所以每一边的只可能是一个点的第一条边或者下一条边</div><div class="line">    for(int i = 1; i &lt;= nSide; i++)</div><div class="line">    &#123;</div><div class="line">        cin &gt;&gt; u[i] &gt;&gt; v[i] &gt;&gt; w[i];</div><div class="line">        next[i] = first[u[i]];</div><div class="line">        first[u[i]] = i;</div><div class="line">    &#125;</div><div class="line">    for(int i = 1; i &lt;= nPoint; i++)</div><div class="line">    &#123;</div><div class="line">        int k = first[i];</div><div class="line">        while(k != -1)</div><div class="line">        &#123;</div><div class="line">            cout &lt;&lt; u[k] &lt;&lt; v[k] &lt;&lt; w[k] &lt;&lt; endl;</div><div class="line">            k = next[k];</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    return 0;</div><div class="line">&#125;</div></pre></td></tr></table></figure>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h3 id=&quot;书没有博客详细系列&quot;&gt;&lt;a href=&quot;#书没有博客详细系列&quot; class=&quot;headerlink&quot; title=&quot;书没有博客详细系列&quot;&gt;&lt;/a&gt;书没有博客详细系列&lt;/h3&gt;&lt;blockquote&gt;
-&lt;p&gt;&lt;a href=&quot;http://www.cnblogs.c
-    
-    </summary>
-    
-      <category term="algorithm" scheme="http://yoursite.com/categories/algorithm/"/>
-    
-    
-      <category term="aha" scheme="http://yoursite.com/tags/aha/"/>
     
   </entry>
   

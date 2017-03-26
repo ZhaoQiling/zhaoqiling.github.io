@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-03-21T13:26:29.852Z</updated>
+  <updated>2017-03-26T13:48:01.400Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -14,6 +14,36 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>CantorExpansion</title>
+    <link href="http://yoursite.com/2017/03/26/CantorExpansion/"/>
+    <id>http://yoursite.com/2017/03/26/CantorExpansion/</id>
+    <published>2017-03-26T13:18:06.000Z</published>
+    <updated>2017-03-26T13:48:01.400Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="康托展开"><a href="#康托展开" class="headerlink" title="康托展开"></a>康托展开</h2><h3 id="应用"><a href="#应用" class="headerlink" title="应用"></a>应用</h3><p>已知一个字符串， 求其字典序</p>
+<h3 id="公式"><a href="#公式" class="headerlink" title="公式"></a>公式</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">X=a[n]*(n-1)!+a[n-1]*(n-2)!+...+a[i]*(i-1)!+...+a[1]*0!</div><div class="line">//其中a[i]为当前未出现的元素中是排在第几个（从0开始）。</div></pre></td></tr></table></figure>
+<h3 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h3><p>康托展开实际是求在<strong>当前序列之前</strong>有几种字典序<br>对于[D, B, A, C]<br>以D为开头的序列之前必定有以A、 B、 C(<em>字典序比D小</em>)开头的序列，共有<strong>3</strong>种, 每种有<strong>3！</strong>种可能性 所以 <strong>a4 = 3 * 3!</strong><br>以B为开头的序列之前必定有以A(字典序比B小)开头的序列，共有<strong>2</strong>种, 每种有<strong>2！</strong>种可能性 所以 <strong>a3 = 1  * 2!</strong><br>以A为开头的序列之前必定无序列，共有<strong>0</strong>种(因为在子串AC中, 无其他元素比A的字典序更小), 每种有<strong>1！</strong>种可能性 所以 <strong>a2 = 0  * 1!</strong><br>同理<strong> a1 = 0 * 0!</strong></p>
+<h3 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">\\注意: 因为排列可能数目众多，所以使用<span class="function"><span class="keyword">long</span> <span class="keyword">long</span></span></div><div class="line"><span class="keyword">long</span> <span class="keyword">long</span> <span class="title">contor</span><span class="params">(<span class="built_in">string</span> &amp; s)</span></div><div class="line">&#123;</div><div class="line">   <span class="keyword">long</span> <span class="keyword">long</span> ans = <span class="number">0</span>;</div><div class="line">   <span class="keyword">for</span>(<span class="keyword">long</span> <span class="keyword">long</span> loc = <span class="number">0</span>; loc &lt;= s.length() - <span class="number">1</span>; loc++)</div><div class="line">   &#123;</div><div class="line">   		<span class="built_in">string</span> sub = s.substr(loc);</div><div class="line">   		sort(sub.begin(), sub.end());</div><div class="line">   		<span class="keyword">long</span> <span class="keyword">long</span> val = lower_bound(sub.begin(), sub.end(), s[loc]) - sub.begin();</div><div class="line">   		ans = ans + fact(s.length() - <span class="number">1</span> - loc) * val;</div><div class="line">   &#125;</div><div class="line">   <span class="keyword">return</span> ans;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="康托逆展开"><a href="#康托逆展开" class="headerlink" title="康托逆展开"></a>康托逆展开</h3><h2 id="原理-1"><a href="#原理-1" class="headerlink" title="原理"></a>原理</h2><p>利用<strong>辗转相除法</strong>即可从字典序逆展开的得到an 到 a1<br><img src="\img\invKT.png" alt="&quot;康托逆展开&quot;"></p>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="built_in">string</span> <span class="title">invcontor</span><span class="params">(<span class="keyword">long</span> <span class="keyword">long</span> val, <span class="built_in">string</span>&amp; s)</span></span></div><div class="line">&#123;</div><div class="line">   sort(s.begin(), s.end());</div><div class="line">   <span class="built_in">std</span>::<span class="built_in">vector</span>&lt;<span class="keyword">long</span> <span class="keyword">long</span>&gt; poly;</div><div class="line">   <span class="keyword">for</span>(<span class="keyword">long</span> <span class="keyword">long</span> i = <span class="number">0</span>; i != s.length(); i++)</div><div class="line">   &#123;</div><div class="line">      poly.push_back(val / fact(s.length() - <span class="number">1</span> - i));</div><div class="line">      val = val % (fact(s.length() - <span class="number">1</span> - i));</div><div class="line">   &#125;</div><div class="line">   <span class="built_in">string</span> ans;</div><div class="line">   <span class="keyword">for</span>(<span class="keyword">long</span> <span class="keyword">long</span> i = <span class="number">0</span>; i &lt; poly.size(); i++)</div><div class="line">   &#123;</div><div class="line">      <span class="comment">//cout &lt;&lt; poly[i] &lt;&lt; endl;</span></div><div class="line">      <span class="comment">//cout &lt;&lt; s &lt;&lt; endl;</span></div><div class="line">      ans = ans + s[poly[i]];</div><div class="line">      s.erase(poly[i], <span class="number">1</span>);</div><div class="line">   &#125;</div><div class="line">   <span class="keyword">return</span> ans;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="代码-1"><a href="#代码-1" class="headerlink" title="代码"></a>代码</h2><p><a href="https://github.com/ZhaoQiling/Algorithm/blob/master/CantorExpansion.cpp" target="_blank" rel="external">github</a></p>
+<h2 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h2><p><a href="http://blog.csdn.net/zhongkeli/article/details/6966805" target="_blank" rel="external">zhongkeli的专栏</a></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;康托展开&quot;&gt;&lt;a href=&quot;#康托展开&quot; class=&quot;headerlink&quot; title=&quot;康托展开&quot;&gt;&lt;/a&gt;康托展开&lt;/h2&gt;&lt;h3 id=&quot;应用&quot;&gt;&lt;a href=&quot;#应用&quot; class=&quot;headerlink&quot; title=&quot;应用&quot;&gt;&lt;/a&gt;应用&lt;/h
+    
+    </summary>
+    
+      <category term="algorithm" scheme="http://yoursite.com/categories/algorithm/"/>
+    
+    
+      <category term="math" scheme="http://yoursite.com/tags/math/"/>
+    
+  </entry>
   
   <entry>
     <title>printf和scanf的一些用法</title>
@@ -813,39 +843,6 @@ f(3) = 5     //即 123、132、213、321、231
       <category term="POJ" scheme="http://yoursite.com/tags/POJ/"/>
     
       <category term="Dijkstra" scheme="http://yoursite.com/tags/Dijkstra/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>POJ2551 Dungeon Master</title>
-    <link href="http://yoursite.com/2016/11/24/POJ-2551-BFS/"/>
-    <id>http://yoursite.com/2016/11/24/POJ-2551-BFS/</id>
-    <published>2016-11-24T06:07:54.000Z</published>
-    <updated>2016-11-24T06:21:57.000Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="3D-BFS"><a href="#3D-BFS" class="headerlink" title="3D BFS"></a>3D BFS</h2><blockquote>
-<p>题目描述<br><a href="http://poj.org/problem?id=2251" target="_blank" rel="external">POJ2551 Dungeon Master</a><br>感受：</p>
-<ol>
-<li>比图上的BFS多了一个维度， 多考虑一下就可以了， 就是代码量有点宏大</li>
-<li>ACM是<em>多组输入输出</em>， <strong>一定记得清空 isVisit </strong>之类具有标记和存储功能的数组!!!!!</li>
-</ol>
-</blockquote>
-<p>我的代码: <a href="https://github.com/ZhaoQiling/Algorithm/blob/master/POJ/2251.cpp" target="_blank" rel="external">github</a></p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;3D-BFS&quot;&gt;&lt;a href=&quot;#3D-BFS&quot; class=&quot;headerlink&quot; title=&quot;3D BFS&quot;&gt;&lt;/a&gt;3D BFS&lt;/h2&gt;&lt;blockquote&gt;
-&lt;p&gt;题目描述&lt;br&gt;&lt;a href=&quot;http://poj.org/problem?i
-    
-    </summary>
-    
-      <category term="algorithm" scheme="http://yoursite.com/categories/algorithm/"/>
-    
-    
-      <category term="BFS" scheme="http://yoursite.com/tags/BFS/"/>
-    
-      <category term="POJ" scheme="http://yoursite.com/tags/POJ/"/>
     
   </entry>
   

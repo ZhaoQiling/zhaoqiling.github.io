@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="math," />
 
 
 
@@ -86,40 +86,24 @@
 
 
 
-<meta name="description" content="stringstream及其用法
-包含在头文件 sstream 中
-
-
-声明stringstream
-1stringstream ss;
-
-给stringstream对象赋值
-123456789101112//可以在定义时赋值string s;cin &amp;gt;&amp;gt; s;stirngstream ss(s);//利用stringstream::str()进行赋值stringstream ss;s">
+<meta name="description" content="康托展开应用已知一个字符串， 求其字典序
+公式12X=a[n]*(n-1)!+a[n-1]*(n-2)!+...+a[i]*(i-1)!+...+a[1]*0!//其中a[i]为当前未出现的元素中是排在第几个（从0开始）。
+原理康托展开实际是求在当前序列之前有几种字典序对于[D, B, A, C]以D为开头的序列之前必定有以A、 B、 C(字典序比D小)开头的序列，共有3种, 每种有3！种可能性">
 <meta property="og:type" content="article">
-<meta property="og:title" content="STLPart1">
-<meta property="og:url" content="http://yoursite.com/2017/02/19/STLPart1/index.html">
+<meta property="og:title" content="CantorExpansion">
+<meta property="og:url" content="http://yoursite.com/2017/03/26/CantorExpansion/index.html">
 <meta property="og:site_name" content="Zhao70's Blog">
-<meta property="og:description" content="stringstream及其用法
-包含在头文件 sstream 中
-
-
-声明stringstream
-1stringstream ss;
-
-给stringstream对象赋值
-123456789101112//可以在定义时赋值string s;cin &amp;gt;&amp;gt; s;stirngstream ss(s);//利用stringstream::str()进行赋值stringstream ss;s">
-<meta property="og:updated_time" content="2017-02-18T15:57:48.000Z">
+<meta property="og:description" content="康托展开应用已知一个字符串， 求其字典序
+公式12X=a[n]*(n-1)!+a[n-1]*(n-2)!+...+a[i]*(i-1)!+...+a[1]*0!//其中a[i]为当前未出现的元素中是排在第几个（从0开始）。
+原理康托展开实际是求在当前序列之前有几种字典序对于[D, B, A, C]以D为开头的序列之前必定有以A、 B、 C(字典序比D小)开头的序列，共有3种, 每种有3！种可能性">
+<meta property="og:image" content="http://yoursite.com/\img\invKT.png">
+<meta property="og:updated_time" content="2017-03-26T13:48:01.400Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="STLPart1">
-<meta name="twitter:description" content="stringstream及其用法
-包含在头文件 sstream 中
-
-
-声明stringstream
-1stringstream ss;
-
-给stringstream对象赋值
-123456789101112//可以在定义时赋值string s;cin &amp;gt;&amp;gt; s;stirngstream ss(s);//利用stringstream::str()进行赋值stringstream ss;s">
+<meta name="twitter:title" content="CantorExpansion">
+<meta name="twitter:description" content="康托展开应用已知一个字符串， 求其字典序
+公式12X=a[n]*(n-1)!+a[n-1]*(n-2)!+...+a[i]*(i-1)!+...+a[1]*0!//其中a[i]为当前未出现的元素中是排在第几个（从0开始）。
+原理康托展开实际是求在当前序列之前有几种字典序对于[D, B, A, C]以D为开头的序列之前必定有以A、 B、 C(字典序比D小)开头的序列，共有3种, 每种有3！种可能性">
+<meta name="twitter:image" content="http://yoursite.com/\img\invKT.png">
 
 
 
@@ -147,13 +131,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/02/19/STLPart1/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/03/26/CantorExpansion/"/>
 
 
 
 
 
-  <title> STLPart1 | Zhao70's Blog </title>
+  <title> CantorExpansion | Zhao70's Blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -284,7 +268,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/02/19/STLPart1/">
+  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/26/CantorExpansion/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <meta itemprop="name" content="Zhao70">
@@ -308,7 +292,7 @@
             
             
               
-                STLPart1
+                CantorExpansion
               
             
           </h1>
@@ -321,8 +305,8 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-02-19T15:15:41+08:00">
-                2017-02-19
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-03-26T21:18:06+08:00">
+                2017-03-26
               </time>
             
 
@@ -340,8 +324,8 @@
               <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/CPP/" itemprop="url" rel="index">
-                    <span itemprop="name">CPP</span>
+                  <a href="/categories/algorithm/" itemprop="url" rel="index">
+                    <span itemprop="name">algorithm</span>
                   </a>
                 </span>
 
@@ -375,64 +359,15 @@
       
 
       
-        <h2 id="stringstream及其用法"><a href="#stringstream及其用法" class="headerlink" title="stringstream及其用法"></a>stringstream及其用法</h2><blockquote>
-<p>包含在头文件 sstream 中</p>
-</blockquote>
-<ol>
-<li><p>声明stringstream</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">stringstream</span> ss;</div></pre></td></tr></table></figure>
-</li>
-<li><p>给stringstream对象赋值</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//可以在定义时赋值</span></div><div class="line"><span class="built_in">string</span> s;</div><div class="line"><span class="built_in">cin</span> &gt;&gt; s;</div><div class="line"><span class="function">stirngstream <span class="title">ss</span><span class="params">(s)</span></span>;</div><div class="line"><span class="comment">//利用stringstream::str()进行赋值</span></div><div class="line"><span class="built_in">stringstream</span> ss;</div><div class="line">ss.str(<span class="string">"hello stringstream"</span>);</div><div class="line"><span class="comment">//利用流</span></div><div class="line"><span class="built_in">string</span> s;</div><div class="line"><span class="built_in">stringstream</span> ss;</div><div class="line"><span class="built_in">cin</span> &gt;&gt; s;</div><div class="line">ss &lt;&lt;　ｓ;</div></pre></td></tr></table></figure>
-</li>
-<li><p>stringstream的清空</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">stringstream ss;</div><div class="line">ss.str(&quot;&quot;);//right</div><div class="line">ss.clear; //error</div></pre></td></tr></table></figure>
-</li>
-</ol>
-<h2 id="std-lower-bound-和std-lower-bound"><a href="#std-lower-bound-和std-lower-bound" class="headerlink" title="std::lower_bound()和std::lower_bound()"></a>std::lower_bound()和std::lower_bound()</h2><blockquote>
-<p>ForwardIter lower_bound(ForwardIter first, ForwardIter last,const _Tp&amp; val)算法返回一个非递减序列[first, last)中的第一个<strong>大于等于</strong>值val的位置。<br>ForwardIter upper_bound(ForwardIter first, ForwardIter last, const _Tp&amp; val)算法返回一个非递减序列[first, last)中第一个<strong>大于</strong>val的位置。</p>
-</blockquote>
-<table>
-<thead>
-<tr>
-<th>1</th>
-<th>2</th>
-<th>2</th>
-<th>3</th>
-<th>4</th>
-<th>4</th>
-<th>4</th>
-<th>5</th>
-<th>6</th>
-<th>7</th>
-<th>9</th>
-<th>9</th>
-<th>10</th>
-<th>&nbsp;</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>first</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>lower_bound(first, last, 4)</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>upper_bound(first, last, 4)</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>last</td>
-</tr>
-</tbody>
-</table>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//查找相应的值的位置</span></div><div class="line"><span class="keyword">int</span> loc = lower_bound(first, last, <span class="number">4</span>) - first;</div></pre></td></tr></table></figure>
-<h2 id="不定长数组：-vector"><a href="#不定长数组：-vector" class="headerlink" title="不定长数组： vector()"></a>不定长数组： vector()</h2><p>若a是一个vector，可以用a.size( )读取它的大小，a.resize( )改变大小，a.push_back( )向尾部添加元素，a.pop_back( )删除最后一个元素</p>
-<h2 id="set-用法"><a href="#set-用法" class="headerlink" title="set()用法"></a>set()用法</h2>
+        <h2 id="康托展开"><a href="#康托展开" class="headerlink" title="康托展开"></a>康托展开</h2><h3 id="应用"><a href="#应用" class="headerlink" title="应用"></a>应用</h3><p>已知一个字符串， 求其字典序</p>
+<h3 id="公式"><a href="#公式" class="headerlink" title="公式"></a>公式</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">X=a[n]*(n-1)!+a[n-1]*(n-2)!+...+a[i]*(i-1)!+...+a[1]*0!</div><div class="line">//其中a[i]为当前未出现的元素中是排在第几个（从0开始）。</div></pre></td></tr></table></figure>
+<h3 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h3><p>康托展开实际是求在<strong>当前序列之前</strong>有几种字典序<br>对于[D, B, A, C]<br>以D为开头的序列之前必定有以A、 B、 C(<em>字典序比D小</em>)开头的序列，共有<strong>3</strong>种, 每种有<strong>3！</strong>种可能性 所以 <strong>a4 = 3 * 3!</strong><br>以B为开头的序列之前必定有以A(字典序比B小)开头的序列，共有<strong>2</strong>种, 每种有<strong>2！</strong>种可能性 所以 <strong>a3 = 1  * 2!</strong><br>以A为开头的序列之前必定无序列，共有<strong>0</strong>种(因为在子串AC中, 无其他元素比A的字典序更小), 每种有<strong>1！</strong>种可能性 所以 <strong>a2 = 0  * 1!</strong><br>同理<strong> a1 = 0 * 0!</strong></p>
+<h3 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">\\注意: 因为排列可能数目众多，所以使用<span class="function"><span class="keyword">long</span> <span class="keyword">long</span></span></div><div class="line"><span class="keyword">long</span> <span class="keyword">long</span> <span class="title">contor</span><span class="params">(<span class="built_in">string</span> &amp; s)</span></div><div class="line">&#123;</div><div class="line">   <span class="keyword">long</span> <span class="keyword">long</span> ans = <span class="number">0</span>;</div><div class="line">   <span class="keyword">for</span>(<span class="keyword">long</span> <span class="keyword">long</span> loc = <span class="number">0</span>; loc &lt;= s.length() - <span class="number">1</span>; loc++)</div><div class="line">   &#123;</div><div class="line">   		<span class="built_in">string</span> sub = s.substr(loc);</div><div class="line">   		sort(sub.begin(), sub.end());</div><div class="line">   		<span class="keyword">long</span> <span class="keyword">long</span> val = lower_bound(sub.begin(), sub.end(), s[loc]) - sub.begin();</div><div class="line">   		ans = ans + fact(s.length() - <span class="number">1</span> - loc) * val;</div><div class="line">   &#125;</div><div class="line">   <span class="keyword">return</span> ans;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="康托逆展开"><a href="#康托逆展开" class="headerlink" title="康托逆展开"></a>康托逆展开</h3><h2 id="原理-1"><a href="#原理-1" class="headerlink" title="原理"></a>原理</h2><p>利用<strong>辗转相除法</strong>即可从字典序逆展开的得到an 到 a1<br><img src="\img\invKT.png" alt="&quot;康托逆展开&quot;"></p>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="built_in">string</span> <span class="title">invcontor</span><span class="params">(<span class="keyword">long</span> <span class="keyword">long</span> val, <span class="built_in">string</span>&amp; s)</span></span></div><div class="line">&#123;</div><div class="line">   sort(s.begin(), s.end());</div><div class="line">   <span class="built_in">std</span>::<span class="built_in">vector</span>&lt;<span class="keyword">long</span> <span class="keyword">long</span>&gt; poly;</div><div class="line">   <span class="keyword">for</span>(<span class="keyword">long</span> <span class="keyword">long</span> i = <span class="number">0</span>; i != s.length(); i++)</div><div class="line">   &#123;</div><div class="line">      poly.push_back(val / fact(s.length() - <span class="number">1</span> - i));</div><div class="line">      val = val % (fact(s.length() - <span class="number">1</span> - i));</div><div class="line">   &#125;</div><div class="line">   <span class="built_in">string</span> ans;</div><div class="line">   <span class="keyword">for</span>(<span class="keyword">long</span> <span class="keyword">long</span> i = <span class="number">0</span>; i &lt; poly.size(); i++)</div><div class="line">   &#123;</div><div class="line">      <span class="comment">//cout &lt;&lt; poly[i] &lt;&lt; endl;</span></div><div class="line">      <span class="comment">//cout &lt;&lt; s &lt;&lt; endl;</span></div><div class="line">      ans = ans + s[poly[i]];</div><div class="line">      s.erase(poly[i], <span class="number">1</span>);</div><div class="line">   &#125;</div><div class="line">   <span class="keyword">return</span> ans;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="代码-1"><a href="#代码-1" class="headerlink" title="代码"></a>代码</h2><p><a href="https://github.com/ZhaoQiling/Algorithm/blob/master/CantorExpansion.cpp" target="_blank" rel="external">github</a></p>
+<h2 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h2><p><a href="http://blog.csdn.net/zhongkeli/article/details/6966805" target="_blank" rel="external">zhongkeli的专栏</a></p>
+
       
     </div>
 
@@ -453,13 +388,19 @@
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/math/" rel="tag"># math</a>
+          
+        </div>
+      
 
       
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/02/15/内联成员函数/" rel="next" title="内联成员函数">
-                <i class="fa fa-chevron-left"></i> 内联成员函数
+              <a href="/2017/03/21/printf和scanf的一些用法/" rel="next" title="printf和scanf的一些用法">
+                <i class="fa fa-chevron-left"></i> printf和scanf的一些用法
               </a>
             
           </div>
@@ -467,10 +408,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/02/20/Uva10474-Where-is-the-Marble/" rel="prev" title="Uva10474 Where is the Marble?">
-                Uva10474 Where is the Marble? <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -597,7 +534,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#stringstream及其用法"><span class="nav-number">1.</span> <span class="nav-text">stringstream及其用法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#std-lower-bound-和std-lower-bound"><span class="nav-number">2.</span> <span class="nav-text">std::lower_bound()和std::lower_bound()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#不定长数组：-vector"><span class="nav-number">3.</span> <span class="nav-text">不定长数组： vector()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#set-用法"><span class="nav-number">4.</span> <span class="nav-text">set()用法</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#康托展开"><span class="nav-number">1.</span> <span class="nav-text">康托展开</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#应用"><span class="nav-number">1.1.</span> <span class="nav-text">应用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#公式"><span class="nav-number">1.2.</span> <span class="nav-text">公式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#原理"><span class="nav-number">1.3.</span> <span class="nav-text">原理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#代码实现"><span class="nav-number">1.4.</span> <span class="nav-text">代码实现</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#康托逆展开"><span class="nav-number">1.5.</span> <span class="nav-text">康托逆展开</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#原理-1"><span class="nav-number">2.</span> <span class="nav-text">原理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#代码"><span class="nav-number">3.</span> <span class="nav-text">代码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#代码-1"><span class="nav-number">4.</span> <span class="nav-text">代码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考链接"><span class="nav-number">5.</span> <span class="nav-text">参考链接</span></a></li></ol></div>
             
 
           </div>

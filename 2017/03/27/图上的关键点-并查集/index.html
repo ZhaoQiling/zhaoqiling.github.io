@@ -86,16 +86,31 @@
 
 
 
-<meta name="description" content="题目1234567891011121314151617181920212223242526272829303132333435标题：风险度量X星系的的防卫体系包含 n 个空间站。这 n 个空间站间有 m 条通信链路，构成通信网。两个空间站间可能直接通信，也可能通过其它空间站中转。对于两个站点x和y (x != y), 如果能找到一个站点z，使得：当z被破坏后，x和y无法通信，则称z为关于x,y的关">
+<meta name="description" content="题目
+标题：风险度量
+X星系的的防卫体系包含 n 个空间站。这 n 个空间站间有 m 条通信链路，构成通信网。两个空间站间可能直接通信，也可能通过其它空间站中转。
+对于两个站点x和y (x != y), 如果能找到一个站点z，使得：当z被破坏后，x和y无法通信，则称z为关于x,y的关键站点。
+显然，对于给定的两个站点，关于它们的关键点的个数越多，通信风险越大。
+你的任务是：已知网络结构，求两站点之">
 <meta property="og:type" content="article">
 <meta property="og:title" content="图上的关键点-并查集">
 <meta property="og:url" content="http://yoursite.com/2017/03/27/图上的关键点-并查集/index.html">
 <meta property="og:site_name" content="Zhao70's Blog">
-<meta property="og:description" content="题目1234567891011121314151617181920212223242526272829303132333435标题：风险度量X星系的的防卫体系包含 n 个空间站。这 n 个空间站间有 m 条通信链路，构成通信网。两个空间站间可能直接通信，也可能通过其它空间站中转。对于两个站点x和y (x != y), 如果能找到一个站点z，使得：当z被破坏后，x和y无法通信，则称z为关于x,y的关">
-<meta property="og:updated_time" content="2017-03-27T14:31:21.701Z">
+<meta property="og:description" content="题目
+标题：风险度量
+X星系的的防卫体系包含 n 个空间站。这 n 个空间站间有 m 条通信链路，构成通信网。两个空间站间可能直接通信，也可能通过其它空间站中转。
+对于两个站点x和y (x != y), 如果能找到一个站点z，使得：当z被破坏后，x和y无法通信，则称z为关于x,y的关键站点。
+显然，对于给定的两个站点，关于它们的关键点的个数越多，通信风险越大。
+你的任务是：已知网络结构，求两站点之">
+<meta property="og:updated_time" content="2017-03-27T14:53:21.072Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="图上的关键点-并查集">
-<meta name="twitter:description" content="题目1234567891011121314151617181920212223242526272829303132333435标题：风险度量X星系的的防卫体系包含 n 个空间站。这 n 个空间站间有 m 条通信链路，构成通信网。两个空间站间可能直接通信，也可能通过其它空间站中转。对于两个站点x和y (x != y), 如果能找到一个站点z，使得：当z被破坏后，x和y无法通信，则称z为关于x,y的关">
+<meta name="twitter:description" content="题目
+标题：风险度量
+X星系的的防卫体系包含 n 个空间站。这 n 个空间站间有 m 条通信链路，构成通信网。两个空间站间可能直接通信，也可能通过其它空间站中转。
+对于两个站点x和y (x != y), 如果能找到一个站点z，使得：当z被破坏后，x和y无法通信，则称z为关于x,y的关键站点。
+显然，对于给定的两个站点，关于它们的关键点的个数越多，通信风险越大。
+你的任务是：已知网络结构，求两站点之">
 
 
 
@@ -351,7 +366,16 @@
       
 
       
-        <h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">标题：风险度量</div><div class="line"></div><div class="line">X星系的的防卫体系包含 n 个空间站。这 n 个空间站间有 m 条通信链路，构成通信网。</div><div class="line">两个空间站间可能直接通信，也可能通过其它空间站中转。</div><div class="line"></div><div class="line">对于两个站点x和y (x != y), 如果能找到一个站点z，使得：</div><div class="line">当z被破坏后，x和y无法通信，则称z为关于x,y的关键站点。</div><div class="line"></div><div class="line">显然，对于给定的两个站点，关于它们的关键点的个数越多，通信风险越大。</div><div class="line"></div><div class="line"></div><div class="line">你的任务是：已知网络结构，求两站点之间的通信风险度，即：它们之间的关键点的个数。</div><div class="line"></div><div class="line"></div><div class="line">输入数据第一行包含2个整数n(2 &lt;= n &lt;= 1000), m(0 &lt;= m &lt;= 2000),分别代表站点数，链路数。</div><div class="line">空间站的编号从1到n。通信链路用其两端的站点编号表示。</div><div class="line">接下来m行，每行两个整数 u,v (1 &lt;= u, v &lt;= n; u != v)代表一条链路。</div><div class="line">最后1行，两个数u,v，代表被询问通信风险度的两个站点。</div><div class="line"></div><div class="line">输出：一个整数，如果询问的两点不连通则输出-1.</div><div class="line"></div><div class="line"></div><div class="line">例如：</div><div class="line">用户输入：</div><div class="line">7 6</div><div class="line">1 3</div><div class="line">2 3</div><div class="line">3 4</div><div class="line">3 5</div><div class="line">4 5</div><div class="line">5 6</div><div class="line">1 6</div><div class="line">则程序应该输出：</div><div class="line">2</div></pre></td></tr></table></figure>
+        <h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><blockquote>
+<p>标题：风险度量</p>
+<p>X星系的的防卫体系包含 n 个空间站。这 n 个空间站间有 m 条通信链路，构成通信网。<br>两个空间站间可能直接通信，也可能通过其它空间站中转。</p>
+<p>对于两个站点x和y (x != y), 如果能找到一个站点z，使得：<br>当z被破坏后，x和y无法通信，则称z为关于x,y的关键站点。</p>
+<p>显然，对于给定的两个站点，关于它们的关键点的个数越多，通信风险越大。</p>
+<p>你的任务是：已知网络结构，求两站点之间的通信风险度，即：它们之间的关键点的个数。</p>
+<p>输入数据第一行包含2个整数n(2 &lt;= n &lt;= 1000), m(0 &lt;= m &lt;= 2000),分别代表站点数，链路数。<br>空间站的编号从1到n。通信链路用其两端的站点编号表示。<br>接下来m行，每行两个整数 u,v (1 &lt;= u, v &lt;= n; u != v)代表一条链路。<br>最后1行，两个数u,v，代表被询问通信风险度的两个站点。</p>
+<p>输出：一个整数，如果询问的两点不连通则输出-1.</p>
+<p>例如：<br>用户输入：<br>7 6<br>1 3<br>2 3<br>3 4<br>3 5<br>4 5<br>5 6<br>1 6<br>则程序应该输出：<br>2</p>
+</blockquote>
 <h2 id="思路解析"><a href="#思路解析" class="headerlink" title="思路解析"></a>思路解析</h2><ol>
 <li>最开始检查a, b亮点是否联通，否则，输出 -1 程序结束</li>
 <li>从1开始去除每一个点后，使用并查集检查是否在同一个集合中</li>

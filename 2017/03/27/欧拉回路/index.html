@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="欧拉回路," />
 
 
 
@@ -86,19 +86,19 @@
 
 
 
-<meta name="description" content="题目
-标题：生物芯片X博士正在研究一种生物芯片，其逻辑密集度、容量都远远高于普通的半导体芯片。博士在芯片中设计了 n 个微型光源，每个光源操作一次就会改变其状态，即：点亮转为关闭，或关闭转为点亮。这些光源的编号从 1 到 n，开始的时候所有光源都是关闭的。博士计划在芯片上执行如下动作：所有编号为2的倍数的光源操作一次，也就是把 2 4 6 8 … 等序号光源打开所有编号为3的倍数的光源操作一次,">
+<meta name="description" content="分类欧拉环：图中经过每条边一次且仅一次的环；欧拉路径：图中经过每条边一次且仅一次的路径；欧拉图：有至少一个欧拉环的图；半欧拉图：没有欧拉环，但有至少一条欧拉路径的图。
+无向图一个无向图是欧拉图当且仅当该图是连通的（注意，不考虑图中度为0的点，因为它们的存在对于图中是否存在欧拉环、欧拉路径没有影响）且所有点的度数都是偶数；一个无向图是半欧拉图当且仅当该图是连通的且有且只有2个点的度数是奇数（此时这两">
 <meta property="og:type" content="article">
-<meta property="og:title" content="生物芯片">
-<meta property="og:url" content="http://yoursite.com/2017/03/09/生物芯片/index.html">
+<meta property="og:title" content="欧拉回路">
+<meta property="og:url" content="http://yoursite.com/2017/03/27/欧拉回路/index.html">
 <meta property="og:site_name" content="Zhao70's Blog">
-<meta property="og:description" content="题目
-标题：生物芯片X博士正在研究一种生物芯片，其逻辑密集度、容量都远远高于普通的半导体芯片。博士在芯片中设计了 n 个微型光源，每个光源操作一次就会改变其状态，即：点亮转为关闭，或关闭转为点亮。这些光源的编号从 1 到 n，开始的时候所有光源都是关闭的。博士计划在芯片上执行如下动作：所有编号为2的倍数的光源操作一次，也就是把 2 4 6 8 … 等序号光源打开所有编号为3的倍数的光源操作一次,">
-<meta property="og:updated_time" content="2017-03-09T14:04:51.121Z">
+<meta property="og:description" content="分类欧拉环：图中经过每条边一次且仅一次的环；欧拉路径：图中经过每条边一次且仅一次的路径；欧拉图：有至少一个欧拉环的图；半欧拉图：没有欧拉环，但有至少一条欧拉路径的图。
+无向图一个无向图是欧拉图当且仅当该图是连通的（注意，不考虑图中度为0的点，因为它们的存在对于图中是否存在欧拉环、欧拉路径没有影响）且所有点的度数都是偶数；一个无向图是半欧拉图当且仅当该图是连通的且有且只有2个点的度数是奇数（此时这两">
+<meta property="og:updated_time" content="2017-03-27T14:49:11.926Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="生物芯片">
-<meta name="twitter:description" content="题目
-标题：生物芯片X博士正在研究一种生物芯片，其逻辑密集度、容量都远远高于普通的半导体芯片。博士在芯片中设计了 n 个微型光源，每个光源操作一次就会改变其状态，即：点亮转为关闭，或关闭转为点亮。这些光源的编号从 1 到 n，开始的时候所有光源都是关闭的。博士计划在芯片上执行如下动作：所有编号为2的倍数的光源操作一次，也就是把 2 4 6 8 … 等序号光源打开所有编号为3的倍数的光源操作一次,">
+<meta name="twitter:title" content="欧拉回路">
+<meta name="twitter:description" content="分类欧拉环：图中经过每条边一次且仅一次的环；欧拉路径：图中经过每条边一次且仅一次的路径；欧拉图：有至少一个欧拉环的图；半欧拉图：没有欧拉环，但有至少一条欧拉路径的图。
+无向图一个无向图是欧拉图当且仅当该图是连通的（注意，不考虑图中度为0的点，因为它们的存在对于图中是否存在欧拉环、欧拉路径没有影响）且所有点的度数都是偶数；一个无向图是半欧拉图当且仅当该图是连通的且有且只有2个点的度数是奇数（此时这两">
 
 
 
@@ -126,13 +126,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/03/09/生物芯片/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/03/27/欧拉回路/"/>
 
 
 
 
 
-  <title> 生物芯片 | Zhao70's Blog </title>
+  <title> 欧拉回路 | Zhao70's Blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -263,7 +263,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/09/生物芯片/">
+  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/27/欧拉回路/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <meta itemprop="name" content="Zhao70">
@@ -287,7 +287,7 @@
             
             
               
-                生物芯片
+                欧拉回路
               
             
           </h1>
@@ -300,8 +300,8 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-03-09T21:56:06+08:00">
-                2017-03-09
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-03-27T22:43:26+08:00">
+                2017-03-27
               </time>
             
 
@@ -354,16 +354,12 @@
       
 
       
-        <h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><blockquote>
-<p>标题：生物芯片<br>X博士正在研究一种生物芯片，其逻辑密集度、容量都远远高于普通的半导体芯片。<br>博士在芯片中设计了 n 个微型光源，每个光源操作一次就会改变其状态，即：点亮转为关闭，或关闭转为点亮。<br>这些光源的编号从 1 到 n，开始的时候所有光源都是关闭的。<br>博士计划在芯片上执行如下动作：<br>所有编号为2的倍数的光源操作一次，也就是把 2 4 6 8 … 等序号光源打开<br>所有编号为3的倍数的光源操作一次, 也就是对 3 6 9 … 等序号光源操作，注意此时6号光源又关闭了。<br>所有编号为4的倍数的光源操作一次。<br>…..<br>直到编号为 n 的倍数的光源操作一次。<br>X博士想知道：经过这些操作后，某个区间中的哪些光源是点亮的。<br>【输入格式】<br>3个用空格分开的整数：N L R (L&lt;R&lt;N&lt;10^15) N表示光源数，L表示区间的左边界，R表示区间的右边界。<br>【输出格式】<br>输出1个整数，表示经过所有操作后，[L,R] 区间中有多少个光源是点亮的。<br>例如：<br>输入：<br>5 2 3<br>程序应该输出：<br>2<br>再例如：<br>输入：<br>10 3 6<br>程序应该输出：<br>3</p>
-</blockquote>
-<h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><p>这道题如果用纯暴力肯定GG，涉及到了2个知识点</p>
-<blockquote>
-<p>完全平方即用一个整数乘以自己例如1<em>1，2</em>2，3*3等，依此类推。若一个数能表示成某个整数的平方的形式，则称这个数为完全平方数。完全平方数是非负数，而一个完全平方数的根有两个。</p>
-<p>一个正整数n是完全平方数的充分必要条件是n有奇数个因数（包括1和n本身）。</p>
-</blockquote>
-<p>从 <strong>左边界</strong>的二次根号下 枚举 i 直到 i 的平方等于 <strong>右边界</strong></p>
-<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cmath&gt;</span></span></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></div><div class="line">&#123;</div><div class="line">    <span class="keyword">long</span> <span class="keyword">long</span> nLight, left, right;</div><div class="line">    <span class="built_in">cin</span> &gt;&gt; nLight &gt;&gt; left &gt;&gt; right;</div><div class="line">    <span class="keyword">long</span> <span class="keyword">long</span> ans = right - left + <span class="number">1</span>;</div><div class="line">    <span class="keyword">for</span>(<span class="keyword">long</span> <span class="keyword">long</span> i = <span class="built_in">sqrt</span>(left); i * i &lt;= right; i++)</div><div class="line">    &#123;</div><div class="line">		<span class="comment">//此处注意这个if, 若left进行开方运算后可能向下取整， 导致ans多自减1</span></div><div class="line">        <span class="keyword">if</span>(i * i &gt;= left &amp;&amp; i * i &lt;= right)</div><div class="line">            ans--;</div><div class="line">    &#125;</div><div class="line">    <span class="built_in">cout</span> &lt;&lt; ans;</div><div class="line">    <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+        <h2 id="分类"><a href="#分类" class="headerlink" title="分类"></a>分类</h2><p>欧拉环：图中经过<em>每条边一次且仅一次</em>的<strong>环</strong>；<br>欧拉路径：图中经过<em>每条边一次且仅一次</em>的<strong>路径</strong>；<br>欧拉图：有<strong>至少一个欧拉环</strong>的图；<br>半欧拉图：<strong>没有欧拉环</strong>，但有<strong>至少一条欧拉路径</strong>的图。</p>
+<h2 id="无向图"><a href="#无向图" class="headerlink" title="无向图"></a>无向图</h2><p>一个无向图是<strong>欧拉图</strong>当且仅当该图是连通的（注意，不考虑图中度为0的点，因为它们的存在对于图中是否存在欧拉环、欧拉路径没有影响）且<strong>所有点的度数都是偶数</strong>；一个无向图是<strong>半欧拉图</strong>当且仅当该图是连通的且<strong>有且只有2个点的度数是奇数</strong>（此时这两个点只能作为欧拉路径的起点和终点）；</p>
+<h3 id="证明"><a href="#证明" class="headerlink" title="证明"></a>证明</h3><p>因为任意一个点，欧拉环（或欧拉路径）从它这里进去多少次就要出来多少次，故(进去的次数+出来的次数)为偶数，又因为(进去的次数+出来的次数)=该点的度数（根据定义），所以该点的度数为偶数。</p>
+<h2 id="有向图"><a href="#有向图" class="headerlink" title="有向图"></a>有向图</h2><p>一个有向图是<strong>欧拉图</strong>当且仅当该图的基图（将所有有向边变为无向边后形成的无向图，这里同样不考虑度数为0的点）是连通的且<strong>所有点的入度等于出度</strong>；一个有向图是<strong>半欧拉图</strong>当且仅当该图的基图是连通的且<strong>有且只有一个点的入度比出度少1</strong>（作为欧拉路径的起点），<strong>有且只有一个点的入度比出度多1</strong>（作为终点），其余点的入度等于出度。</p>
+<h3 id="证明-1"><a href="#证明-1" class="headerlink" title="证明"></a>证明</h3><p>与无向图证明类似，一个点进去多少次就要出来多少次。</p>
+
       
     </div>
 
@@ -384,13 +380,19 @@
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/欧拉回路/" rel="tag"># 欧拉回路</a>
+          
+        </div>
+      
 
       
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/02/20/Uva10474-Where-is-the-Marble/" rel="next" title="Uva10474 Where is the Marble?">
-                <i class="fa fa-chevron-left"></i> Uva10474 Where is the Marble?
+              <a href="/2017/03/27/图上的关键点-并查集/" rel="next" title="图上的关键点-并查集">
+                <i class="fa fa-chevron-left"></i> 图上的关键点-并查集
               </a>
             
           </div>
@@ -398,10 +400,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/03/09/GCD-LCM/" rel="prev" title="GCD&LCM">
-                GCD&LCM <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -528,7 +526,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#题目"><span class="nav-number">1.</span> <span class="nav-text">题目</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#思路"><span class="nav-number">2.</span> <span class="nav-text">思路</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#代码"><span class="nav-number">3.</span> <span class="nav-text">代码</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#分类"><span class="nav-number">1.</span> <span class="nav-text">分类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#无向图"><span class="nav-number">2.</span> <span class="nav-text">无向图</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#证明"><span class="nav-number">2.1.</span> <span class="nav-text">证明</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#有向图"><span class="nav-number">3.</span> <span class="nav-text">有向图</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#证明-1"><span class="nav-number">3.1.</span> <span class="nav-text">证明</span></a></li></ol></li></ol></div>
             
 
           </div>

@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="随机数," />
 
 
 
@@ -86,12 +86,30 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="Zhao70's Blog">
-<meta property="og:url" content="http://yoursite.com/page/4/index.html">
+<meta name="description" content="前(tu)言(cao)
+在做蓝桥2012预赛试题的时候， 做到“夺冠概率”这道题， 明明可以用数学上的方法求解。 结果，必须使用随机数，因为三次运行程序结果相同不给分。。。
+
+题目
+足球比赛具有一定程度的偶然性，弱队也有战胜强队的可能。假设有甲、乙、丙、丁四个球队。根据他们过去比赛的成绩，得出每个队与另一个队对阵时取胜的概率表:    &amp;nbsp;    &amp;nbsp;    &amp;nbsp;    &amp;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="C++产生随机数">
+<meta property="og:url" content="http://yoursite.com/2017/03/29/C-产生随机数/index.html">
 <meta property="og:site_name" content="Zhao70's Blog">
+<meta property="og:description" content="前(tu)言(cao)
+在做蓝桥2012预赛试题的时候， 做到“夺冠概率”这道题， 明明可以用数学上的方法求解。 结果，必须使用随机数，因为三次运行程序结果相同不给分。。。
+
+题目
+足球比赛具有一定程度的偶然性，弱队也有战胜强队的可能。假设有甲、乙、丙、丁四个球队。根据他们过去比赛的成绩，得出每个队与另一个队对阵时取胜的概率表:    &amp;nbsp;    &amp;nbsp;    &amp;nbsp;    &amp;">
+<meta property="og:image" content="http://yoursite.com/\source\img\championships.jpg">
+<meta property="og:updated_time" content="2017-03-29T13:45:52.309Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Zhao70's Blog">
+<meta name="twitter:title" content="C++产生随机数">
+<meta name="twitter:description" content="前(tu)言(cao)
+在做蓝桥2012预赛试题的时候， 做到“夺冠概率”这道题， 明明可以用数学上的方法求解。 结果，必须使用随机数，因为三次运行程序结果相同不给分。。。
+
+题目
+足球比赛具有一定程度的偶然性，弱队也有战胜强队的可能。假设有甲、乙、丙、丁四个球队。根据他们过去比赛的成绩，得出每个队与另一个队对阵时取胜的概率表:    &amp;nbsp;    &amp;nbsp;    &amp;nbsp;    &amp;">
+<meta name="twitter:image" content="http://yoursite.com/\source\img\championships.jpg">
 
 
 
@@ -119,13 +137,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/page/4/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/03/29/C-产生随机数/"/>
 
 
 
 
 
-  <title> Zhao70's Blog </title>
+  <title> C++产生随机数 | Zhao70's Blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -156,9 +174,7 @@
     
   
 
-  <div class="container one-collumn sidebar-position-left 
-   page-home 
- ">
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -247,9 +263,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
 
@@ -258,7 +274,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/11/09/再解炸弹人_BFS/">
+  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/29/C-产生随机数/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <meta itemprop="name" content="Zhao70">
@@ -282,10 +298,7 @@
             
             
               
-                
-                <a class="post-title-link" href="/2016/11/09/再解炸弹人_BFS/" itemprop="url">
-                  再解炸弹人
-                </a>
+                C++产生随机数
               
             
           </h1>
@@ -298,8 +311,8 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-11-09T10:32:29+08:00">
-                2016-11-09
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-03-29T21:14:26+08:00">
+                2017-03-29
               </time>
             
 
@@ -317,8 +330,8 @@
               <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/algorithm/" itemprop="url" rel="index">
-                    <span itemprop="name">algorithm</span>
+                  <a href="/categories/CPP/" itemprop="url" rel="index">
+                    <span itemprop="name">CPP</span>
                   </a>
                 </span>
 
@@ -352,317 +365,88 @@
       
 
       
-        
-          
-            <h2 id="简单的BFS搜索"><a href="#简单的BFS搜索" class="headerlink" title="简单的BFS搜索"></a>简单的BFS搜索</h2><blockquote>
-<p>题目描述<br><a href="http://www.tianchai.org/problem-12034.html" target="_blank" rel="external">再解炸弹人</a></p>
+        <h2 id="前-tu-言-cao"><a href="#前-tu-言-cao" class="headerlink" title="前(tu)言(cao)"></a>前(tu)言(cao)</h2><blockquote>
+<p>在做蓝桥2012预赛试题的时候， 做到“夺冠概率”这道题， 明明可以用数学上的方法求解。 结果，必须使用随机数，因为三次运行程序结果相同不给分。。。</p>
 </blockquote>
-<p>心得：</p>
-<ol>
-<li>利用一个结构体数组，对每个点进行出入队列操作</li>
-<li>编写getNum时, 按照向<strong>四个</strong>不同方向扩展的思路，而不是<em>两条</em>交叉的直线</li>
-<li>对每个head点的<em>四个方向</em>进行扩展，并且<strong>先判断</strong>是否可以加入队列，<strong>然后再</strong>加入队列</li>
-<li>每有一个点加入队列后便<strong>tail++</strong>每判断四个点后便<strong>head++</strong></li>
-<li>在对startX 和 startY 进行<strong>加入第一个节点</strong>操作时，虽然head 和 tail都可以进行相同的操作，但是<strong>入队操作需要使用tail</strong></li>
-</ol>
-<p>我的代码: <a href="https://github.com/ZhaoQiling/Algorithm/blob/master/%E5%95%8A%E5%93%88%E7%AE%97%E6%B3%95/%E5%86%8D%E8%A7%A3%E7%82%B8%E5%BC%B9%E4%BA%BA.cpp" target="_blank" rel="external">github</a></p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/11/07/拯救小哈_DFS/">
-
-  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
-    <meta itemprop="name" content="Zhao70">
-    <meta itemprop="description" content="">
-    <meta itemprop="image" content="/uploads/avatar.png">
-  </span>
-
-  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="Zhao70's Blog">
-    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
-      <img style="display:none;" itemprop="url image" alt="Zhao70's Blog" src="">
-    </span>
-  </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/11/07/拯救小哈_DFS/" itemprop="url">
-                  解救小哈
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-11-07T13:42:43+08:00">
-                2016-11-07
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-              <span class="post-meta-divider">|</span>
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/algorithm/" itemprop="url" rel="index">
-                    <span itemprop="name">algorithm</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-
-          
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="简单的dfs搜索"><a href="#简单的dfs搜索" class="headerlink" title="简单的dfs搜索"></a>简单的dfs搜索</h2><hr>
+<h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><blockquote>
+<p>足球比赛具有一定程度的偶然性，弱队也有战胜强队的可能。<br>假设有甲、乙、丙、丁四个球队。根据他们过去比赛的成绩，得出每个队与另一个队对阵时取胜的概率表:<br>    &nbsp;    &nbsp;    &nbsp;    &nbsp;甲  乙  丙  丁<br>甲   -  0.1 0.3 0.5<br>乙 0.9  -   0.7 0.4<br>丙 0.7  0.3 -   0.2<br>丁 0.5  0.6 0.8 -<br>数据含义：甲对乙的取胜概率为0.1，丙对乙的胜率为0.3，…<br>现在要举行一次锦标赛。双方抽签，分两个组比，获胜的两个队再争夺冠军。（参见【1.jpg】）<br>请你进行10万次模拟，计算出甲队夺冠的概率。</p>
+</blockquote>
+<p><img src="\source\img\championships.jpg" alt="图一"></p>
+<h2 id="评测标准"><a href="#评测标准" class="headerlink" title="评测标准"></a>评测标准</h2><p>满分17分</p>
+<p>编译选手提供的源代码，运行看结果</p>
+<p>!! 至少运行3次，如果结果相同则不能得分！ 说明选手是用理论推算而非模拟方法。</p>
+<p>输出四舍五入后为： 0.075  或  0.076 即可满分17分</p>
+<p>如果输出 7.5 或 7.6 是采用了百分数的形式，也认为正确。</p>
+<p>多次运行结果为：0.074 或 0.077 表明存在设计上的系统误差，可以给 5 分</p>
+<h2 id="如何产生随机数"><a href="#如何产生随机数" class="headerlink" title="如何产生随机数"></a>如何产生随机数</h2><ol>
+<li>添加头文件stdlib.h</li>
+<li>由于rand()返回的是伪随机数字， 每次执行时结果是相同的</li>
+<li><p>为了避免每次生成固定的随机数，引进srand()函数</p>
 <blockquote>
-<p>题目描述：<br><a href="http://www.tianchai.org/problem-12032.html" target="_blank" rel="external">添柴，拯救小哈</a></p>
+<p>用法：srand(unsigned int seed)</p>
 </blockquote>
-<pre><code>一道比较水的DFS搜索题目，需要注意的是
-</code></pre><ol>
-<li>运用next数组进行下一步的加减，与八皇后问题可以<em>斜着走</em>的问题区别开，只能上下左右运动的需要定义一个next[4][2]的数组进行保存。</li>
-<li>编写DFS只关心当前这一步要做什么，并且注意边界条件的判断，如此题的是否出界和是否有障碍物</li>
-<li>标记数组的处理，为了防止死递归，所以需要标记数组，而下一步的决策取决于上面的标记，但是不能影响其他平行的决策，所以标记数组要<strong>及时</strong>复原。<br>我的代码： <a href="https://github.com/ZhaoQiling/Algorithm/blob/master/%E5%95%8A%E5%93%88%E7%AE%97%E6%B3%95/%E8%A7%A3%E6%95%91%E5%B0%8F%E5%93%88.cpp" target="_blank" rel="external">github</a></li>
+</li>
+<li><p>可以利用<time.h>中的随机函数初始化, 产生不同的随机种子</time.h></p>
+</li>
+<li>srand((unsigned)time(NULL))</li>
 </ol>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;time.h&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdlib.h&gt;</span></span></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></div><div class="line">&#123;</div><div class="line">    <span class="keyword">double</span> arr[<span class="number">3</span>] = &#123;<span class="number">0.046</span>, <span class="number">0.102</span>, <span class="number">0.08</span>&#125;;</div><div class="line">    <span class="keyword">double</span> sum = <span class="number">0</span>;</div><div class="line">	<span class="comment">//这里srand只能写在for循环外侧，否则会WA</span></div><div class="line">	<span class="comment">//看来srand的seed整个程序运行时只执行一次即可</span></div><div class="line">    srand(time(<span class="literal">NULL</span>));</div><div class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt;= <span class="number">100000</span> ; i++)</div><div class="line">    &#123;</div><div class="line">        <span class="keyword">int</span> val = rand() % <span class="number">3</span>;</div><div class="line">        sum = sum + arr[val];</div><div class="line">    &#125;</div><div class="line">    <span class="built_in">cout</span> &lt;&lt; sum / <span class="number">100000</span>;</div><div class="line">    <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+      
+    </div>
 
-          
+    <div>
+      
         
+
       
     </div>
 
     <div>
       
-    </div>
+        
 
-    <div>
       
     </div>
 
 
     <footer class="post-footer">
       
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/11/06/my-new-post/">
-
-  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
-    <meta itemprop="name" content="Zhao70">
-    <meta itemprop="description" content="">
-    <meta itemprop="image" content="/uploads/avatar.png">
-  </span>
-
-  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="Zhao70's Blog">
-    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
-      <img style="display:none;" itemprop="url image" alt="Zhao70's Blog" src="">
-    </span>
-  </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/11/06/my-new-post/" itemprop="url">
-                  我的第一篇文章
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-11-06T09:44:12+08:00">
-                2016-11-06
-              </time>
-            
-
-            
-
-            
-          </span>
-
+        <div class="post-tags">
           
-
+            <a href="/tags/随机数/" rel="tag"># 随机数</a>
           
-            
-          
-
-          
-
-          
-          
-
-          
-
-          
-
         </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
       
 
       
-        
-          
-            <p>使用markdown</p>
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/03/29/微生物增殖/" rel="next" title="微生物增殖">
+                <i class="fa fa-chevron-left"></i> 微生物增殖
+              </a>
+            
+          </div>
 
-          
-        
-      
-    </div>
+          <span class="post-nav-divider"></span>
 
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-
-    <footer class="post-footer">
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
       
 
       
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </article>
 
 
-    
-  </section>
 
-  
-  <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/3/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span>
-  </nav>
-
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -670,6 +454,10 @@
 
 
           
+  <div class="comments" id="comments">
+    
+  </div>
+
 
         </div>
         
@@ -689,8 +477,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/uploads/avatar.png"
@@ -750,6 +547,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前-tu-言-cao"><span class="nav-number">1.</span> <span class="nav-text">前(tu)言(cao)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#题目"><span class="nav-number">2.</span> <span class="nav-text">题目</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#评测标准"><span class="nav-number">3.</span> <span class="nav-text">评测标准</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#如何产生随机数"><span class="nav-number">4.</span> <span class="nav-text">如何产生随机数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#代码"><span class="nav-number">5.</span> <span class="nav-text">代码</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
     </div>
@@ -855,6 +668,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
 
   
 

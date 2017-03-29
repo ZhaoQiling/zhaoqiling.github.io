@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-03-29T13:09:36.518Z</updated>
+  <updated>2017-03-29T13:45:52.309Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -16,31 +16,67 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>C++产生随机数</title>
+    <link href="http://yoursite.com/2017/03/29/C-%E4%BA%A7%E7%94%9F%E9%9A%8F%E6%9C%BA%E6%95%B0/"/>
+    <id>http://yoursite.com/2017/03/29/C-产生随机数/</id>
+    <published>2017-03-29T13:14:26.000Z</published>
+    <updated>2017-03-29T13:45:52.309Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="前-tu-言-cao"><a href="#前-tu-言-cao" class="headerlink" title="前(tu)言(cao)"></a>前(tu)言(cao)</h2><blockquote>
+<p>在做蓝桥2012预赛试题的时候， 做到“夺冠概率”这道题， 明明可以用数学上的方法求解。 结果，必须使用随机数，因为三次运行程序结果相同不给分。。。</p>
+</blockquote>
+<h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><blockquote>
+<p>足球比赛具有一定程度的偶然性，弱队也有战胜强队的可能。<br>假设有甲、乙、丙、丁四个球队。根据他们过去比赛的成绩，得出每个队与另一个队对阵时取胜的概率表:<br>    &nbsp;    &nbsp;    &nbsp;    &nbsp;甲  乙  丙  丁<br>甲   -  0.1 0.3 0.5<br>乙 0.9  -   0.7 0.4<br>丙 0.7  0.3 -   0.2<br>丁 0.5  0.6 0.8 -<br>数据含义：甲对乙的取胜概率为0.1，丙对乙的胜率为0.3，…<br>现在要举行一次锦标赛。双方抽签，分两个组比，获胜的两个队再争夺冠军。（参见【1.jpg】）<br>请你进行10万次模拟，计算出甲队夺冠的概率。</p>
+</blockquote>
+<p><img src="\source\img\championships.jpg" alt="图一"></p>
+<h2 id="评测标准"><a href="#评测标准" class="headerlink" title="评测标准"></a>评测标准</h2><p>满分17分</p>
+<p>编译选手提供的源代码，运行看结果</p>
+<p>!! 至少运行3次，如果结果相同则不能得分！ 说明选手是用理论推算而非模拟方法。</p>
+<p>输出四舍五入后为： 0.075  或  0.076 即可满分17分</p>
+<p>如果输出 7.5 或 7.6 是采用了百分数的形式，也认为正确。</p>
+<p>多次运行结果为：0.074 或 0.077 表明存在设计上的系统误差，可以给 5 分</p>
+<h2 id="如何产生随机数"><a href="#如何产生随机数" class="headerlink" title="如何产生随机数"></a>如何产生随机数</h2><ol>
+<li>添加头文件stdlib.h</li>
+<li>由于rand()返回的是伪随机数字， 每次执行时结果是相同的</li>
+<li><p>为了避免每次生成固定的随机数，引进srand()函数</p>
+<blockquote>
+<p>用法：srand(unsigned int seed)</p>
+</blockquote>
+</li>
+<li><p>可以利用<time.h>中的随机函数初始化, 产生不同的随机种子</time.h></p>
+</li>
+<li>srand((unsigned)time(NULL))</li>
+</ol>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;time.h&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdlib.h&gt;</span></span></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></div><div class="line">&#123;</div><div class="line">    <span class="keyword">double</span> arr[<span class="number">3</span>] = &#123;<span class="number">0.046</span>, <span class="number">0.102</span>, <span class="number">0.08</span>&#125;;</div><div class="line">    <span class="keyword">double</span> sum = <span class="number">0</span>;</div><div class="line">	<span class="comment">//这里srand只能写在for循环外侧，否则会WA</span></div><div class="line">	<span class="comment">//看来srand的seed整个程序运行时只执行一次即可</span></div><div class="line">    srand(time(<span class="literal">NULL</span>));</div><div class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt;= <span class="number">100000</span> ; i++)</div><div class="line">    &#123;</div><div class="line">        <span class="keyword">int</span> val = rand() % <span class="number">3</span>;</div><div class="line">        sum = sum + arr[val];</div><div class="line">    &#125;</div><div class="line">    <span class="built_in">cout</span> &lt;&lt; sum / <span class="number">100000</span>;</div><div class="line">    <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;前-tu-言-cao&quot;&gt;&lt;a href=&quot;#前-tu-言-cao&quot; class=&quot;headerlink&quot; title=&quot;前(tu)言(cao)&quot;&gt;&lt;/a&gt;前(tu)言(cao)&lt;/h2&gt;&lt;blockquote&gt;
+&lt;p&gt;在做蓝桥2012预赛试题的时候， 做到“夺冠概
+    
+    </summary>
+    
+      <category term="CPP" scheme="http://yoursite.com/categories/CPP/"/>
+    
+    
+      <category term="随机数" scheme="http://yoursite.com/tags/%E9%9A%8F%E6%9C%BA%E6%95%B0/"/>
+    
+  </entry>
+  
+  <entry>
     <title>微生物增殖</title>
     <link href="http://yoursite.com/2017/03/29/%E5%BE%AE%E7%94%9F%E7%89%A9%E5%A2%9E%E6%AE%96/"/>
     <id>http://yoursite.com/2017/03/29/微生物增殖/</id>
     <published>2017-03-29T12:42:06.000Z</published>
-    <updated>2017-03-29T13:09:36.518Z</updated>
+    <updated>2017-03-29T13:12:57.409Z</updated>
     
     <content type="html"><![CDATA[<blockquote>
 <p>题目来源<br>2012年蓝桥杯预赛</p>
 </blockquote>
-<h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><pre><code>假设有两种微生物 X 和 Y
-
-X出生后每隔3分钟分裂一次（数目加倍），Y出生后每隔2分钟分裂一次（数目加倍）。
-
-一个新出生的X，半分钟之后吃掉1个Y，并且，从此开始，每隔1分钟吃1个Y。
-
-现在已知有新出生的 X=10, Y=89，求60分钟后Y的数目。
-
-如果X=10，Y=90  呢？
-
-本题的要求就是写出这两种初始条件下，60分钟后Y的数目。
-
-题目的结果令你震惊吗？这不是简单的数字游戏！真实的生物圈有着同样脆弱的性质！也许因为你消灭的那只 Y 就是最终导致 Y 种群灭绝的最后一根稻草！
-
-请忍住悲伤，把答案写在“解答.txt”中，不要写在这里！
-</code></pre><h2 id="思路与感悟"><a href="#思路与感悟" class="headerlink" title="思路与感悟"></a>思路与感悟</h2><p>遇到这种模拟类的题目，最好还是不要随意更改题目，先<strong>按照0.5秒来模拟</strong>一下， <strong>打表</strong>， <strong>找出规律</strong>后再为了<strong>计算的精确性</strong>， <strong>更改时间周期</strong>。</p>
+<h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><blockquote>
+<p>假设有两种微生物 X 和 Y<br>X出生后每隔3分钟分裂一次（数目加倍），Y出生后每隔2分钟分裂一次（数目加倍）。<br>一个新出生的X，半分钟之后吃掉1个Y，并且，从此开始，每隔1分钟吃1个Y。<br>现在已知有新出生的 X=10, Y=89，求60分钟后Y的数目。<br>如果X=10，Y=90  呢？<br>本题的要求就是写出这两种初始条件下，60分钟后Y的数目。<br>题目的结果令你震惊吗？这不是简单的数字游戏！真实的生物圈有着同样脆弱的性质！也许因为你消灭的那只 Y 就是最终导致 Y 种群灭绝的最后一根稻草！<br>请忍住悲伤，把答案写在“解答.txt”中，不要写在这里！</p>
+</blockquote>
+<h2 id="思路与感悟"><a href="#思路与感悟" class="headerlink" title="思路与感悟"></a>思路与感悟</h2><p>遇到这种模拟类的题目，最好还是不要随意更改题目，先<strong>按照0.5秒来模拟</strong>一下， <strong>打表</strong>， <strong>找出规律</strong>后再为了<strong>计算的精确性</strong>， <strong>更改时间周期</strong>。</p>
 <h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></div><div class="line">&#123;</div><div class="line">    <span class="keyword">int</span> nX, nY;</div><div class="line">    nX = <span class="number">10</span>;</div><div class="line">    nY = <span class="number">90</span>;</div><div class="line">    <span class="comment">// i 为 0.5分钟</span></div><div class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= <span class="number">120</span>; i++)</div><div class="line">    &#123;</div><div class="line">        <span class="keyword">if</span>(i % <span class="number">2</span> == <span class="number">1</span>)</div><div class="line">            nY = nY - nX;</div><div class="line">        <span class="keyword">if</span>(i % <span class="number">4</span> == <span class="number">0</span>)</div><div class="line">            nY = nY * <span class="number">2</span>;</div><div class="line">        <span class="keyword">if</span>(i % <span class="number">6</span> == <span class="number">0</span>)</div><div class="line">            nX = nX * <span class="number">2</span>;</div><div class="line">    &#125;</div><div class="line">    <span class="built_in">cout</span> &lt;&lt; nX &lt;&lt; <span class="string">" "</span> &lt;&lt; nY;</div><div class="line">    <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <h2 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h2><p><a href="http://blog.csdn.net/qsyzb/article/details/19156551?utm_source=tuicool&amp;utm_medium=referral" target="_blank" rel="external">丁棒儿的博客</a></p>
 ]]></content>
@@ -50,7 +86,7 @@ X出生后每隔3分钟分裂一次（数目加倍），Y出生后每隔2分钟�
       &lt;blockquote&gt;
 &lt;p&gt;题目来源&lt;br&gt;2012年蓝桥杯预赛&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;h2 id=&quot;题目描述&quot;&gt;&lt;a href=&quot;#题目描述&quot; class=&quot;headerlink&quot; title=&quot;题目描述&quot;&gt;&lt;/a&gt;题目描述&lt;/h2&gt;&lt;pre&gt;&lt;code&gt;假
+&lt;h2 id=&quot;题目描述&quot;&gt;&lt;a href=&quot;#题目描述&quot; class=&quot;headerlink&quot; title=&quot;题目描述&quot;&gt;&lt;/a&gt;题目描述&lt;/h2&gt;&lt;blockquote&gt;
     
     </summary>
     
@@ -756,58 +792,6 @@ f(3) = 5     //即 123、132、213、321、231
 &lt;thead&gt;
 &lt;tr&gt;
 &lt;th style=&quot;text-align:center
-    
-    </summary>
-    
-      <category term="CPP" scheme="http://yoursite.com/categories/CPP/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>位运算Part1</title>
-    <link href="http://yoursite.com/2017/02/10/%E4%BD%8D%E8%BF%90%E7%AE%97/"/>
-    <id>http://yoursite.com/2017/02/10/位运算/</id>
-    <published>2017-02-10T01:29:13.000Z</published>
-    <updated>2017-02-19T10:48:29.231Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="六种位运算符"><a href="#六种位运算符" class="headerlink" title="六种位运算符"></a>六种位运算符</h1><hr>
-<h2 id="amp-按位与"><a href="#amp-按位与" class="headerlink" title="&amp; 按位与"></a>&amp; 按位与</h2><h3 id="用处"><a href="#用处" class="headerlink" title="用处"></a>用处</h3><ul>
-<li>将变量某些位<strong>清0</strong>且同时保持其他位不变<br>  example: 将int变量n的低8位全置成0， 而其余位不变, n = n &amp; 0xffffff00;</li>
-<li>获取变量中的某一位<br>  example: 判断一个int类型变量第n位是否是1(从右往左， 从0开始数), n &amp; 0x80 是否等于 0x80(即1000 0000)</li>
-<li>判断一个数字的奇偶<br>  example: 一个数 ^ 1 的结果就是二进制的最末位</li>
-</ul>
-<h2 id="按位或"><a href="#按位或" class="headerlink" title="| 按位或"></a>| 按位或</h2><h3 id="用处-1"><a href="#用处-1" class="headerlink" title="用处"></a>用处</h3><ul>
-<li>将变量某些位<strong>置1</strong>且同时保持其他位不变<br>  example: 将int类型变量n的低8位全置成1， 而其余位不变， n |= 0xff(1111 1111)</li>
-<li>二进制特定位上无条件赋值<br>  example: 把二进制最末尾变1, (n | 1) - 1</li>
-</ul>
-<h2 id="按位异或"><a href="#按位异或" class="headerlink" title="^ 按位异或"></a>^ 按位异或</h2><h3 id="规则"><a href="#规则" class="headerlink" title="规则"></a>规则</h3><ul>
-<li>相同取0，相异取1</li>
-</ul>
-<h3 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h3><ul>
-<li>若a ^ b = c, 那么就有 c ^ b = a以及 c ^ a = b.此规律可用来进行简单的加密和解密</li>
-</ul>
-<h3 id="用处-2"><a href="#用处-2" class="headerlink" title="用处"></a>用处</h3><ul>
-<li><p>将变量某些位<strong>取反</strong>且同时保持其他位不变<br>  example: 将int类型变量n的低8位取反， 而其余位不变， n = n ^ 0xff(1111 1111)</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">0000 0000 1111 1111</div><div class="line">^</div><div class="line">0010 1110 1001 0000</div><div class="line">==</div><div class="line">0010 1110 0110 1111</div></pre></td></tr></table></figure>
-</li>
-<li><p>不使用中间变量交换a, b的值</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">a = a ^ b;</div><div class="line">b = a ^ b;</div><div class="line">a = a ^ b;</div></pre></td></tr></table></figure>
-</li>
-</ul>
-<h2 id="按位非（单目）"><a href="#按位非（单目）" class="headerlink" title="~ 按位非（单目）"></a>~ 按位非（单目）</h2><h2 id="lt-lt-左移"><a href="#lt-lt-左移" class="headerlink" title="&lt;&lt; 左移"></a>&lt;&lt; 左移</h2><h3 id="规则-1"><a href="#规则-1" class="headerlink" title="规则"></a>规则</h3><ul>
-<li>高位直接丢弃， 低位补0<h3 id="用处-3"><a href="#用处-3" class="headerlink" title="用处"></a>用处</h3></li>
-<li>把一个数左移n位就相当于乘以2的n次方// 但可能改变符号<h2 id="gt-gt-右移"><a href="#gt-gt-右移" class="headerlink" title="&gt;&gt; 右移"></a>&gt;&gt; 右移</h2><h3 id="规则-2"><a href="#规则-2" class="headerlink" title="规则"></a>规则</h3></li>
-<li>低位直接丢弃， 大多数C/C++编译器规定， 如果原符号位为1， 则右移时高位就补充1， 原符号位位0， 则右移时高位就补充0<h3 id="用处-4"><a href="#用处-4" class="headerlink" title="用处"></a>用处</h3></li>
-<li>把一个数右移n位就相当于除以2的n次方（不改变符号）， 但时<strong>向小里取整</strong>， 而不是丢失小数位</li>
-<li>写出一个表达式的值与 a的第n位相同(从右向左， 从0开始): (a &gt;&gt; n) &amp; 1 或 (a &amp; (1 &lt;&lt; n)) &gt;&gt; n //0 &lt;= n &lt; 31</li>
-</ul>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;六种位运算符&quot;&gt;&lt;a href=&quot;#六种位运算符&quot; class=&quot;headerlink&quot; title=&quot;六种位运算符&quot;&gt;&lt;/a&gt;六种位运算符&lt;/h1&gt;&lt;hr&gt;
-&lt;h2 id=&quot;amp-按位与&quot;&gt;&lt;a href=&quot;#amp-按位与&quot; class=&quot;headerlin
     
     </summary>
     

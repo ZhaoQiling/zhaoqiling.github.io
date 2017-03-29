@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="DP," />
+  <meta name="keywords" content="模拟算法," />
 
 
 
@@ -86,25 +86,58 @@
 
 
 
-<meta name="description" content="题目描述题目链接: POJ3624很经典的01背包问题，不累述了。
-理解01背包问题本身代码并不复杂，很难理解的是状态的转移，引用Tanky Woo的一句话
+<meta name="description" content="题目来源2012年蓝桥杯预赛
 
-首先说下动态规划，动态规划这东西就和递归一样，只能找局部关系，若想全部列出来，是很难的，比如汉诺塔。你可以说先把除最后一层的其他所有层都移动到2，再把最后一层移动到3，最后再把其余的从2移动到3，这是一个直观的关系，但是想列举出来是很难的，">
+题目描述假设有两种微生物 X 和 Y
+
+X出生后每隔3分钟分裂一次（数目加倍），Y出生后每隔2分钟分裂一次（数目加倍）。
+
+一个新出生的X，半分钟之后吃掉1个Y，并且，从此开始，每隔1分钟吃1个Y。
+
+现在已知有新出生的 X=10, Y=89，求60分钟后Y的数目。
+
+如果X=10，Y=90  呢？
+
+本题的要求就是写出这两种初始条件下，60分钟后Y的数目。
+
+题">
 <meta property="og:type" content="article">
-<meta property="og:title" content="01package">
-<meta property="og:url" content="http://yoursite.com/2017/03/16/01package/index.html">
+<meta property="og:title" content="微生物增殖">
+<meta property="og:url" content="http://yoursite.com/2017/03/29/微生物增殖/index.html">
 <meta property="og:site_name" content="Zhao70's Blog">
-<meta property="og:description" content="题目描述题目链接: POJ3624很经典的01背包问题，不累述了。
-理解01背包问题本身代码并不复杂，很难理解的是状态的转移，引用Tanky Woo的一句话
+<meta property="og:description" content="题目来源2012年蓝桥杯预赛
 
-首先说下动态规划，动态规划这东西就和递归一样，只能找局部关系，若想全部列出来，是很难的，比如汉诺塔。你可以说先把除最后一层的其他所有层都移动到2，再把最后一层移动到3，最后再把其余的从2移动到3，这是一个直观的关系，但是想列举出来是很难的，">
-<meta property="og:updated_time" content="2017-03-16T14:44:44.856Z">
+题目描述假设有两种微生物 X 和 Y
+
+X出生后每隔3分钟分裂一次（数目加倍），Y出生后每隔2分钟分裂一次（数目加倍）。
+
+一个新出生的X，半分钟之后吃掉1个Y，并且，从此开始，每隔1分钟吃1个Y。
+
+现在已知有新出生的 X=10, Y=89，求60分钟后Y的数目。
+
+如果X=10，Y=90  呢？
+
+本题的要求就是写出这两种初始条件下，60分钟后Y的数目。
+
+题">
+<meta property="og:updated_time" content="2017-03-29T13:09:36.518Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="01package">
-<meta name="twitter:description" content="题目描述题目链接: POJ3624很经典的01背包问题，不累述了。
-理解01背包问题本身代码并不复杂，很难理解的是状态的转移，引用Tanky Woo的一句话
+<meta name="twitter:title" content="微生物增殖">
+<meta name="twitter:description" content="题目来源2012年蓝桥杯预赛
 
-首先说下动态规划，动态规划这东西就和递归一样，只能找局部关系，若想全部列出来，是很难的，比如汉诺塔。你可以说先把除最后一层的其他所有层都移动到2，再把最后一层移动到3，最后再把其余的从2移动到3，这是一个直观的关系，但是想列举出来是很难的，">
+题目描述假设有两种微生物 X 和 Y
+
+X出生后每隔3分钟分裂一次（数目加倍），Y出生后每隔2分钟分裂一次（数目加倍）。
+
+一个新出生的X，半分钟之后吃掉1个Y，并且，从此开始，每隔1分钟吃1个Y。
+
+现在已知有新出生的 X=10, Y=89，求60分钟后Y的数目。
+
+如果X=10，Y=90  呢？
+
+本题的要求就是写出这两种初始条件下，60分钟后Y的数目。
+
+题">
 
 
 
@@ -132,13 +165,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/03/16/01package/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/03/29/微生物增殖/"/>
 
 
 
 
 
-  <title> 01package | Zhao70's Blog </title>
+  <title> 微生物增殖 | Zhao70's Blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -269,7 +302,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/16/01package/">
+  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/29/微生物增殖/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <meta itemprop="name" content="Zhao70">
@@ -293,7 +326,7 @@
             
             
               
-                01package
+                微生物增殖
               
             
           </h1>
@@ -306,8 +339,8 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-03-16T22:04:45+08:00">
-                2017-03-16
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-03-29T20:42:06+08:00">
+                2017-03-29
               </time>
             
 
@@ -360,17 +393,27 @@
       
 
       
-        <h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>题目链接: <a href="http://poj.org/?id=3624" target="_blank" rel="external">POJ3624</a><br>很经典的01背包问题，不累述了。</p>
-<h2 id="理解"><a href="#理解" class="headerlink" title="理解"></a>理解</h2><p>01背包问题本身代码并不复杂，很难理解的是<strong>状态的转移</strong>，引用Tanky Woo的一句话</p>
-<blockquote>
-<p>首先说下动态规划，动态规划这东西就和递归一样，只能找局部关系，若想全部列出来，是很难的，比如汉诺塔。你可以说先把除最后一层的其他所有层都移动到2，再把最后一层移动到3，最后再把其余的从2移动到3，这是一个直观的关系，但是想列举出来是很难的，也许当层数n=3时还可以模拟下，再大一些就不可能了，所以，诸如递归，动态规划之类的，不能细想，只能找局部关系。</p>
+        <blockquote>
+<p>题目来源<br>2012年蓝桥杯预赛</p>
 </blockquote>
-<p>使用01背包问题这类简单的问题来学习动态规划是新手友好的。</p>
-<p>其次，对于01背包进行<strong>一维数组的优化</strong>，以及和<strong>完全背包问题</strong>及其<strong>一维数组优化</strong>的对比， 能够更好的理解<strong>状态</strong>这个概念。</p>
-<h2 id="原始版本"><a href="#原始版本" class="headerlink" title="原始版本"></a>原始版本</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= nItem; i++)</div><div class="line">&#123;</div><div class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">1</span>; j &lt;= nWeight; j++)</div><div class="line">    &#123;</div><div class="line">        <span class="comment">//如果不选一件物品有两种可能：</span></div><div class="line">        <span class="comment">//1. 装不下</span></div><div class="line">        <span class="comment">//2. 不想装</span></div><div class="line">        <span class="keyword">if</span>(j &lt; weight[i])</div><div class="line">            dp[i][j] = dp[i - <span class="number">1</span>][j];</div><div class="line">        <span class="keyword">else</span>&#123;</div><div class="line">            <span class="comment">//注意此处max函数中dp数组无论拿还是不拿都是从[i - 1]的状态转移而来的</span></div><div class="line">            <span class="comment">//[i - 1]保证此处为01背包问题</span></div><div class="line">            <span class="comment">//即保证每个物品只有一个</span></div><div class="line">            dp[i][j] = max(dp[i - <span class="number">1</span>][j], dp[i - <span class="number">1</span>][j - weight[i]] + value[i]);</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h2 id="使用一维数据进行优化"><a href="#使用一维数据进行优化" class="headerlink" title="使用一维数据进行优化"></a>使用一维数据进行优化</h2><p>当nItem比较小(例如在1000以内)时，使用二维数组是可以使用的，但当nItem偏大(n为10000)时， 使用二维数组时不可行的， 所以学会使用一维数组是必须的。<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">  <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= nItem; i++)</div><div class="line">  &#123;</div><div class="line"><span class="comment">//此处的j为逆序</span></div><div class="line"><span class="comment">//说明每次计算得出的dp[j]都是从nItem - 1转移(保证每件物品只选一次)而来的</span></div><div class="line"><span class="comment">//完全背包与这个有微小的区别</span></div><div class="line"><span class="comment">//即从nItem转移而来的(每件物品可选任意次)</span></div><div class="line">      <span class="keyword">for</span>(<span class="keyword">int</span> j = nWeight; j &gt;= <span class="number">1</span>; j--)</div><div class="line">      &#123;</div><div class="line">          <span class="keyword">if</span>(weight[i] &gt; j)</div><div class="line">              <span class="keyword">continue</span>;</div><div class="line">          dp[j] = max(dp[j], dp[j - weight[i]] + value[i]);</div><div class="line">      &#125;</div><div class="line">  &#125;</div></pre></td></tr></table></figure></p>
-<h2 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h2><p><a href="http://www.wutianqi.com/?p=539" target="_blank" rel="external">Tanky Woo’s Blog</a><br><a href="https://github.com/tianyicui/pack" target="_blank" rel="external">DD大牛的背包九讲</a><br><a href="http://www.icst.pku.edu.cn/course/cpp/cpp.htm" target="_blank" rel="external">北大动归相关课件</a></p>
-<p>本人文笔略拙，觉得本文晦涩难懂可参考以上大牛的相关文档。</p>
+<h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><pre><code>假设有两种微生物 X 和 Y
+
+X出生后每隔3分钟分裂一次（数目加倍），Y出生后每隔2分钟分裂一次（数目加倍）。
+
+一个新出生的X，半分钟之后吃掉1个Y，并且，从此开始，每隔1分钟吃1个Y。
+
+现在已知有新出生的 X=10, Y=89，求60分钟后Y的数目。
+
+如果X=10，Y=90  呢？
+
+本题的要求就是写出这两种初始条件下，60分钟后Y的数目。
+
+题目的结果令你震惊吗？这不是简单的数字游戏！真实的生物圈有着同样脆弱的性质！也许因为你消灭的那只 Y 就是最终导致 Y 种群灭绝的最后一根稻草！
+
+请忍住悲伤，把答案写在“解答.txt”中，不要写在这里！
+</code></pre><h2 id="思路与感悟"><a href="#思路与感悟" class="headerlink" title="思路与感悟"></a>思路与感悟</h2><p>遇到这种模拟类的题目，最好还是不要随意更改题目，先<strong>按照0.5秒来模拟</strong>一下， <strong>打表</strong>， <strong>找出规律</strong>后再为了<strong>计算的精确性</strong>， <strong>更改时间周期</strong>。</p>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></div><div class="line">&#123;</div><div class="line">    <span class="keyword">int</span> nX, nY;</div><div class="line">    nX = <span class="number">10</span>;</div><div class="line">    nY = <span class="number">90</span>;</div><div class="line">    <span class="comment">// i 为 0.5分钟</span></div><div class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= <span class="number">120</span>; i++)</div><div class="line">    &#123;</div><div class="line">        <span class="keyword">if</span>(i % <span class="number">2</span> == <span class="number">1</span>)</div><div class="line">            nY = nY - nX;</div><div class="line">        <span class="keyword">if</span>(i % <span class="number">4</span> == <span class="number">0</span>)</div><div class="line">            nY = nY * <span class="number">2</span>;</div><div class="line">        <span class="keyword">if</span>(i % <span class="number">6</span> == <span class="number">0</span>)</div><div class="line">            nX = nX * <span class="number">2</span>;</div><div class="line">    &#125;</div><div class="line">    <span class="built_in">cout</span> &lt;&lt; nX &lt;&lt; <span class="string">" "</span> &lt;&lt; nY;</div><div class="line">    <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h2><p><a href="http://blog.csdn.net/qsyzb/article/details/19156551?utm_source=tuicool&amp;utm_medium=referral" target="_blank" rel="external">丁棒儿的博客</a></p>
 
       
     </div>
@@ -394,7 +437,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/DP/" rel="tag"># DP</a>
+            <a href="/tags/模拟算法/" rel="tag"># 模拟算法</a>
           
         </div>
       
@@ -403,8 +446,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/03/12/next-permutaion-perv-permutation/" rel="next" title="next_permutaion&perv_permutation">
-                <i class="fa fa-chevron-left"></i> next_permutaion&perv_permutation
+              <a href="/2017/03/28/国际歌/" rel="next" title="国际歌">
+                <i class="fa fa-chevron-left"></i> 国际歌
               </a>
             
           </div>
@@ -412,10 +455,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/03/19/开学一个月总结/" rel="prev" title="开学一个月总结">
-                开学一个月总结 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -542,7 +581,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#题目描述"><span class="nav-number">1.</span> <span class="nav-text">题目描述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#理解"><span class="nav-number">2.</span> <span class="nav-text">理解</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#原始版本"><span class="nav-number">3.</span> <span class="nav-text">原始版本</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用一维数据进行优化"><span class="nav-number">4.</span> <span class="nav-text">使用一维数据进行优化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考链接"><span class="nav-number">5.</span> <span class="nav-text">参考链接</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#题目描述"><span class="nav-number">1.</span> <span class="nav-text">题目描述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#思路与感悟"><span class="nav-number">2.</span> <span class="nav-text">思路与感悟</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#代码"><span class="nav-number">3.</span> <span class="nav-text">代码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考链接"><span class="nav-number">4.</span> <span class="nav-text">参考链接</span></a></li></ol></div>
             
 
           </div>

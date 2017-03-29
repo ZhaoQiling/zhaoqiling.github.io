@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-03-29T13:45:52.309Z</updated>
+  <updated>2017-03-29T13:47:58.967Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://yoursite.com/2017/03/29/C-%E4%BA%A7%E7%94%9F%E9%9A%8F%E6%9C%BA%E6%95%B0/"/>
     <id>http://yoursite.com/2017/03/29/C-产生随机数/</id>
     <published>2017-03-29T13:14:26.000Z</published>
-    <updated>2017-03-29T13:45:52.309Z</updated>
+    <updated>2017-03-29T13:47:58.967Z</updated>
     
     <content type="html"><![CDATA[<h2 id="前-tu-言-cao"><a href="#前-tu-言-cao" class="headerlink" title="前(tu)言(cao)"></a>前(tu)言(cao)</h2><blockquote>
 <p>在做蓝桥2012预赛试题的时候， 做到“夺冠概率”这道题， 明明可以用数学上的方法求解。 结果，必须使用随机数，因为三次运行程序结果相同不给分。。。</p>
@@ -28,7 +28,7 @@
 <h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><blockquote>
 <p>足球比赛具有一定程度的偶然性，弱队也有战胜强队的可能。<br>假设有甲、乙、丙、丁四个球队。根据他们过去比赛的成绩，得出每个队与另一个队对阵时取胜的概率表:<br>    &nbsp;    &nbsp;    &nbsp;    &nbsp;甲  乙  丙  丁<br>甲   -  0.1 0.3 0.5<br>乙 0.9  -   0.7 0.4<br>丙 0.7  0.3 -   0.2<br>丁 0.5  0.6 0.8 -<br>数据含义：甲对乙的取胜概率为0.1，丙对乙的胜率为0.3，…<br>现在要举行一次锦标赛。双方抽签，分两个组比，获胜的两个队再争夺冠军。（参见【1.jpg】）<br>请你进行10万次模拟，计算出甲队夺冠的概率。</p>
 </blockquote>
-<p><img src="\source\img\championships.jpg" alt="图一"></p>
+<p><img src="\img\championships.jpg" alt="&quot;图一&quot;"></p>
 <h2 id="评测标准"><a href="#评测标准" class="headerlink" title="评测标准"></a>评测标准</h2><p>满分17分</p>
 <p>编译选手提供的源代码，运行看结果</p>
 <p>!! 至少运行3次，如果结果相同则不能得分！ 说明选手是用理论推算而非模拟方法。</p>

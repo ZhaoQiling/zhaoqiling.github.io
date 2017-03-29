@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-03-29T13:47:58.967Z</updated>
+  <updated>2017-03-29T14:25:56.284Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -14,6 +14,38 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>动归解决取球问题</title>
+    <link href="http://yoursite.com/2017/03/29/%E5%8A%A8%E5%BD%92%E8%A7%A3%E5%86%B3%E5%8F%96%E7%90%83%E9%97%AE%E9%A2%98/"/>
+    <id>http://yoursite.com/2017/03/29/动归解决取球问题/</id>
+    <published>2017-03-29T13:53:55.000Z</published>
+    <updated>2017-03-29T14:25:56.284Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="题目大意"><a href="#题目大意" class="headerlink" title="题目大意"></a>题目大意</h2><p> 现在有n个小球，每次从盒子中取出的小球数目必须是1, 3, 7, 8个, 不可弃权, 拿到最后一个小球的人为失败</p>
+<h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><ol>
+<li>此题可以通过状态转移方程进行计算, 从而避免使用递归的方法, 减少了运算量</li>
+<li>当球的数目为0时, 为必胜态, arr[0] = true</li>
+<li>只要能转移到必败态的一定是必胜态</li>
+<li>无法转移到必胜态的是必败态</li>
+</ol>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"><span class="keyword">bool</span> arr[<span class="number">10500</span>];</div><div class="line"><span class="keyword">int</span>  query[<span class="number">150</span>];</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">char</span> <span class="keyword">const</span> *argv[])</span></span></div><div class="line">&#123;</div><div class="line">    arr[<span class="number">0</span>] = <span class="literal">true</span>;</div><div class="line">    <span class="keyword">int</span> prob[<span class="number">4</span>] = &#123;<span class="number">1</span>, <span class="number">3</span>, <span class="number">7</span>, <span class="number">8</span>&#125;;</div><div class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= <span class="number">9999</span>; i++)</div><div class="line">    &#123;</div><div class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">0</span>; j &lt;= <span class="number">3</span>; j++)</div><div class="line">        &#123;</div><div class="line">            <span class="keyword">if</span>(i - prob[j] &lt; <span class="number">0</span>)</div><div class="line">                <span class="keyword">continue</span>;</div><div class="line">            <span class="keyword">if</span>(arr[i - prob[j]] == <span class="literal">false</span>)</div><div class="line">            &#123;</div><div class="line">                arr[i] = <span class="literal">true</span>;</div><div class="line">                <span class="keyword">break</span>;</div><div class="line">            &#125;</div><div class="line">            <span class="keyword">if</span>(j == <span class="number">3</span>)</div><div class="line">            &#123;</div><div class="line">                arr[i] = <span class="literal">false</span>;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line"><span class="comment">//    for(int i = 0; i &lt;= 100; i++)</span></div><div class="line"><span class="comment">//        cout &lt;&lt; arr[i] &lt;&lt; " ";</span></div><div class="line">    <span class="keyword">int</span> nQuery;</div><div class="line">    <span class="built_in">cin</span> &gt;&gt; nQuery;</div><div class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; nQuery; i++)</div><div class="line">    &#123;</div><div class="line">        <span class="keyword">int</span> val;</div><div class="line">        <span class="built_in">cin</span> &gt;&gt; val;</div><div class="line">        <span class="built_in">cout</span> &lt;&lt; arr[val] &lt;&lt; <span class="built_in">endl</span>;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;题目大意&quot;&gt;&lt;a href=&quot;#题目大意&quot; class=&quot;headerlink&quot; title=&quot;题目大意&quot;&gt;&lt;/a&gt;题目大意&lt;/h2&gt;&lt;p&gt; 现在有n个小球，每次从盒子中取出的小球数目必须是1, 3, 7, 8个, 不可弃权, 拿到最后一个小球的人为失败&lt;/p&gt;
+
+    
+    </summary>
+    
+      <category term="algorithm" scheme="http://yoursite.com/categories/algorithm/"/>
+    
+    
+      <category term="DP" scheme="http://yoursite.com/tags/DP/"/>
+    
+      <category term="博弈论" scheme="http://yoursite.com/tags/%E5%8D%9A%E5%BC%88%E8%AE%BA/"/>
+    
+  </entry>
   
   <entry>
     <title>C++产生随机数</title>
@@ -663,135 +695,6 @@ f(3) = 5     //即 123、132、213、321、231
       &lt;h2 id=&quot;定义常量&quot;&gt;&lt;a href=&quot;#定义常量&quot; class=&quot;headerlink&quot; title=&quot;定义常量&quot;&gt;&lt;/a&gt;定义常量&lt;/h2&gt;&lt;ul&gt;
 &lt;li&gt;const int MAX_VAL = 23;&lt;/li&gt;
 &lt;li&gt;const string SCHOOL_NAM
-    
-    </summary>
-    
-      <category term="CPP" scheme="http://yoursite.com/categories/CPP/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>位运算Part2</title>
-    <link href="http://yoursite.com/2017/02/11/%E4%BD%8D%E8%BF%90%E7%AE%97Part2/"/>
-    <id>http://yoursite.com/2017/02/11/位运算Part2/</id>
-    <published>2017-02-11T00:33:16.000Z</published>
-    <updated>2017-02-11T01:25:47.616Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="位运算的简单应用"><a href="#位运算的简单应用" class="headerlink" title="位运算的简单应用"></a>位运算的简单应用</h2><table>
-<thead>
-<tr>
-<th style="text-align:center">功能</th>
-<th style="text-align:center">示例</th>
-<th style="text-align:center">位运算</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">去掉最后一位</td>
-<td style="text-align:center">(101101-&gt;10110)</td>
-<td style="text-align:center">x &gt;&gt; 1</td>
-</tr>
-<tr>
-<td style="text-align:center">在最后加一个 0</td>
-<td style="text-align:center">(101101-&gt;1011010)</td>
-<td style="text-align:center">x &lt;&lt; 1</td>
-</tr>
-<tr>
-<td style="text-align:center">在最后加一个 1</td>
-<td style="text-align:center">(101101-&gt;1011011)</td>
-<td style="text-align:center">x &lt;&lt; 1+1</td>
-</tr>
-<tr>
-<td style="text-align:center">把最后一位变成 1</td>
-<td style="text-align:center">(101100-&gt;101101)</td>
-<td style="text-align:center">x &#166; 1</td>
-</tr>
-<tr>
-<td style="text-align:center">把最后一位变成 0</td>
-<td style="text-align:center">(101101-&gt;101100)</td>
-<td style="text-align:center">x &#166; 1-1</td>
-</tr>
-<tr>
-<td style="text-align:center">最后一位取反</td>
-<td style="text-align:center">(101101-&gt;101100)</td>
-<td style="text-align:center">x ^ 1</td>
-</tr>
-<tr>
-<td style="text-align:center">把右数第 k 位变成 1</td>
-<td style="text-align:center">(101001-&gt;101101,k=3)</td>
-<td style="text-align:center">x &#166; (1 &lt;&lt; (k-1))</td>
-</tr>
-<tr>
-<td style="text-align:center">把右数第 k 位变成 0</td>
-<td style="text-align:center">(101101-&gt;101001,k=3)</td>
-<td style="text-align:center">x &amp; ! (1 &lt;&lt;(k-1))</td>
-</tr>
-<tr>
-<td style="text-align:center">右数第 k 位取反</td>
-<td style="text-align:center">(101001-&gt;101101,k=3)</td>
-<td style="text-align:center">x ^ (1 &lt;&lt; (k-1))</td>
-</tr>
-<tr>
-<td style="text-align:center">取末三位</td>
-<td style="text-align:center">(1101101-&gt;101)</td>
-<td style="text-align:center">x &amp; 7</td>
-</tr>
-<tr>
-<td style="text-align:center">取末 k 位</td>
-<td style="text-align:center">(1101101-&gt;1101,k=5)</td>
-<td style="text-align:center">x &amp; (1 &lt;&lt; k-1)</td>
-</tr>
-<tr>
-<td style="text-align:center">取右数第 k 位</td>
-<td style="text-align:center">(1101101-&gt;1,k=4)</td>
-<td style="text-align:center">x &gt;&gt; (k-1) &amp; 1</td>
-</tr>
-<tr>
-<td style="text-align:center">把末 k 位变成 1</td>
-<td style="text-align:center">(101001-&gt;101111,k=4)</td>
-<td style="text-align:center">x &#166; (1 &lt;&lt; k-1)</td>
-</tr>
-<tr>
-<td style="text-align:center">末 k 位取反</td>
-<td style="text-align:center">(101001-&gt;100110,k=4)</td>
-<td style="text-align:center">x ^ (1 &lt;&lt; k-1)</td>
-</tr>
-<tr>
-<td style="text-align:center">把右边连续的 1 变成 0</td>
-<td style="text-align:center">(100101111-&gt;100100000)</td>
-<td style="text-align:center">x &amp; (x+1)</td>
-</tr>
-<tr>
-<td style="text-align:center">把右起第一个 0 变成 1</td>
-<td style="text-align:center">(100101111-&gt;100111111)</td>
-<td style="text-align:center">x &#166; (x+1)</td>
-</tr>
-<tr>
-<td style="text-align:center">把右边连续的 0 变成 1</td>
-<td style="text-align:center">(11011000-&gt;11011111)</td>
-<td style="text-align:center">x &#166; (x-1)</td>
-</tr>
-<tr>
-<td style="text-align:center">取右边连续的 1</td>
-<td style="text-align:center">(100101111-&gt;1111)</td>
-<td style="text-align:center">(x ^ (x+1)) &gt;&gt; 1</td>
-</tr>
-<tr>
-<td style="text-align:center">去掉右起第一个 1 的左边</td>
-<td style="text-align:center">(100101000-&gt;1000)</td>
-<td style="text-align:center">x &amp; (x ^ (x-1))</td>
-</tr>
-</tbody>
-</table>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;位运算的简单应用&quot;&gt;&lt;a href=&quot;#位运算的简单应用&quot; class=&quot;headerlink&quot; title=&quot;位运算的简单应用&quot;&gt;&lt;/a&gt;位运算的简单应用&lt;/h2&gt;&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th style=&quot;text-align:center
     
     </summary>
     

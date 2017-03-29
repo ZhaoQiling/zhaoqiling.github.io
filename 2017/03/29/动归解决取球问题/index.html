@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="dijkstra," />
+  <meta name="keywords" content="DP,博弈论," />
 
 
 
@@ -86,37 +86,37 @@
 
 
 
-<meta name="description" content="邻接矩阵实现
-水题做多会变傻的。 —— 静静学姐
-最近做水题上瘾， 这道题无论如何还是要用邻接表做一遍，先用的dijkstra的邻接矩阵水一下，挖个坑： 以后要用邻接表做一遍！！！
+<meta name="description" content="题目大意 现在有n个小球，每次从盒子中取出的小球数目必须是1, 3, 7, 8个, 不可弃权, 拿到最后一个小球的人为失败
+思路
+此题可以通过状态转移方程进行计算, 从而避免使用递归的方法, 减少了运算量
+当球的数目为0时, 为必胜态, arr[0] = true
+只要能转移到必败态的一定是必胜态
+无法转移到必胜态的是必败态
 
-
-注意判断重边即可~ （邻接矩阵多加个if语句就好
-
-我的代码：github">
+代码123456789101112131415161718192021">
 <meta property="og:type" content="article">
-<meta property="og:title" content="POJ2387 Til the Cows Come Home">
-<meta property="og:url" content="http://yoursite.com/2016/12/03/POJ2387/index.html">
+<meta property="og:title" content="动归解决取球问题">
+<meta property="og:url" content="http://yoursite.com/2017/03/29/动归解决取球问题/index.html">
 <meta property="og:site_name" content="Zhao70's Blog">
-<meta property="og:description" content="邻接矩阵实现
-水题做多会变傻的。 —— 静静学姐
-最近做水题上瘾， 这道题无论如何还是要用邻接表做一遍，先用的dijkstra的邻接矩阵水一下，挖个坑： 以后要用邻接表做一遍！！！
+<meta property="og:description" content="题目大意 现在有n个小球，每次从盒子中取出的小球数目必须是1, 3, 7, 8个, 不可弃权, 拿到最后一个小球的人为失败
+思路
+此题可以通过状态转移方程进行计算, 从而避免使用递归的方法, 减少了运算量
+当球的数目为0时, 为必胜态, arr[0] = true
+只要能转移到必败态的一定是必胜态
+无法转移到必胜态的是必败态
 
-
-注意判断重边即可~ （邻接矩阵多加个if语句就好
-
-我的代码：github">
-<meta property="og:updated_time" content="2016-12-03T07:20:26.000Z">
+代码123456789101112131415161718192021">
+<meta property="og:updated_time" content="2017-03-29T14:25:56.284Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="POJ2387 Til the Cows Come Home">
-<meta name="twitter:description" content="邻接矩阵实现
-水题做多会变傻的。 —— 静静学姐
-最近做水题上瘾， 这道题无论如何还是要用邻接表做一遍，先用的dijkstra的邻接矩阵水一下，挖个坑： 以后要用邻接表做一遍！！！
+<meta name="twitter:title" content="动归解决取球问题">
+<meta name="twitter:description" content="题目大意 现在有n个小球，每次从盒子中取出的小球数目必须是1, 3, 7, 8个, 不可弃权, 拿到最后一个小球的人为失败
+思路
+此题可以通过状态转移方程进行计算, 从而避免使用递归的方法, 减少了运算量
+当球的数目为0时, 为必胜态, arr[0] = true
+只要能转移到必败态的一定是必胜态
+无法转移到必胜态的是必败态
 
-
-注意判断重边即可~ （邻接矩阵多加个if语句就好
-
-我的代码：github">
+代码123456789101112131415161718192021">
 
 
 
@@ -144,13 +144,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2016/12/03/POJ2387/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/03/29/动归解决取球问题/"/>
 
 
 
 
 
-  <title> POJ2387 Til the Cows Come Home | Zhao70's Blog </title>
+  <title> 动归解决取球问题 | Zhao70's Blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -281,7 +281,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/12/03/POJ2387/">
+  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/29/动归解决取球问题/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <meta itemprop="name" content="Zhao70">
@@ -305,7 +305,7 @@
             
             
               
-                POJ2387 Til the Cows Come Home
+                动归解决取球问题
               
             
           </h1>
@@ -318,8 +318,8 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-12-03T15:04:22+08:00">
-                2016-12-03
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-03-29T21:53:55+08:00">
+                2017-03-29
               </time>
             
 
@@ -337,8 +337,8 @@
               <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/algothrim/" itemprop="url" rel="index">
-                    <span itemprop="name">algothrim</span>
+                  <a href="/categories/algorithm/" itemprop="url" rel="index">
+                    <span itemprop="name">algorithm</span>
                   </a>
                 </span>
 
@@ -372,15 +372,14 @@
       
 
       
-        <h2 id="邻接矩阵实现"><a href="#邻接矩阵实现" class="headerlink" title="邻接矩阵实现"></a>邻接矩阵实现</h2><blockquote>
-<p>水题做多会变傻的。 —— 静静学姐</p>
-<p>最近做水题上瘾， 这道题无论如何还是要用邻接表做一遍，先用的dijkstra的邻接矩阵水一下，挖个坑： 以后要用邻接表做一遍！！！</p>
-</blockquote>
-<ul>
-<li>注意判断重边即可~ （邻接矩阵多加个if语句就好</li>
-</ul>
-<p>我的代码：<a href="https://github.com/ZhaoQiling/Algorithm/blob/master/POJ/2387.cpp" target="_blank" rel="external">github</a></p>
-
+        <h2 id="题目大意"><a href="#题目大意" class="headerlink" title="题目大意"></a>题目大意</h2><p> 现在有n个小球，每次从盒子中取出的小球数目必须是1, 3, 7, 8个, 不可弃权, 拿到最后一个小球的人为失败</p>
+<h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><ol>
+<li>此题可以通过状态转移方程进行计算, 从而避免使用递归的方法, 减少了运算量</li>
+<li>当球的数目为0时, 为必胜态, arr[0] = true</li>
+<li>只要能转移到必败态的一定是必胜态</li>
+<li>无法转移到必胜态的是必败态</li>
+</ol>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"><span class="keyword">bool</span> arr[<span class="number">10500</span>];</div><div class="line"><span class="keyword">int</span>  query[<span class="number">150</span>];</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">char</span> <span class="keyword">const</span> *argv[])</span></span></div><div class="line">&#123;</div><div class="line">    arr[<span class="number">0</span>] = <span class="literal">true</span>;</div><div class="line">    <span class="keyword">int</span> prob[<span class="number">4</span>] = &#123;<span class="number">1</span>, <span class="number">3</span>, <span class="number">7</span>, <span class="number">8</span>&#125;;</div><div class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= <span class="number">9999</span>; i++)</div><div class="line">    &#123;</div><div class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">0</span>; j &lt;= <span class="number">3</span>; j++)</div><div class="line">        &#123;</div><div class="line">            <span class="keyword">if</span>(i - prob[j] &lt; <span class="number">0</span>)</div><div class="line">                <span class="keyword">continue</span>;</div><div class="line">            <span class="keyword">if</span>(arr[i - prob[j]] == <span class="literal">false</span>)</div><div class="line">            &#123;</div><div class="line">                arr[i] = <span class="literal">true</span>;</div><div class="line">                <span class="keyword">break</span>;</div><div class="line">            &#125;</div><div class="line">            <span class="keyword">if</span>(j == <span class="number">3</span>)</div><div class="line">            &#123;</div><div class="line">                arr[i] = <span class="literal">false</span>;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line"><span class="comment">//    for(int i = 0; i &lt;= 100; i++)</span></div><div class="line"><span class="comment">//        cout &lt;&lt; arr[i] &lt;&lt; " ";</span></div><div class="line">    <span class="keyword">int</span> nQuery;</div><div class="line">    <span class="built_in">cin</span> &gt;&gt; nQuery;</div><div class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; nQuery; i++)</div><div class="line">    &#123;</div><div class="line">        <span class="keyword">int</span> val;</div><div class="line">        <span class="built_in">cin</span> &gt;&gt; val;</div><div class="line">        <span class="built_in">cout</span> &lt;&lt; arr[val] &lt;&lt; <span class="built_in">endl</span>;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
       
     </div>
 
@@ -403,7 +402,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/dijkstra/" rel="tag"># dijkstra</a>
+            <a href="/tags/DP/" rel="tag"># DP</a>
+          
+            <a href="/tags/博弈论/" rel="tag"># 博弈论</a>
           
         </div>
       
@@ -412,8 +413,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/12/03/cmd-and-functionPoint/" rel="next" title="函数指针和命令行参数">
-                <i class="fa fa-chevron-left"></i> 函数指针和命令行参数
+              <a href="/2017/03/29/C-产生随机数/" rel="next" title="C++产生随机数">
+                <i class="fa fa-chevron-left"></i> C++产生随机数
               </a>
             
           </div>
@@ -421,10 +422,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/02/09/Plan170209/" rel="prev" title="Plan170209">
-                Plan170209 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -551,7 +548,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#邻接矩阵实现"><span class="nav-number">1.</span> <span class="nav-text">邻接矩阵实现</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#题目大意"><span class="nav-number">1.</span> <span class="nav-text">题目大意</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#思路"><span class="nav-number">2.</span> <span class="nav-text">思路</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#代码"><span class="nav-number">3.</span> <span class="nav-text">代码</span></a></li></ol></div>
             
 
           </div>

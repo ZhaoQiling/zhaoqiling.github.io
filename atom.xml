@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-03-29T14:25:56.284Z</updated>
+  <updated>2017-04-23T13:19:41.938Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -14,6 +14,63 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>KMP算法</title>
+    <link href="http://yoursite.com/2017/04/23/KMP%E7%AE%97%E6%B3%95/"/>
+    <id>http://yoursite.com/2017/04/23/KMP算法/</id>
+    <published>2017-04-23T11:02:06.000Z</published>
+    <updated>2017-04-23T13:19:41.938Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>  想KMP这个算法的时间， 前前后后加起来能有48个小时吧。 学这种算法还是画画图实在啊， 空想是没有用的~</p>
+<h2 id="kmpSearch"><a href="#kmpSearch" class="headerlink" title="kmpSearch"></a>kmpSearch</h2><h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">kmpSearch</span><span class="params">(<span class="keyword">const</span> <span class="built_in">string</span> &amp;s, <span class="keyword">const</span> <span class="built_in">string</span> &amp;p)</span></span></div><div class="line">&#123;</div><div class="line">    <span class="keyword">int</span> i = <span class="number">0</span>;</div><div class="line">    <span class="keyword">int</span> j = <span class="number">0</span>;</div><div class="line">    <span class="keyword">int</span> sLen = s.length();</div><div class="line">    <span class="keyword">int</span> pLen = p.length();</div><div class="line">    <span class="keyword">while</span>(i &lt; sLen &amp;&amp; j &lt; pLen)</div><div class="line">    &#123;</div><div class="line">        <span class="keyword">if</span>(j == <span class="number">-1</span> || s[i] == p[j])</div><div class="line">        &#123;</div><div class="line">            i++;</div><div class="line">            j++;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">else</span></div><div class="line">            j = next[j];</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">if</span>(j == pLen)</div><div class="line">        <span class="keyword">return</span> i - j;</div><div class="line">    <span class="keyword">else</span></div><div class="line">        <span class="keyword">return</span> <span class="number">-1</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="讲解"><a href="#讲解" class="headerlink" title="讲解"></a>讲解</h3><p>  对于kmpSearch这个函数来讲， 思路是不难理解的。 不过此 i，j 的<strong>变化</strong>和<strong>边界</strong>是需要特别注意的。</p>
+<ol>
+<li>可以将 i, j 理解为<strong>指针</strong>， 所谓的-1即为<strong>空指针</strong>。</li>
+<li>当 j 的值为 -1 时， 说明 p 中已经<em>没有可以匹配的前缀了</em>。 所以 i, j分别自增 1。 i 指向下一个 s 中的字符。 j 指向 p[0].</li>
+<li><p>跳出while循环的可能性:</p>
+<ol>
+<li>i 遍历 s 中所有元素</li>
+<li>j 遍历 p 中所有元素</li>
+</ol>
+<p>只有第 2 种情况说明字符串完全匹配。 返回值 i 中找到的字符串结尾 减去 字符串 p 的长度(即 j)。</p>
+</li>
+</ol>
+<h2 id="getNextVal"><a href="#getNextVal" class="headerlink" title="getNextVal"></a>getNextVal</h2><h3 id="代码-1"><a href="#代码-1" class="headerlink" title="代码"></a>代码</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">getNextVal</span><span class="params">(<span class="keyword">const</span> <span class="built_in">string</span> &amp;p)</span></span></div><div class="line">&#123;</div><div class="line">    next[<span class="number">0</span>] = <span class="number">-1</span>;</div><div class="line">    <span class="keyword">int</span> k = <span class="number">-1</span>;</div><div class="line">    <span class="keyword">int</span> j = <span class="number">0</span>;</div><div class="line">    <span class="keyword">int</span> pLen = p.length();</div><div class="line">    <span class="keyword">while</span>(j &lt; pLen - <span class="number">1</span>)</div><div class="line">    &#123;</div><div class="line">        <span class="keyword">if</span>(k == <span class="number">-1</span> || p[k] == p[j])</div><div class="line">        &#123;</div><div class="line">            j++;</div><div class="line">            k++;</div><div class="line">            next[j] = k;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">else</span></div><div class="line">        &#123;</div><div class="line">            k = next[k];</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="讲解-1"><a href="#讲解-1" class="headerlink" title="讲解"></a>讲解</h3><p>  next数组可是kmp算法的精华啊， 最开始看next数组生成过程的时候，有一种很玄学的感觉。。。</p>
+<p>  next数组的含义</p>
+<blockquote>
+<p>代表当前字符之前的字符串中，有多大长度的相同前缀后缀。<br>例如 如果next [j] = k，代表j 之前的字符串中有最大长度为k 的相同前缀后缀。</p>
+</blockquote>
+<ol>
+<li>k, j分别是指向相同前后缀最后一个字符的指针。 </li>
+<li>当 p[k] == p[j] 时，k，j 自增一。 因为 k 为指向前缀的指针， 即为前缀的长度， k 的大小即最长相同前后缀的长度</li>
+<li>因为 j 的取值范围为[0, pLen - 1] 但 next 数组的含义为 “代表<strong>当前字符之前</strong>的字符串中，有多大长度的相同前缀后缀”, 所以判断到 p[plen - 2]的字符 即可得到 next[pLen - 1]的值。</li>
+<li>题目中的 i, j 为先判断后更新 next 的值， 保证了 3 的成立。</li>
+<li>当p[k] != p[j]时, 便寻找更小的后缀 k = next[k]<br>第五条我想了整整一下午， <blockquote>
+<p>举个例子<br>前缀1 和 后缀1 相同<br>前缀1 包括相同的 前缀a 和 后缀b<br>后缀2 包括相同的 前缀c 和 后缀d<br>因为 1 == 2<br>所以 a == b == c == d<br>所以可以放弃 1 + p[k] 与 2 + p[j]<br>来更新 a + p[k] (k = next[k]) 和 d + p[j] (j值未变)</p>
+</blockquote>
+</li>
+</ol>
+<h2 id="next数组优化"><a href="#next数组优化" class="headerlink" title="next数组优化"></a>next数组优化</h2><h3 id="代码-2"><a href="#代码-2" class="headerlink" title="代码"></a>代码</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">getNextVal</span><span class="params">(<span class="keyword">const</span> <span class="built_in">string</span> &amp;p)</span></span></div><div class="line">&#123;</div><div class="line">    next[<span class="number">0</span>] = <span class="number">-1</span>;</div><div class="line">    <span class="keyword">int</span> k = <span class="number">-1</span>;</div><div class="line">    <span class="keyword">int</span> j = <span class="number">0</span>;</div><div class="line">    <span class="keyword">int</span> pLen = p.length();</div><div class="line">    <span class="keyword">while</span>(j &lt; pLen - <span class="number">1</span>)</div><div class="line">    &#123;</div><div class="line">        <span class="keyword">if</span>(k == <span class="number">-1</span> || p[k] == p[j])</div><div class="line">        &#123;</div><div class="line">            j++;</div><div class="line">            k++;</div><div class="line">            <span class="keyword">if</span>(p[k] != p[j])</div><div class="line">                next[j] = k;</div><div class="line">            <span class="keyword">else</span></div><div class="line">                next[j] = next[k];</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">else</span></div><div class="line">        &#123;</div><div class="line">            k = next[k];</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="讲解-2"><a href="#讲解-2" class="headerlink" title="讲解"></a>讲解</h3><p>  当<strong>p[j] == p[next[j]]</strong>时， 匹配是无效的。 所以不能允许p[j] == p[next[j]]。如果出现了p[j] == p[ next[j] ]咋办呢？如果出现了，则需要再次递归，即令<strong>next[j] = next[next[j]]</strong>。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;简介&quot;&gt;&lt;a href=&quot;#简介&quot; class=&quot;headerlink&quot; title=&quot;简介&quot;&gt;&lt;/a&gt;简介&lt;/h2&gt;&lt;p&gt;  想KMP这个算法的时间， 前前后后加起来能有48个小时吧。 学这种算法还是画画图实在啊， 空想是没有用的~&lt;/p&gt;
+&lt;h2 id=&quot;km
+    
+    </summary>
+    
+      <category term="algorithm" scheme="http://yoursite.com/categories/algorithm/"/>
+    
+    
+      <category term="KMP" scheme="http://yoursite.com/tags/KMP/"/>
+    
+      <category term="字符串匹配" scheme="http://yoursite.com/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%8C%B9%E9%85%8D/"/>
+    
+  </entry>
   
   <entry>
     <title>动归解决取球问题</title>
@@ -665,36 +722,6 @@ f(3) = 5     //即 123、132、213、321、231
 &lt;ul&gt;
 &lt;li&gt;inline + 成员函数&lt;/li&gt;
 &lt;li&gt;整个函数体出现在类定义内部&lt;figure class=&quot;highlight c++&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;li
-    
-    </summary>
-    
-      <category term="CPP" scheme="http://yoursite.com/categories/CPP/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>const关键字及使用</title>
-    <link href="http://yoursite.com/2017/02/11/const%E5%85%B3%E9%94%AE%E5%AD%97%E5%8F%8A%E4%BD%BF%E7%94%A8/"/>
-    <id>http://yoursite.com/2017/02/11/const关键字及使用/</id>
-    <published>2017-02-11T03:26:39.000Z</published>
-    <updated>2017-02-19T10:48:13.465Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="定义常量"><a href="#定义常量" class="headerlink" title="定义常量"></a>定义常量</h2><ul>
-<li>const int MAX_VAL = 23;</li>
-<li>const string SCHOOL_NAME = “QDU”;</li>
-</ul>
-<h2 id="定义常量指针"><a href="#定义常量指针" class="headerlink" title="定义常量指针"></a>定义常量指针</h2><blockquote>
-<p>不可通过常量指针修改其所指向的内容</p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">int n, m;</div><div class="line">const int *p = &amp;n;</div><div class="line">*p = 5;//error</div><div class="line">n = 4; // ok</div><div class="line">p = &amp;m; //ok</div><div class="line">//常量指针可通过强制类型转化 转化为非常量指针</div><div class="line">int * p1 = (int *)p;//ok</div></pre></td></tr></table></figure>
-<h2 id="定义常应用"><a href="#定义常应用" class="headerlink" title="定义常应用"></a>定义常应用</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">int</span> n;</div><div class="line"><span class="keyword">const</span> <span class="keyword">int</span> &amp;r = n;</div><div class="line">r = <span class="number">5</span>;</div><div class="line">n = <span class="number">4</span>;</div></pre></td></tr></table></figure>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;定义常量&quot;&gt;&lt;a href=&quot;#定义常量&quot; class=&quot;headerlink&quot; title=&quot;定义常量&quot;&gt;&lt;/a&gt;定义常量&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;const int MAX_VAL = 23;&lt;/li&gt;
-&lt;li&gt;const string SCHOOL_NAM
     
     </summary>
     

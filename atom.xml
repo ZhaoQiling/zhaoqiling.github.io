@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-04-23T13:24:21.159Z</updated>
+  <updated>2017-04-29T03:35:29.474Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -14,6 +14,33 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>linear_equation</title>
+    <link href="http://yoursite.com/2017/04/29/linear-equation/"/>
+    <id>http://yoursite.com/2017/04/29/linear-equation/</id>
+    <published>2017-04-29T03:32:42.000Z</published>
+    <updated>2017-04-29T03:35:29.474Z</updated>
+    
+    <content type="html"><![CDATA[<p>看了半天各种大手子解析， 也许是数学基础不好吧，熟练背诵吧。<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">exgcd</span><span class="params">(<span class="keyword">int</span> a, <span class="keyword">int</span> b, <span class="keyword">int</span>&amp; x, <span class="keyword">int</span>&amp; y)</span></span></div><div class="line">&#123;</div><div class="line">    <span class="keyword">if</span>(b == <span class="number">0</span>)</div><div class="line">    &#123;</div><div class="line">        x = <span class="number">1</span>;</div><div class="line">        y = <span class="number">0</span>;</div><div class="line">        <span class="keyword">return</span> a;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">int</span> r = exgcd(b, a % b, x, y);</div><div class="line">    <span class="keyword">int</span> t = x;</div><div class="line">    x = y;</div><div class="line">    y = t - (a / b) * y;</div><div class="line">    <span class="keyword">return</span> r;</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">bool</span> <span class="title">linear_equation</span><span class="params">(<span class="keyword">int</span> a, <span class="keyword">int</span> b, <span class="keyword">int</span> c, <span class="keyword">int</span> &amp;x, <span class="keyword">int</span> &amp;y)</span></span></div><div class="line">&#123;</div><div class="line">    <span class="keyword">int</span> d = exgcd(a, b, x, y);</div><div class="line">    <span class="keyword">if</span>(c % d)</div><div class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</div><div class="line">    <span class="keyword">int</span> k = c / d;</div><div class="line">    x *= k; y *= k;</div><div class="line">    <span class="keyword">return</span> <span class="literal">true</span>;</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">char</span> <span class="keyword">const</span> *argv[])</span></span></div><div class="line">&#123;</div><div class="line">    <span class="keyword">int</span> x, y;</div><div class="line">    <span class="keyword">if</span>(linear_equation(<span class="number">47</span>, <span class="number">30</span>, <span class="number">1</span>, x, y))</div><div class="line">        <span class="built_in">cout</span> &lt;&lt; x &lt;&lt; <span class="string">" "</span> &lt;&lt; y &lt;&lt; <span class="built_in">endl</span>;</div><div class="line">    <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;看了半天各种大手子解析， 也许是数学基础不好吧，熟练背诵吧。&lt;br&gt;&lt;figure class=&quot;highlight c++&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;l
+    
+    </summary>
+    
+      <category term="algorithm" scheme="http://yoursite.com/categories/algorithm/"/>
+    
+    
+      <category term="gcd" scheme="http://yoursite.com/tags/gcd/"/>
+    
+      <category term="exgcd" scheme="http://yoursite.com/tags/exgcd/"/>
+    
+      <category term="linear_equation" scheme="http://yoursite.com/tags/linear-equation/"/>
+    
+  </entry>
   
   <entry>
     <title>KMP算法</title>
@@ -692,34 +719,6 @@ f(3) = 5     //即 123、132、213、321、231
     
       &lt;h2 id=&quot;stringstream及其用法&quot;&gt;&lt;a href=&quot;#stringstream及其用法&quot; class=&quot;headerlink&quot; title=&quot;stringstream及其用法&quot;&gt;&lt;/a&gt;stringstream及其用法&lt;/h2&gt;&lt;blockquote&gt;
 &lt;p&gt;包
-    
-    </summary>
-    
-      <category term="CPP" scheme="http://yoursite.com/categories/CPP/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>内联成员函数</title>
-    <link href="http://yoursite.com/2017/02/15/%E5%86%85%E8%81%94%E6%88%90%E5%91%98%E5%87%BD%E6%95%B0/"/>
-    <id>http://yoursite.com/2017/02/15/内联成员函数/</id>
-    <published>2017-02-15T00:54:09.000Z</published>
-    <updated>2017-02-19T10:48:05.071Z</updated>
-    
-    <content type="html"><![CDATA[<p>##内联成员函数</p>
-<ul>
-<li>inline + 成员函数</li>
-<li>整个函数体出现在类定义内部<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">class</span> B&#123;</div><div class="line">	<span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">func1</span><span class="params">()</span></span>;</div><div class="line">	<span class="function"><span class="keyword">void</span> <span class="title">func2</span><span class="params">()</span></span></div><div class="line">	&#123;</div><div class="line">	&#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure></li>
-</ul>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;##内联成员函数&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;inline + 成员函数&lt;/li&gt;
-&lt;li&gt;整个函数体出现在类定义内部&lt;figure class=&quot;highlight c++&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;li
     
     </summary>
     

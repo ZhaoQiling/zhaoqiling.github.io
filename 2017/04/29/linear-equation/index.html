@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="gcd,exgcd,linear_equation," />
 
 
 
@@ -86,40 +86,16 @@
 
 
 
-<meta name="description" content="stringstream及其用法
-包含在头文件 sstream 中
-
-
-声明stringstream
-1stringstream ss;
-
-给stringstream对象赋值
-123456789101112//可以在定义时赋值string s;cin &amp;gt;&amp;gt; s;stirngstream ss(s);//利用stringstream::str()进行赋值stringstream ss;s">
+<meta name="description" content="看了半天各种大手子解析， 也许是数学基础不好吧，熟练背诵吧。1234567891011121314151617181920212223242526272829303132#include &amp;lt;iostream&amp;gt;using namespace std;int exgcd(int a, int b, int&amp;amp; x, int&amp;amp; y)&amp;#123;    if(b == 0)">
 <meta property="og:type" content="article">
-<meta property="og:title" content="STLPart1">
-<meta property="og:url" content="http://yoursite.com/2017/02/19/STLPart1/index.html">
+<meta property="og:title" content="linear_equation">
+<meta property="og:url" content="http://yoursite.com/2017/04/29/linear-equation/index.html">
 <meta property="og:site_name" content="Zhao70's Blog">
-<meta property="og:description" content="stringstream及其用法
-包含在头文件 sstream 中
-
-
-声明stringstream
-1stringstream ss;
-
-给stringstream对象赋值
-123456789101112//可以在定义时赋值string s;cin &amp;gt;&amp;gt; s;stirngstream ss(s);//利用stringstream::str()进行赋值stringstream ss;s">
-<meta property="og:updated_time" content="2017-02-18T15:57:48.000Z">
+<meta property="og:description" content="看了半天各种大手子解析， 也许是数学基础不好吧，熟练背诵吧。1234567891011121314151617181920212223242526272829303132#include &amp;lt;iostream&amp;gt;using namespace std;int exgcd(int a, int b, int&amp;amp; x, int&amp;amp; y)&amp;#123;    if(b == 0)">
+<meta property="og:updated_time" content="2017-04-29T03:35:29.474Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="STLPart1">
-<meta name="twitter:description" content="stringstream及其用法
-包含在头文件 sstream 中
-
-
-声明stringstream
-1stringstream ss;
-
-给stringstream对象赋值
-123456789101112//可以在定义时赋值string s;cin &amp;gt;&amp;gt; s;stirngstream ss(s);//利用stringstream::str()进行赋值stringstream ss;s">
+<meta name="twitter:title" content="linear_equation">
+<meta name="twitter:description" content="看了半天各种大手子解析， 也许是数学基础不好吧，熟练背诵吧。1234567891011121314151617181920212223242526272829303132#include &amp;lt;iostream&amp;gt;using namespace std;int exgcd(int a, int b, int&amp;amp; x, int&amp;amp; y)&amp;#123;    if(b == 0)">
 
 
 
@@ -147,13 +123,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/02/19/STLPart1/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/04/29/linear-equation/"/>
 
 
 
 
 
-  <title> STLPart1 | Zhao70's Blog </title>
+  <title> linear_equation | Zhao70's Blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -284,7 +260,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/02/19/STLPart1/">
+  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/04/29/linear-equation/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <meta itemprop="name" content="Zhao70">
@@ -308,7 +284,7 @@
             
             
               
-                STLPart1
+                linear_equation
               
             
           </h1>
@@ -321,8 +297,8 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-02-19T15:15:41+08:00">
-                2017-02-19
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-04-29T11:32:42+08:00">
+                2017-04-29
               </time>
             
 
@@ -340,8 +316,8 @@
               <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/CPP/" itemprop="url" rel="index">
-                    <span itemprop="name">CPP</span>
+                  <a href="/categories/algorithm/" itemprop="url" rel="index">
+                    <span itemprop="name">algorithm</span>
                   </a>
                 </span>
 
@@ -375,64 +351,8 @@
       
 
       
-        <h2 id="stringstream及其用法"><a href="#stringstream及其用法" class="headerlink" title="stringstream及其用法"></a>stringstream及其用法</h2><blockquote>
-<p>包含在头文件 sstream 中</p>
-</blockquote>
-<ol>
-<li><p>声明stringstream</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">stringstream</span> ss;</div></pre></td></tr></table></figure>
-</li>
-<li><p>给stringstream对象赋值</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//可以在定义时赋值</span></div><div class="line"><span class="built_in">string</span> s;</div><div class="line"><span class="built_in">cin</span> &gt;&gt; s;</div><div class="line"><span class="function">stirngstream <span class="title">ss</span><span class="params">(s)</span></span>;</div><div class="line"><span class="comment">//利用stringstream::str()进行赋值</span></div><div class="line"><span class="built_in">stringstream</span> ss;</div><div class="line">ss.str(<span class="string">"hello stringstream"</span>);</div><div class="line"><span class="comment">//利用流</span></div><div class="line"><span class="built_in">string</span> s;</div><div class="line"><span class="built_in">stringstream</span> ss;</div><div class="line"><span class="built_in">cin</span> &gt;&gt; s;</div><div class="line">ss &lt;&lt;　ｓ;</div></pre></td></tr></table></figure>
-</li>
-<li><p>stringstream的清空</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">stringstream ss;</div><div class="line">ss.str(&quot;&quot;);//right</div><div class="line">ss.clear; //error</div></pre></td></tr></table></figure>
-</li>
-</ol>
-<h2 id="std-lower-bound-和std-lower-bound"><a href="#std-lower-bound-和std-lower-bound" class="headerlink" title="std::lower_bound()和std::lower_bound()"></a>std::lower_bound()和std::lower_bound()</h2><blockquote>
-<p>ForwardIter lower_bound(ForwardIter first, ForwardIter last,const _Tp&amp; val)算法返回一个非递减序列[first, last)中的第一个<strong>大于等于</strong>值val的位置。<br>ForwardIter upper_bound(ForwardIter first, ForwardIter last, const _Tp&amp; val)算法返回一个非递减序列[first, last)中第一个<strong>大于</strong>val的位置。</p>
-</blockquote>
-<table>
-<thead>
-<tr>
-<th>1</th>
-<th>2</th>
-<th>2</th>
-<th>3</th>
-<th>4</th>
-<th>4</th>
-<th>4</th>
-<th>5</th>
-<th>6</th>
-<th>7</th>
-<th>9</th>
-<th>9</th>
-<th>10</th>
-<th>&nbsp;</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>first</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>lower_bound(first, last, 4)</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>upper_bound(first, last, 4)</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>last</td>
-</tr>
-</tbody>
-</table>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//查找相应的值的位置</span></div><div class="line"><span class="keyword">int</span> loc = lower_bound(first, last, <span class="number">4</span>) - first;</div></pre></td></tr></table></figure>
-<h2 id="不定长数组：-vector"><a href="#不定长数组：-vector" class="headerlink" title="不定长数组： vector()"></a>不定长数组： vector()</h2><p>若a是一个vector，可以用a.size( )读取它的大小，a.resize( )改变大小，a.push_back( )向尾部添加元素，a.pop_back( )删除最后一个元素</p>
-<h2 id="set-用法"><a href="#set-用法" class="headerlink" title="set()用法"></a>set()用法</h2>
+        <p>看了半天各种大手子解析， 也许是数学基础不好吧，熟练背诵吧。<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">exgcd</span><span class="params">(<span class="keyword">int</span> a, <span class="keyword">int</span> b, <span class="keyword">int</span>&amp; x, <span class="keyword">int</span>&amp; y)</span></span></div><div class="line">&#123;</div><div class="line">    <span class="keyword">if</span>(b == <span class="number">0</span>)</div><div class="line">    &#123;</div><div class="line">        x = <span class="number">1</span>;</div><div class="line">        y = <span class="number">0</span>;</div><div class="line">        <span class="keyword">return</span> a;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">int</span> r = exgcd(b, a % b, x, y);</div><div class="line">    <span class="keyword">int</span> t = x;</div><div class="line">    x = y;</div><div class="line">    y = t - (a / b) * y;</div><div class="line">    <span class="keyword">return</span> r;</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">bool</span> <span class="title">linear_equation</span><span class="params">(<span class="keyword">int</span> a, <span class="keyword">int</span> b, <span class="keyword">int</span> c, <span class="keyword">int</span> &amp;x, <span class="keyword">int</span> &amp;y)</span></span></div><div class="line">&#123;</div><div class="line">    <span class="keyword">int</span> d = exgcd(a, b, x, y);</div><div class="line">    <span class="keyword">if</span>(c % d)</div><div class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</div><div class="line">    <span class="keyword">int</span> k = c / d;</div><div class="line">    x *= k; y *= k;</div><div class="line">    <span class="keyword">return</span> <span class="literal">true</span>;</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">char</span> <span class="keyword">const</span> *argv[])</span></span></div><div class="line">&#123;</div><div class="line">    <span class="keyword">int</span> x, y;</div><div class="line">    <span class="keyword">if</span>(linear_equation(<span class="number">47</span>, <span class="number">30</span>, <span class="number">1</span>, x, y))</div><div class="line">        <span class="built_in">cout</span> &lt;&lt; x &lt;&lt; <span class="string">" "</span> &lt;&lt; y &lt;&lt; <span class="built_in">endl</span>;</div><div class="line">    <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+
       
     </div>
 
@@ -453,13 +373,23 @@
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/gcd/" rel="tag"># gcd</a>
+          
+            <a href="/tags/exgcd/" rel="tag"># exgcd</a>
+          
+            <a href="/tags/linear-equation/" rel="tag"># linear_equation</a>
+          
+        </div>
+      
 
       
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/02/15/内联成员函数/" rel="next" title="内联成员函数">
-                <i class="fa fa-chevron-left"></i> 内联成员函数
+              <a href="/2017/04/23/KMP算法/" rel="next" title="KMP算法">
+                <i class="fa fa-chevron-left"></i> KMP算法
               </a>
             
           </div>
@@ -467,10 +397,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/02/20/Uva10474-Where-is-the-Marble/" rel="prev" title="Uva10474 Where is the Marble?">
-                Uva10474 Where is the Marble? <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -517,17 +443,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <section class="site-overview sidebar-panel">
+      <section class="site-overview sidebar-panel sidebar-panel-active">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/uploads/avatar.png"
@@ -587,22 +504,6 @@
 
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#stringstream及其用法"><span class="nav-number">1.</span> <span class="nav-text">stringstream及其用法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#std-lower-bound-和std-lower-bound"><span class="nav-number">2.</span> <span class="nav-text">std::lower_bound()和std::lower_bound()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#不定长数组：-vector"><span class="nav-number">3.</span> <span class="nav-text">不定长数组： vector()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#set-用法"><span class="nav-number">4.</span> <span class="nav-text">set()用法</span></a></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
     </div>

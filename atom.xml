@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-05-03T12:19:49.980Z</updated>
+  <updated>2017-05-03T12:33:49.574Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -16,18 +16,50 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>HDU1097</title>
+    <link href="http://yoursite.com/2017/05/03/HDU1097-A-hard-puzzle/"/>
+    <id>http://yoursite.com/2017/05/03/HDU1097-A-hard-puzzle/</id>
+    <published>2017-05-03T12:23:48.000Z</published>
+    <updated>2017-05-03T12:33:49.574Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="题目大意"><a href="#题目大意" class="headerlink" title="题目大意"></a>题目大意</h2><blockquote>
+<p>给定a, b求 a ^ b的个位数字.<br>(0&lt;a,b&lt;=2^30)</p>
+</blockquote>
+<h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><p>这道题肯定是使用快速幂取模解题。<br>但是如果直接<strong>quickMod(a, b, c)</strong>肯定会<strong>爆掉</strong>，因为a最大值2 ^ 30在<strong>进入函数平方</strong>后， 会超出int数据类型， 所以应该<strong>quickMod(a % c, b, c)</strong></p>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">quickMod</span><span class="params">(<span class="keyword">int</span> a, <span class="keyword">int</span> b, <span class="keyword">int</span> c)</span></span></div><div class="line">&#123;</div><div class="line">    <span class="keyword">int</span> ans = <span class="number">1</span>;</div><div class="line">    <span class="keyword">while</span>(b)</div><div class="line">    &#123;</div><div class="line">        <span class="keyword">if</span>(b % <span class="number">2</span>)</div><div class="line">            ans = (ans * a) % c;</div><div class="line">        a = (a * a) % c;</div><div class="line">        b /= <span class="number">2</span>;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> ans;</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></div><div class="line">&#123;</div><div class="line">    <span class="keyword">int</span> a, b;</div><div class="line">    <span class="keyword">while</span>(~<span class="built_in">scanf</span>(<span class="string">"%d%d"</span>, &amp;a, &amp;b))</div><div class="line">    &#123;</div><div class="line">        <span class="built_in">printf</span>(<span class="string">"%d\n"</span>, quickMod(a % <span class="number">10</span>, b, <span class="number">10</span>));</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="题目链接"><a href="#题目链接" class="headerlink" title="题目链接"></a>题目链接</h2><p><a href="http://acm.hdu.edu.cn/showproblem.php?pid=1097" target="_blank" rel="external">HDU1097</a></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;题目大意&quot;&gt;&lt;a href=&quot;#题目大意&quot; class=&quot;headerlink&quot; title=&quot;题目大意&quot;&gt;&lt;/a&gt;题目大意&lt;/h2&gt;&lt;blockquote&gt;
+&lt;p&gt;给定a, b求 a ^ b的个位数字.&lt;br&gt;(0&amp;lt;a,b&amp;lt;=2^30)&lt;/p&gt;
+&lt;/
+    
+    </summary>
+    
+      <category term="algorithm" scheme="http://yoursite.com/categories/algorithm/"/>
+    
+    
+      <category term="math" scheme="http://yoursite.com/tags/math/"/>
+    
+      <category term="快速幂取模" scheme="http://yoursite.com/tags/%E5%BF%AB%E9%80%9F%E5%B9%82%E5%8F%96%E6%A8%A1/"/>
+    
+  </entry>
+  
+  <entry>
     <title>快速幂取模</title>
     <link href="http://yoursite.com/2017/05/03/%E5%BF%AB%E9%80%9F%E5%B9%82%E5%8F%96%E6%A8%A1/"/>
     <id>http://yoursite.com/2017/05/03/快速幂取模/</id>
     <published>2017-05-03T11:59:20.000Z</published>
-    <updated>2017-05-03T12:19:49.980Z</updated>
+    <updated>2017-05-03T12:21:50.617Z</updated>
     
     <content type="html"><![CDATA[<h2 id="快速幂"><a href="#快速幂" class="headerlink" title="快速幂"></a>快速幂</h2><h3 id="基本公式"><a href="#基本公式" class="headerlink" title="基本公式"></a>基本公式</h3><p><img src="/img/quickMod.png" alt="quickMod"></p>
 <h3 id="过程"><a href="#过程" class="headerlink" title="过程"></a>过程</h3><p>以 b 为偶数举例<br>a^b%c = ((a^2)^b/2)%c</p>
 <p>若 b / 2仍为偶数， 那么<br>((a^2)^b/2)%c = (((a^2)^2)^(b/2)/2)%c</p>
 <h3 id="举例"><a href="#举例" class="headerlink" title="举例"></a>举例</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="number">3</span> ^ <span class="number">16</span></div><div class="line">= (<span class="number">3</span>     * <span class="number">3</span>    ) ^ <span class="number">8</span></div><div class="line">= (<span class="number">3</span> ^ <span class="number">2</span> * <span class="number">3</span> ^ <span class="number">2</span>) ^ <span class="number">4</span> <span class="comment">//3^2 由上一步3 * 3得</span></div><div class="line">= (<span class="number">3</span> ^ <span class="number">4</span> * <span class="number">3</span> ^ <span class="number">4</span>) ^ <span class="number">2</span> <span class="comment">//3^4 由上一步3 ^ 2 * 3 ^ 2得</span></div><div class="line">= (<span class="number">3</span> ^ <span class="number">8</span> * <span class="number">3</span> ^ <span class="number">8</span>) ^ <span class="number">1</span> <span class="comment">//3^8 由上一步3 ^ 4 * 3 ^ 4得</span></div></pre></td></tr></table></figure>
 <h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">myQuickPow1</span><span class="params">(<span class="keyword">int</span> a, <span class="keyword">int</span> b)</span></span></div><div class="line">&#123;</div><div class="line">    <span class="keyword">int</span> ans = <span class="number">1</span>;</div><div class="line">    <span class="keyword">while</span>(b != <span class="number">0</span>)</div><div class="line">    &#123;</div><div class="line">        <span class="keyword">if</span>(b % <span class="number">2</span> == <span class="number">1</span>)</div><div class="line">            ans = ans * a;</div><div class="line">        a = a * a;</div><div class="line">        b = b / <span class="number">2</span>;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> ans;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>也可以取模<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">int myQuickMod1(int a, int b, int c)</div><div class="line">&#123;</div><div class="line">    int ans = 1;</div><div class="line">    while(b != 0)</div><div class="line">    &#123;</div><div class="line">        if(b % 2 == 1)</div><div class="line">            ans = (ans * a) % c;</div><div class="line">        a = (a * a) % c;</div><div class="line">        b = b / 2;</div><div class="line">    &#125;</div><div class="line">    return ans;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>也可以取模<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">myQuickMod1</span><span class="params">(<span class="keyword">int</span> a, <span class="keyword">int</span> b, <span class="keyword">int</span> c)</span></span></div><div class="line">&#123;</div><div class="line">    <span class="keyword">int</span> ans = <span class="number">1</span>;</div><div class="line">    <span class="keyword">while</span>(b != <span class="number">0</span>)</div><div class="line">    &#123;</div><div class="line">        <span class="keyword">if</span>(b % <span class="number">2</span> == <span class="number">1</span>)</div><div class="line">            ans = (ans * a) % c;</div><div class="line">        a = (a * a) % c;</div><div class="line">        b = b / <span class="number">2</span>;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> ans;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <h2 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h2><p><a href="http://blog.csdn.net/u013174702/article/details/43761197" target="_blank" rel="external">快速幂取余算法总结详解</a></p>
 ]]></content>
     
@@ -644,41 +676,6 @@ f(3) = 5     //即 123、132、213、321、231
     
       <category term="algorithm" scheme="http://yoursite.com/categories/algorithm/"/>
     
-    
-  </entry>
-  
-  <entry>
-    <title>Uva10474 Where is the Marble?</title>
-    <link href="http://yoursite.com/2017/02/20/Uva10474-Where-is-the-Marble/"/>
-    <id>http://yoursite.com/2017/02/20/Uva10474-Where-is-the-Marble/</id>
-    <published>2017-02-20T11:56:20.000Z</published>
-    <updated>2017-02-20T12:14:33.774Z</updated>
-    
-    <content type="html"><![CDATA[<p>题目链接: <a href="https://vjudge.net/problem/UVA-10474" target="_blank" rel="external">Uva10474 Where is the Marble?</a></p>
-<h2 id="涉及的知识点"><a href="#涉及的知识点" class="headerlink" title="涉及的知识点"></a>涉及的知识点</h2><ul>
-<li>lower_bound</li>
-</ul>
-<h2 id="分析"><a href="#分析" class="headerlink" title="分析"></a>分析</h2><p>典型的水题， lower_bound()返回的是一个有序的非递减数列第一个大于等于查询值的位置。</p>
-<p>如果要在</p>
-<blockquote>
-<p>1, 2, 2, 3, 3, 3, 4, 5, 7</p>
-</blockquote>
-<p>找寻2, 则返回所在的位置，检查该位置的数值是否为2</p>
-<p>找寻6, 返回7所在位置</p>
-<h2 id="我的代码"><a href="#我的代码" class="headerlink" title="我的代码"></a>我的代码</h2><p><a href="https://github.com/ZhaoQiling/CplusplusLearn/blob/master/STL/Uva10474.cpp" target="_blank" rel="external">github</a></p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;题目链接: &lt;a href=&quot;https://vjudge.net/problem/UVA-10474&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Uva10474 Where is the Marble?&lt;/a&gt;&lt;/p&gt;
-&lt;h2 id=&quot;涉及的知识点&quot;
-    
-    </summary>
-    
-    
-      <category term="STL" scheme="http://yoursite.com/tags/STL/"/>
-    
-      <category term="low_bound" scheme="http://yoursite.com/tags/low-bound/"/>
     
   </entry>
   

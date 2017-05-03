@@ -258,6 +258,147 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/05/03/快速幂取模/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="Zhao70">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/uploads/avatar.png">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="Zhao70's Blog">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="Zhao70's Blog" src="">
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/05/03/快速幂取模/" itemprop="url">
+                  快速幂取模
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-05-03T19:59:20+08:00">
+                2017-05-03
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+              <span class="post-meta-divider">|</span>
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/algorithm/" itemprop="url" rel="index">
+                    <span itemprop="name">algorithm</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="快速幂"><a href="#快速幂" class="headerlink" title="快速幂"></a>快速幂</h2><h3 id="基本公式"><a href="#基本公式" class="headerlink" title="基本公式"></a>基本公式</h3><p><img src="/img/quickMod.png" alt="quickMod"></p>
+<h3 id="过程"><a href="#过程" class="headerlink" title="过程"></a>过程</h3><p>以 b 为偶数举例<br>a^b%c = ((a^2)^b/2)%c</p>
+<p>若 b / 2仍为偶数， 那么<br>((a^2)^b/2)%c = (((a^2)^2)^(b/2)/2)%c</p>
+<h3 id="举例"><a href="#举例" class="headerlink" title="举例"></a>举例</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="number">3</span> ^ <span class="number">16</span></div><div class="line">= (<span class="number">3</span>     * <span class="number">3</span>    ) ^ <span class="number">8</span></div><div class="line">= (<span class="number">3</span> ^ <span class="number">2</span> * <span class="number">3</span> ^ <span class="number">2</span>) ^ <span class="number">4</span> <span class="comment">//3^2 由上一步3 * 3得</span></div><div class="line">= (<span class="number">3</span> ^ <span class="number">4</span> * <span class="number">3</span> ^ <span class="number">4</span>) ^ <span class="number">2</span> <span class="comment">//3^4 由上一步3 ^ 2 * 3 ^ 2得</span></div><div class="line">= (<span class="number">3</span> ^ <span class="number">8</span> * <span class="number">3</span> ^ <span class="number">8</span>) ^ <span class="number">1</span> <span class="comment">//3^8 由上一步3 ^ 4 * 3 ^ 4得</span></div></pre></td></tr></table></figure>
+<h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">myQuickPow1</span><span class="params">(<span class="keyword">int</span> a, <span class="keyword">int</span> b)</span></span></div><div class="line">&#123;</div><div class="line">    <span class="keyword">int</span> ans = <span class="number">1</span>;</div><div class="line">    <span class="keyword">while</span>(b != <span class="number">0</span>)</div><div class="line">    &#123;</div><div class="line">        <span class="keyword">if</span>(b % <span class="number">2</span> == <span class="number">1</span>)</div><div class="line">            ans = ans * a;</div><div class="line">        a = a * a;</div><div class="line">        b = b / <span class="number">2</span>;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> ans;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>也可以取模<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">int myQuickMod1(int a, int b, int c)</div><div class="line">&#123;</div><div class="line">    int ans = 1;</div><div class="line">    while(b != 0)</div><div class="line">    &#123;</div><div class="line">        if(b % 2 == 1)</div><div class="line">            ans = (ans * a) % c;</div><div class="line">        a = (a * a) % c;</div><div class="line">        b = b / 2;</div><div class="line">    &#125;</div><div class="line">    return ans;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h2 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h2><p><a href="http://blog.csdn.net/u013174702/article/details/43761197" target="_blank" rel="external">快速幂取余算法总结详解</a></p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
   <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/04/29/linear-equation/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1542,142 +1683,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/21/printf和scanf的一些用法/">
-
-  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
-    <meta itemprop="name" content="Zhao70">
-    <meta itemprop="description" content="">
-    <meta itemprop="image" content="/uploads/avatar.png">
-  </span>
-
-  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="Zhao70's Blog">
-    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
-      <img style="display:none;" itemprop="url image" alt="Zhao70's Blog" src="">
-    </span>
-  </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/03/21/printf和scanf的一些用法/" itemprop="url">
-                  printf和scanf的一些用法
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-03-21T19:50:25+08:00">
-                2017-03-21
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-
-          
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="printf-函数"><a href="#printf-函数" class="headerlink" title="printf()函数"></a>printf()函数</h2><blockquote>
-<p>%%打印一个百分号<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">printf</span>(<span class="string">"%%\n"</span>);</div><div class="line">\\输出结果</div><div class="line">\\%</div></pre></td></tr></table></figure></p>
-</blockquote>
-<h2 id="printf-的转换说明修饰符"><a href="#printf-的转换说明修饰符" class="headerlink" title="printf()的转换说明修饰符"></a>printf()的转换说明修饰符</h2><h3 id="数字"><a href="#数字" class="headerlink" title=".数字"></a>.数字</h3><p>%5.2f打印一个浮点数， 字段宽度为5， 其中小数点后有两位<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">double</span> per = <span class="number">4.23</span>;</div><div class="line"><span class="built_in">printf</span>(<span class="string">"%5.2f\n"</span>, per);</div></pre></td></tr></table></figure></p>
-<h3 id=""><a href="#" class="headerlink" title="-"></a>-</h3><p>待打印项向左对齐<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">printf</span>(<span class="string">"%-10d"</span>, val);</div></pre></td></tr></table></figure></p>
-<h3 id="-1"><a href="#-1" class="headerlink" title="+"></a>+</h3><p>若符号值为正， 则在值前面显示加号; 若为负，则在值前面显示减号<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">    <span class="built_in">printf</span>(<span class="string">"%+5.2f\n"</span>, per);</div><div class="line">    <span class="built_in">printf</span>(<span class="string">"%+5.2f\n"</span>, <span class="number">-1</span> * per);</div><div class="line">\\output</div><div class="line">\\+<span class="number">4.23</span></div><div class="line">\\<span class="number">-4.23</span></div></pre></td></tr></table></figure></p>
-<h3 id="空格"><a href="#空格" class="headerlink" title="空格"></a>空格</h3><p>若符号值为正，则显示前导空格; 若为负，则在值前面显示减号<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">    <span class="built_in">printf</span>(<span class="string">"% 5.2f\n"</span>, per);</div><div class="line">    <span class="built_in">printf</span>(<span class="string">"% 5.2f\n"</span>, <span class="number">-1</span> * per);</div><div class="line">\\output</div><div class="line">\\ <span class="number">4.23</span></div><div class="line">\\<span class="number">-4.23</span></div></pre></td></tr></table></figure></p>
-<h2 id="printf-的返回值"><a href="#printf-的返回值" class="headerlink" title="printf()的返回值"></a>printf()的返回值</h2><blockquote>
-<p>printf()的返回值为打印字符的个数<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">    <span class="keyword">int</span> num = <span class="built_in">printf</span>(<span class="string">"Hello World\n"</span>);</div><div class="line">    <span class="built_in">printf</span>(<span class="string">"%d\n"</span>, num);</div><div class="line">\\output</div><div class="line">\\<span class="number">12</span></div></pre></td></tr></table></figure></p>
-</blockquote>
-<h2 id="scanf-的返回值"><a href="#scanf-的返回值" class="headerlink" title="scanf()的返回值"></a>scanf()的返回值</h2><blockquote>
-<p>scanf()函数返回成功读取的项数</p>
-</blockquote>
-<h2 id="printf-和scanf-的-修饰符"><a href="#printf-和scanf-的-修饰符" class="headerlink" title="printf()和scanf()的*修饰符"></a>printf()和scanf()的*修饰符</h2><h3 id="printf-中的"><a href="#printf-中的" class="headerlink" title="printf()中的*"></a>printf()中的*</h3><blockquote>
-<p>用 * 修饰符代替字符宽度</p>
-</blockquote>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">double</span> per = <span class="number">4.23</span>;</div><div class="line">   <span class="keyword">int</span> width = <span class="number">5</span>;</div><div class="line">   <span class="keyword">int</span> percent = <span class="number">2</span>;</div><div class="line">   <span class="built_in">printf</span>(<span class="string">"%*.*f\n"</span>, width, percent, per);</div></pre></td></tr></table></figure>
-<h3 id="scanf-中的"><a href="#scanf-中的" class="headerlink" title="scanf()中的*"></a>scanf()中的*</h3><blockquote>
-<p>将 * 放在% 和 转换字符之间会使得scanf()跳过相应的输入项</p>
-</blockquote>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">    <span class="built_in">scanf</span>(<span class="string">"%*d%*d%d"</span>, &amp;val);</div><div class="line">    <span class="built_in">printf</span>(<span class="string">"%d\n"</span>, val);</div><div class="line">\\input</div><div class="line">\\<span class="number">4</span> <span class="number">5</span> <span class="number">6</span></div><div class="line">\\output</div><div class="line">\\<span class="number">6</span></div></pre></td></tr></table></figure>
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -1723,7 +1728,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">36</span>
+              <span class="site-state-item-count">37</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -1740,7 +1745,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">27</span>
+                <span class="site-state-item-count">29</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>

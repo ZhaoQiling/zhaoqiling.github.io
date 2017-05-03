@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-04-29T03:35:29.474Z</updated>
+  <updated>2017-05-03T12:19:49.980Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -14,6 +14,39 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>快速幂取模</title>
+    <link href="http://yoursite.com/2017/05/03/%E5%BF%AB%E9%80%9F%E5%B9%82%E5%8F%96%E6%A8%A1/"/>
+    <id>http://yoursite.com/2017/05/03/快速幂取模/</id>
+    <published>2017-05-03T11:59:20.000Z</published>
+    <updated>2017-05-03T12:19:49.980Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="快速幂"><a href="#快速幂" class="headerlink" title="快速幂"></a>快速幂</h2><h3 id="基本公式"><a href="#基本公式" class="headerlink" title="基本公式"></a>基本公式</h3><p><img src="/img/quickMod.png" alt="quickMod"></p>
+<h3 id="过程"><a href="#过程" class="headerlink" title="过程"></a>过程</h3><p>以 b 为偶数举例<br>a^b%c = ((a^2)^b/2)%c</p>
+<p>若 b / 2仍为偶数， 那么<br>((a^2)^b/2)%c = (((a^2)^2)^(b/2)/2)%c</p>
+<h3 id="举例"><a href="#举例" class="headerlink" title="举例"></a>举例</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="number">3</span> ^ <span class="number">16</span></div><div class="line">= (<span class="number">3</span>     * <span class="number">3</span>    ) ^ <span class="number">8</span></div><div class="line">= (<span class="number">3</span> ^ <span class="number">2</span> * <span class="number">3</span> ^ <span class="number">2</span>) ^ <span class="number">4</span> <span class="comment">//3^2 由上一步3 * 3得</span></div><div class="line">= (<span class="number">3</span> ^ <span class="number">4</span> * <span class="number">3</span> ^ <span class="number">4</span>) ^ <span class="number">2</span> <span class="comment">//3^4 由上一步3 ^ 2 * 3 ^ 2得</span></div><div class="line">= (<span class="number">3</span> ^ <span class="number">8</span> * <span class="number">3</span> ^ <span class="number">8</span>) ^ <span class="number">1</span> <span class="comment">//3^8 由上一步3 ^ 4 * 3 ^ 4得</span></div></pre></td></tr></table></figure>
+<h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">myQuickPow1</span><span class="params">(<span class="keyword">int</span> a, <span class="keyword">int</span> b)</span></span></div><div class="line">&#123;</div><div class="line">    <span class="keyword">int</span> ans = <span class="number">1</span>;</div><div class="line">    <span class="keyword">while</span>(b != <span class="number">0</span>)</div><div class="line">    &#123;</div><div class="line">        <span class="keyword">if</span>(b % <span class="number">2</span> == <span class="number">1</span>)</div><div class="line">            ans = ans * a;</div><div class="line">        a = a * a;</div><div class="line">        b = b / <span class="number">2</span>;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> ans;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>也可以取模<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">int myQuickMod1(int a, int b, int c)</div><div class="line">&#123;</div><div class="line">    int ans = 1;</div><div class="line">    while(b != 0)</div><div class="line">    &#123;</div><div class="line">        if(b % 2 == 1)</div><div class="line">            ans = (ans * a) % c;</div><div class="line">        a = (a * a) % c;</div><div class="line">        b = b / 2;</div><div class="line">    &#125;</div><div class="line">    return ans;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h2 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h2><p><a href="http://blog.csdn.net/u013174702/article/details/43761197" target="_blank" rel="external">快速幂取余算法总结详解</a></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;快速幂&quot;&gt;&lt;a href=&quot;#快速幂&quot; class=&quot;headerlink&quot; title=&quot;快速幂&quot;&gt;&lt;/a&gt;快速幂&lt;/h2&gt;&lt;h3 id=&quot;基本公式&quot;&gt;&lt;a href=&quot;#基本公式&quot; class=&quot;headerlink&quot; title=&quot;基本公式&quot;&gt;&lt;/a&gt;基本公
+    
+    </summary>
+    
+      <category term="algorithm" scheme="http://yoursite.com/categories/algorithm/"/>
+    
+    
+      <category term="math" scheme="http://yoursite.com/tags/math/"/>
+    
+      <category term="快速幂" scheme="http://yoursite.com/tags/%E5%BF%AB%E9%80%9F%E5%B9%82/"/>
+    
+      <category term="二分" scheme="http://yoursite.com/tags/%E4%BA%8C%E5%88%86/"/>
+    
+  </entry>
   
   <entry>
     <title>linear_equation</title>
@@ -646,84 +679,6 @@ f(3) = 5     //即 123、132、213、321、231
       <category term="STL" scheme="http://yoursite.com/tags/STL/"/>
     
       <category term="low_bound" scheme="http://yoursite.com/tags/low-bound/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>STLPart1</title>
-    <link href="http://yoursite.com/2017/02/19/STLPart1/"/>
-    <id>http://yoursite.com/2017/02/19/STLPart1/</id>
-    <published>2017-02-19T07:15:41.000Z</published>
-    <updated>2017-02-18T15:57:48.000Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="stringstream及其用法"><a href="#stringstream及其用法" class="headerlink" title="stringstream及其用法"></a>stringstream及其用法</h2><blockquote>
-<p>包含在头文件 sstream 中</p>
-</blockquote>
-<ol>
-<li><p>声明stringstream</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">stringstream</span> ss;</div></pre></td></tr></table></figure>
-</li>
-<li><p>给stringstream对象赋值</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//可以在定义时赋值</span></div><div class="line"><span class="built_in">string</span> s;</div><div class="line"><span class="built_in">cin</span> &gt;&gt; s;</div><div class="line"><span class="function">stirngstream <span class="title">ss</span><span class="params">(s)</span></span>;</div><div class="line"><span class="comment">//利用stringstream::str()进行赋值</span></div><div class="line"><span class="built_in">stringstream</span> ss;</div><div class="line">ss.str(<span class="string">"hello stringstream"</span>);</div><div class="line"><span class="comment">//利用流</span></div><div class="line"><span class="built_in">string</span> s;</div><div class="line"><span class="built_in">stringstream</span> ss;</div><div class="line"><span class="built_in">cin</span> &gt;&gt; s;</div><div class="line">ss &lt;&lt;　ｓ;</div></pre></td></tr></table></figure>
-</li>
-<li><p>stringstream的清空</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">stringstream ss;</div><div class="line">ss.str(&quot;&quot;);//right</div><div class="line">ss.clear; //error</div></pre></td></tr></table></figure>
-</li>
-</ol>
-<h2 id="std-lower-bound-和std-lower-bound"><a href="#std-lower-bound-和std-lower-bound" class="headerlink" title="std::lower_bound()和std::lower_bound()"></a>std::lower_bound()和std::lower_bound()</h2><blockquote>
-<p>ForwardIter lower_bound(ForwardIter first, ForwardIter last,const _Tp&amp; val)算法返回一个非递减序列[first, last)中的第一个<strong>大于等于</strong>值val的位置。<br>ForwardIter upper_bound(ForwardIter first, ForwardIter last, const _Tp&amp; val)算法返回一个非递减序列[first, last)中第一个<strong>大于</strong>val的位置。</p>
-</blockquote>
-<table>
-<thead>
-<tr>
-<th>1</th>
-<th>2</th>
-<th>2</th>
-<th>3</th>
-<th>4</th>
-<th>4</th>
-<th>4</th>
-<th>5</th>
-<th>6</th>
-<th>7</th>
-<th>9</th>
-<th>9</th>
-<th>10</th>
-<th>&nbsp;</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>first</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>lower_bound(first, last, 4)</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>upper_bound(first, last, 4)</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>last</td>
-</tr>
-</tbody>
-</table>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//查找相应的值的位置</span></div><div class="line"><span class="keyword">int</span> loc = lower_bound(first, last, <span class="number">4</span>) - first;</div></pre></td></tr></table></figure>
-<h2 id="不定长数组：-vector"><a href="#不定长数组：-vector" class="headerlink" title="不定长数组： vector()"></a>不定长数组： vector()</h2><p>若a是一个vector，可以用a.size( )读取它的大小，a.resize( )改变大小，a.push_back( )向尾部添加元素，a.pop_back( )删除最后一个元素</p>
-<h2 id="set-用法"><a href="#set-用法" class="headerlink" title="set()用法"></a>set()用法</h2>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;stringstream及其用法&quot;&gt;&lt;a href=&quot;#stringstream及其用法&quot; class=&quot;headerlink&quot; title=&quot;stringstream及其用法&quot;&gt;&lt;/a&gt;stringstream及其用法&lt;/h2&gt;&lt;blockquote&gt;
-&lt;p&gt;包
-    
-    </summary>
-    
-      <category term="CPP" scheme="http://yoursite.com/categories/CPP/"/>
-    
     
   </entry>
   

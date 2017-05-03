@@ -258,6 +258,142 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/21/printf和scanf的一些用法/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="Zhao70">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/uploads/avatar.png">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="Zhao70's Blog">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="Zhao70's Blog" src="">
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/03/21/printf和scanf的一些用法/" itemprop="url">
+                  printf和scanf的一些用法
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-03-21T19:50:25+08:00">
+                2017-03-21
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="printf-函数"><a href="#printf-函数" class="headerlink" title="printf()函数"></a>printf()函数</h2><blockquote>
+<p>%%打印一个百分号<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">printf</span>(<span class="string">"%%\n"</span>);</div><div class="line">\\输出结果</div><div class="line">\\%</div></pre></td></tr></table></figure></p>
+</blockquote>
+<h2 id="printf-的转换说明修饰符"><a href="#printf-的转换说明修饰符" class="headerlink" title="printf()的转换说明修饰符"></a>printf()的转换说明修饰符</h2><h3 id="数字"><a href="#数字" class="headerlink" title=".数字"></a>.数字</h3><p>%5.2f打印一个浮点数， 字段宽度为5， 其中小数点后有两位<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">double</span> per = <span class="number">4.23</span>;</div><div class="line"><span class="built_in">printf</span>(<span class="string">"%5.2f\n"</span>, per);</div></pre></td></tr></table></figure></p>
+<h3 id=""><a href="#" class="headerlink" title="-"></a>-</h3><p>待打印项向左对齐<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">printf</span>(<span class="string">"%-10d"</span>, val);</div></pre></td></tr></table></figure></p>
+<h3 id="-1"><a href="#-1" class="headerlink" title="+"></a>+</h3><p>若符号值为正， 则在值前面显示加号; 若为负，则在值前面显示减号<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">    <span class="built_in">printf</span>(<span class="string">"%+5.2f\n"</span>, per);</div><div class="line">    <span class="built_in">printf</span>(<span class="string">"%+5.2f\n"</span>, <span class="number">-1</span> * per);</div><div class="line">\\output</div><div class="line">\\+<span class="number">4.23</span></div><div class="line">\\<span class="number">-4.23</span></div></pre></td></tr></table></figure></p>
+<h3 id="空格"><a href="#空格" class="headerlink" title="空格"></a>空格</h3><p>若符号值为正，则显示前导空格; 若为负，则在值前面显示减号<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">    <span class="built_in">printf</span>(<span class="string">"% 5.2f\n"</span>, per);</div><div class="line">    <span class="built_in">printf</span>(<span class="string">"% 5.2f\n"</span>, <span class="number">-1</span> * per);</div><div class="line">\\output</div><div class="line">\\ <span class="number">4.23</span></div><div class="line">\\<span class="number">-4.23</span></div></pre></td></tr></table></figure></p>
+<h2 id="printf-的返回值"><a href="#printf-的返回值" class="headerlink" title="printf()的返回值"></a>printf()的返回值</h2><blockquote>
+<p>printf()的返回值为打印字符的个数<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">    <span class="keyword">int</span> num = <span class="built_in">printf</span>(<span class="string">"Hello World\n"</span>);</div><div class="line">    <span class="built_in">printf</span>(<span class="string">"%d\n"</span>, num);</div><div class="line">\\output</div><div class="line">\\<span class="number">12</span></div></pre></td></tr></table></figure></p>
+</blockquote>
+<h2 id="scanf-的返回值"><a href="#scanf-的返回值" class="headerlink" title="scanf()的返回值"></a>scanf()的返回值</h2><blockquote>
+<p>scanf()函数返回成功读取的项数</p>
+</blockquote>
+<h2 id="printf-和scanf-的-修饰符"><a href="#printf-和scanf-的-修饰符" class="headerlink" title="printf()和scanf()的*修饰符"></a>printf()和scanf()的*修饰符</h2><h3 id="printf-中的"><a href="#printf-中的" class="headerlink" title="printf()中的*"></a>printf()中的*</h3><blockquote>
+<p>用 * 修饰符代替字符宽度</p>
+</blockquote>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">double</span> per = <span class="number">4.23</span>;</div><div class="line">   <span class="keyword">int</span> width = <span class="number">5</span>;</div><div class="line">   <span class="keyword">int</span> percent = <span class="number">2</span>;</div><div class="line">   <span class="built_in">printf</span>(<span class="string">"%*.*f\n"</span>, width, percent, per);</div></pre></td></tr></table></figure>
+<h3 id="scanf-中的"><a href="#scanf-中的" class="headerlink" title="scanf()中的*"></a>scanf()中的*</h3><blockquote>
+<p>将 * 放在% 和 转换字符之间会使得scanf()跳过相应的输入项</p>
+</blockquote>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">    <span class="built_in">scanf</span>(<span class="string">"%*d%*d%d"</span>, &amp;val);</div><div class="line">    <span class="built_in">printf</span>(<span class="string">"%d\n"</span>, val);</div><div class="line">\\input</div><div class="line">\\<span class="number">4</span> <span class="number">5</span> <span class="number">6</span></div><div class="line">\\output</div><div class="line">\\<span class="number">6</span></div></pre></td></tr></table></figure>
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
   <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/19/开学一个月总结/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1481,197 +1617,6 @@ f(3) = 5     //即 123、132、213、321、231
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/02/19/STLPart1/">
-
-  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
-    <meta itemprop="name" content="Zhao70">
-    <meta itemprop="description" content="">
-    <meta itemprop="image" content="/uploads/avatar.png">
-  </span>
-
-  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="Zhao70's Blog">
-    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
-      <img style="display:none;" itemprop="url image" alt="Zhao70's Blog" src="">
-    </span>
-  </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/02/19/STLPart1/" itemprop="url">
-                  STLPart1
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-02-19T15:15:41+08:00">
-                2017-02-19
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-              <span class="post-meta-divider">|</span>
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/CPP/" itemprop="url" rel="index">
-                    <span itemprop="name">CPP</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-
-          
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="stringstream及其用法"><a href="#stringstream及其用法" class="headerlink" title="stringstream及其用法"></a>stringstream及其用法</h2><blockquote>
-<p>包含在头文件 sstream 中</p>
-</blockquote>
-<ol>
-<li><p>声明stringstream</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">stringstream</span> ss;</div></pre></td></tr></table></figure>
-</li>
-<li><p>给stringstream对象赋值</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//可以在定义时赋值</span></div><div class="line"><span class="built_in">string</span> s;</div><div class="line"><span class="built_in">cin</span> &gt;&gt; s;</div><div class="line"><span class="function">stirngstream <span class="title">ss</span><span class="params">(s)</span></span>;</div><div class="line"><span class="comment">//利用stringstream::str()进行赋值</span></div><div class="line"><span class="built_in">stringstream</span> ss;</div><div class="line">ss.str(<span class="string">"hello stringstream"</span>);</div><div class="line"><span class="comment">//利用流</span></div><div class="line"><span class="built_in">string</span> s;</div><div class="line"><span class="built_in">stringstream</span> ss;</div><div class="line"><span class="built_in">cin</span> &gt;&gt; s;</div><div class="line">ss &lt;&lt;　ｓ;</div></pre></td></tr></table></figure>
-</li>
-<li><p>stringstream的清空</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">stringstream ss;</div><div class="line">ss.str(&quot;&quot;);//right</div><div class="line">ss.clear; //error</div></pre></td></tr></table></figure>
-</li>
-</ol>
-<h2 id="std-lower-bound-和std-lower-bound"><a href="#std-lower-bound-和std-lower-bound" class="headerlink" title="std::lower_bound()和std::lower_bound()"></a>std::lower_bound()和std::lower_bound()</h2><blockquote>
-<p>ForwardIter lower_bound(ForwardIter first, ForwardIter last,const _Tp&amp; val)算法返回一个非递减序列[first, last)中的第一个<strong>大于等于</strong>值val的位置。<br>ForwardIter upper_bound(ForwardIter first, ForwardIter last, const _Tp&amp; val)算法返回一个非递减序列[first, last)中第一个<strong>大于</strong>val的位置。</p>
-</blockquote>
-<table>
-<thead>
-<tr>
-<th>1</th>
-<th>2</th>
-<th>2</th>
-<th>3</th>
-<th>4</th>
-<th>4</th>
-<th>4</th>
-<th>5</th>
-<th>6</th>
-<th>7</th>
-<th>9</th>
-<th>9</th>
-<th>10</th>
-<th>&nbsp;</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>first</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>lower_bound(first, last, 4)</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>upper_bound(first, last, 4)</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>last</td>
-</tr>
-</tbody>
-</table>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//查找相应的值的位置</span></div><div class="line"><span class="keyword">int</span> loc = lower_bound(first, last, <span class="number">4</span>) - first;</div></pre></td></tr></table></figure>
-<h2 id="不定长数组：-vector"><a href="#不定长数组：-vector" class="headerlink" title="不定长数组： vector()"></a>不定长数组： vector()</h2><p>若a是一个vector，可以用a.size( )读取它的大小，a.resize( )改变大小，a.push_back( )向尾部添加元素，a.pop_back( )删除最后一个元素</p>
-<h2 id="set-用法"><a href="#set-用法" class="headerlink" title="set()用法"></a>set()用法</h2>
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -1717,7 +1662,7 @@ f(3) = 5     //即 123、132、213、321、231
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">36</span>
+              <span class="site-state-item-count">37</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -1734,7 +1679,7 @@ f(3) = 5     //即 123、132、213、321、231
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">27</span>
+                <span class="site-state-item-count">29</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>

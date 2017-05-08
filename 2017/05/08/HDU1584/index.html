@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="BFS,POJ," />
+  <meta name="keywords" content="DFS,好题,剪枝," />
 
 
 
@@ -86,37 +86,22 @@
 
 
 
-<meta name="description" content="3D BFS
-题目描述POJ2551 Dungeon Master感受：
-
-比图上的BFS多了一个维度， 多考虑一下就可以了， 就是代码量有点宏大
-ACM是多组输入输出， 一定记得清空 isVisit 之类具有标记和存储功能的数组!!!!!
-
-
-我的代码: github">
+<meta name="description" content="题目大意给定值为1到10的纸牌的顺序，每张牌只能放在大一的纸牌上，每次移动的代价为两张牌的差值的绝对值， 求最小代价。
+题目思路在不改变数组排列顺序的前提下生成全排列的题，当然还要带上剪枝和关于回溯的判断， 真的是考察dfs的好题。
+代码123456789101112131415161718192021222324252627282930313233343536373839404142434445">
 <meta property="og:type" content="article">
-<meta property="og:title" content="POJ2551 Dungeon Master">
-<meta property="og:url" content="http://yoursite.com/2016/11/24/POJ-2551-BFS/index.html">
+<meta property="og:title" content="HDU1584">
+<meta property="og:url" content="http://yoursite.com/2017/05/08/HDU1584/index.html">
 <meta property="og:site_name" content="Zhao70's Blog">
-<meta property="og:description" content="3D BFS
-题目描述POJ2551 Dungeon Master感受：
-
-比图上的BFS多了一个维度， 多考虑一下就可以了， 就是代码量有点宏大
-ACM是多组输入输出， 一定记得清空 isVisit 之类具有标记和存储功能的数组!!!!!
-
-
-我的代码: github">
-<meta property="og:updated_time" content="2016-11-24T06:21:57.000Z">
+<meta property="og:description" content="题目大意给定值为1到10的纸牌的顺序，每张牌只能放在大一的纸牌上，每次移动的代价为两张牌的差值的绝对值， 求最小代价。
+题目思路在不改变数组排列顺序的前提下生成全排列的题，当然还要带上剪枝和关于回溯的判断， 真的是考察dfs的好题。
+代码123456789101112131415161718192021222324252627282930313233343536373839404142434445">
+<meta property="og:updated_time" content="2017-05-08T13:08:21.125Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="POJ2551 Dungeon Master">
-<meta name="twitter:description" content="3D BFS
-题目描述POJ2551 Dungeon Master感受：
-
-比图上的BFS多了一个维度， 多考虑一下就可以了， 就是代码量有点宏大
-ACM是多组输入输出， 一定记得清空 isVisit 之类具有标记和存储功能的数组!!!!!
-
-
-我的代码: github">
+<meta name="twitter:title" content="HDU1584">
+<meta name="twitter:description" content="题目大意给定值为1到10的纸牌的顺序，每张牌只能放在大一的纸牌上，每次移动的代价为两张牌的差值的绝对值， 求最小代价。
+题目思路在不改变数组排列顺序的前提下生成全排列的题，当然还要带上剪枝和关于回溯的判断， 真的是考察dfs的好题。
+代码123456789101112131415161718192021222324252627282930313233343536373839404142434445">
 
 
 
@@ -144,13 +129,13 @@ ACM是多组输入输出， 一定记得清空 isVisit 之类具有标记和存�
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2016/11/24/POJ-2551-BFS/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/05/08/HDU1584/"/>
 
 
 
 
 
-  <title> POJ2551 Dungeon Master | Zhao70's Blog </title>
+  <title> HDU1584 | Zhao70's Blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -281,7 +266,7 @@ ACM是多组输入输出， 一定记得清空 isVisit 之类具有标记和存�
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/11/24/POJ-2551-BFS/">
+  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/05/08/HDU1584/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <meta itemprop="name" content="Zhao70">
@@ -305,7 +290,7 @@ ACM是多组输入输出， 一定记得清空 isVisit 之类具有标记和存�
             
             
               
-                POJ2551 Dungeon Master
+                HDU1584
               
             
           </h1>
@@ -318,8 +303,8 @@ ACM是多组输入输出， 一定记得清空 isVisit 之类具有标记和存�
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-11-24T14:07:54+08:00">
-                2016-11-24
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-05-08T20:27:20+08:00">
+                2017-05-08
               </time>
             
 
@@ -372,14 +357,10 @@ ACM是多组输入输出， 一定记得清空 isVisit 之类具有标记和存�
       
 
       
-        <h2 id="3D-BFS"><a href="#3D-BFS" class="headerlink" title="3D BFS"></a>3D BFS</h2><blockquote>
-<p>题目描述<br><a href="http://poj.org/problem?id=2251" target="_blank" rel="external">POJ2551 Dungeon Master</a><br>感受：</p>
-<ol>
-<li>比图上的BFS多了一个维度， 多考虑一下就可以了， 就是代码量有点宏大</li>
-<li>ACM是<em>多组输入输出</em>， <strong>一定记得清空 isVisit </strong>之类具有标记和存储功能的数组!!!!!</li>
-</ol>
-</blockquote>
-<p>我的代码: <a href="https://github.com/ZhaoQiling/Algorithm/blob/master/POJ/2251.cpp" target="_blank" rel="external">github</a></p>
+        <h2 id="题目大意"><a href="#题目大意" class="headerlink" title="题目大意"></a>题目大意</h2><p>给定<strong>值为1到10</strong>的纸牌的顺序，每张牌只能放在<strong>大一</strong>的纸牌上，每次移动的<strong>代价</strong>为<strong>两张牌的差值的绝对值</strong>， 求最小代价。</p>
+<h2 id="题目思路"><a href="#题目思路" class="headerlink" title="题目思路"></a>题目思路</h2><p>在<strong>不改变</strong>数组排列顺序的前提下<strong>生成全排列</strong>的题，当然还要带上<strong>剪枝</strong>和<strong>关于回溯的判断</strong>， 真的是考察dfs的好题。</p>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cmath&gt;</span></span></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"><span class="keyword">int</span> loc[<span class="number">11</span>];</div><div class="line"><span class="keyword">int</span> isUsed[<span class="number">11</span>];</div><div class="line"><span class="keyword">int</span> ans;</div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">dfs</span><span class="params">(<span class="keyword">int</span> step, <span class="keyword">int</span> temp)</span></span></div><div class="line">&#123;</div><div class="line">    <span class="comment">//剪枝. 无论何时, 只要当前步数大于已知的ans(最大值), 就进行回溯</span></div><div class="line">    <span class="keyword">if</span>(ans &lt; temp)</div><div class="line">        <span class="keyword">return</span>;</div><div class="line">    <span class="comment">//由于值为10的牌的特殊性, 不需要进行移动, 所以步数为9步即可得出结论</span></div><div class="line">    <span class="keyword">if</span>(step == <span class="number">9</span>)</div><div class="line">    &#123;</div><div class="line">        <span class="keyword">if</span>(ans &gt;= temp)</div><div class="line">            ans = temp;</div><div class="line">        <span class="keyword">return</span>;</div><div class="line">    &#125;</div><div class="line">    <span class="comment">//选择进行九张牌的移动, 移动九次</span></div><div class="line">    <span class="comment">//在第几层递归, 此循环就选择i当作, 该层的一个子树的根节点</span></div><div class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; <span class="number">10</span>; i++)</div><div class="line">    &#123;</div><div class="line">        <span class="keyword">if</span>(isUsed[i])</div><div class="line">            <span class="keyword">continue</span>;</div><div class="line">        <span class="comment">//选择移动到第几张牌的下面</span></div><div class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j = i + <span class="number">1</span>; j &lt;= <span class="number">10</span>; j++)</div><div class="line">        &#123;</div><div class="line">            <span class="comment">//比如要移1了，如果2,3,4,5都已经被移动过了 那么这几张牌必定叠放在6的下面，所以要移到6的位置</span></div><div class="line">            <span class="keyword">if</span>(isUsed[j])</div><div class="line">                <span class="keyword">continue</span>;</div><div class="line">            isUsed[i] = <span class="literal">true</span>;</div><div class="line">            dfs(step + <span class="number">1</span>, temp + <span class="built_in">abs</span>(loc[i] - loc[j]));</div><div class="line">            isUsed[i] = <span class="literal">false</span>;</div><div class="line">            <span class="comment">//注意不要再这个地方回溯 如果回溯了 就像是又一个全排列 而且牌得移动不合理，比如2移到6了，结果回溯就直接跳过3~6到了7的下面(比如: temp的值比ans更大, 但说不定2 -&gt; 6的移动是合法的, 但之后存在不合法的移动)</span></div><div class="line">            <span class="keyword">break</span>;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></div><div class="line">&#123;</div><div class="line">    <span class="keyword">int</span> nTest;</div><div class="line">    <span class="built_in">cin</span> &gt;&gt; nTest;</div><div class="line">    <span class="keyword">while</span>(nTest--)</div><div class="line">    &#123;</div><div class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= <span class="number">10</span>; i++)</div><div class="line">        &#123;</div><div class="line">            <span class="keyword">int</span> val;</div><div class="line">            <span class="built_in">cin</span> &gt;&gt; val;</div><div class="line">            <span class="comment">//怎么存储数据也是有讲究的</span></div><div class="line">            loc[val] = i;</div><div class="line">            isUsed[i] = <span class="literal">false</span>;</div><div class="line">        &#125;</div><div class="line">        ans = <span class="number">9999999</span>;</div><div class="line">        dfs(<span class="number">0</span>, <span class="number">0</span>);</div><div class="line">        <span class="built_in">cout</span> &lt;&lt; ans &lt;&lt; <span class="built_in">endl</span>;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h2><p><a href="http://blog.csdn.net/flynn_curry/article/details/50775604" target="_blank" rel="external">hdu1584 蜘蛛牌（经典dfs）</a><br><a href="http://www.cnblogs.com/sook/archive/2011/03/27/1996775.html" target="_blank" rel="external">hdu 1584 蜘蛛牌</a></p>
 
       
     </div>
@@ -403,9 +384,11 @@ ACM是多组输入输出， 一定记得清空 isVisit 之类具有标记和存�
       
         <div class="post-tags">
           
-            <a href="/tags/BFS/" rel="tag"># BFS</a>
+            <a href="/tags/DFS/" rel="tag"># DFS</a>
           
-            <a href="/tags/POJ/" rel="tag"># POJ</a>
+            <a href="/tags/好题/" rel="tag"># 好题</a>
+          
+            <a href="/tags/剪枝/" rel="tag"># 剪枝</a>
           
         </div>
       
@@ -414,8 +397,8 @@ ACM是多组输入输出， 一定记得清空 isVisit 之类具有标记和存�
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/11/23/adjacencyListByArray/" rel="next" title="邻接表的数组实现">
-                <i class="fa fa-chevron-left"></i> 邻接表的数组实现
+              <a href="/2017/05/03/HDU1097-A-hard-puzzle/" rel="next" title="HDU1097">
+                <i class="fa fa-chevron-left"></i> HDU1097
               </a>
             
           </div>
@@ -423,10 +406,6 @@ ACM是多组输入输出， 一定记得清空 isVisit 之类具有标记和存�
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/11/27/POJ326868—-Dijkstra/" rel="prev" title="POJ3268 Silver Cow Party">
-                POJ3268 Silver Cow Party <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -553,7 +532,7 @@ ACM是多组输入输出， 一定记得清空 isVisit 之类具有标记和存�
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#3D-BFS"><span class="nav-number">1.</span> <span class="nav-text">3D BFS</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#题目大意"><span class="nav-number">1.</span> <span class="nav-text">题目大意</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#题目思路"><span class="nav-number">2.</span> <span class="nav-text">题目思路</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#代码"><span class="nav-number">3.</span> <span class="nav-text">代码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考链接"><span class="nav-number">4.</span> <span class="nav-text">参考链接</span></a></li></ol></div>
             
 
           </div>

@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-05-08T13:08:21.125Z</updated>
+  <updated>2017-07-21T12:10:18.560Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -14,6 +14,29 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>秦九韶算法</title>
+    <link href="http://yoursite.com/2017/07/21/%E7%A7%A6%E4%B9%9D%E9%9F%B6%E7%AE%97%E6%B3%95/"/>
+    <id>http://yoursite.com/2017/07/21/秦九韶算法/</id>
+    <published>2017-07-21T11:39:09.000Z</published>
+    <updated>2017-07-21T12:10:18.560Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>当处理一个多项式在 x = x0 处的值的时候, 不断地对求 x^n 是低效的。 尤其是当n很大的时候, pow(x, n)在多项式系数的循环当中将整个算法的复杂度变为O(n^2). </p>
+<h2 id="公式"><a href="#公式" class="headerlink" title="公式"></a>公式</h2><p><img src="\img\Qinjiuzhao.png" alt="&quot;秦九韶算法&quot;"></p>
+<h2 id="程序实现"><a href="#程序实现" class="headerlink" title="程序实现"></a>程序实现</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;vector&gt;</span></span></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></div><div class="line">&#123;</div><div class="line">    <span class="keyword">int</span> n;</div><div class="line">    <span class="built_in">cin</span> &gt;&gt; n;</div><div class="line">    <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; arr(n + <span class="number">1</span>);</div><div class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt;= n; ++i)</div><div class="line">    &#123;</div><div class="line">        <span class="built_in">cin</span> &gt;&gt; arr[i];</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">int</span> x;</div><div class="line">    <span class="built_in">cin</span> &gt;&gt; x;</div><div class="line">    <span class="keyword">int</span> ans = arr[n];</div><div class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = n - <span class="number">1</span>; i &gt;= <span class="number">0</span>; --i)</div><div class="line">    &#123;</div><div class="line">        ans = ans * x + arr[i];</div><div class="line">    &#125;</div><div class="line">    <span class="built_in">cout</span> &lt;&lt; ans &lt;&lt; <span class="built_in">endl</span>;</div><div class="line">    <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> java.util.ArrayList;</div><div class="line"><span class="keyword">import</span> java.util.Scanner;</div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">QinJiuZhaoAlgorithm</span> </span>&#123;</div><div class="line"></div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</div><div class="line">		<span class="comment">// TODO Auto-generated method stub</span></div><div class="line">		Scanner in = <span class="keyword">new</span> Scanner(System.in);</div><div class="line">		ArrayList&lt;Integer&gt; arr = <span class="keyword">new</span> ArrayList&lt;Integer&gt;();</div><div class="line">		<span class="keyword">int</span> nNum = in.nextInt();</div><div class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt;= nNum; i++)</div><div class="line">		&#123;</div><div class="line">			arr.add(in.nextInt());</div><div class="line">		&#125;</div><div class="line">		<span class="keyword">int</span> x = in.nextInt();</div><div class="line">		<span class="keyword">int</span> ans = arr.get(arr.size() - <span class="number">1</span>);</div><div class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i = arr.size() - <span class="number">2</span>; i &gt;= <span class="number">0</span>; --i)</div><div class="line">		&#123;</div><div class="line">			ans = arr.get(i) + x * ans;</div><div class="line">		&#125;</div><div class="line">		System.out.println(ans);</div><div class="line">	&#125;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;简介&quot;&gt;&lt;a href=&quot;#简介&quot; class=&quot;headerlink&quot; title=&quot;简介&quot;&gt;&lt;/a&gt;简介&lt;/h2&gt;&lt;p&gt;当处理一个多项式在 x = x0 处的值的时候, 不断地对求 x^n 是低效的。 尤其是当n很大的时候, pow(x, n)在多项式系数的循
+    
+    </summary>
+    
+      <category term="algorithm" scheme="http://yoursite.com/categories/algorithm/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>HDU1584</title>
@@ -649,32 +672,6 @@ f(3) = 5     //即 123、132、213、321、231
     </summary>
     
       <category term="algorithm" scheme="http://yoursite.com/categories/algorithm/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>GCD&amp;LCM</title>
-    <link href="http://yoursite.com/2017/03/09/GCD-LCM/"/>
-    <id>http://yoursite.com/2017/03/09/GCD-LCM/</id>
-    <published>2017-03-09T14:10:59.000Z</published>
-    <updated>2017-03-11T00:59:45.145Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="GCD最大公约数"><a href="#GCD最大公约数" class="headerlink" title="GCD最大公约数"></a>GCD最大公约数</h2><h3 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h3><blockquote>
-<p>最大公因数，也称最大公约数、最大公因子，指两个或多个整数共有约数中最大的一个。</p>
-</blockquote>
-<h3 id="求法"><a href="#求法" class="headerlink" title="求法"></a>求法</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">unsigned</span> <span class="keyword">int</span> <span class="title">gcd</span><span class="params">(<span class="keyword">unsigned</span> <span class="keyword">int</span> a,<span class="keyword">unsigned</span> <span class="keyword">int</span> b)</span></span></div><div class="line">&#123;</div><div class="line">    <span class="keyword">while</span>(b^=a^=b^=a%=b);<span class="comment">//注意此处分号</span></div><div class="line">    <span class="keyword">return</span> a;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h2 id="LCM最小公倍数"><a href="#LCM最小公倍数" class="headerlink" title="LCM最小公倍数"></a>LCM最小公倍数</h2><h3 id="概念-1"><a href="#概念-1" class="headerlink" title="概念"></a>概念</h3><blockquote>
-<p>几个数共有的倍数叫做这几个数的公倍数，其中除0以外最小的一个公倍数，叫做这几个数的最小公倍数。</p>
-</blockquote>
-<h3 id="求法-1"><a href="#求法-1" class="headerlink" title="求法"></a>求法</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">LCM</span><span class="params">(<span class="keyword">int</span> a,<span class="keyword">int</span> b)</span></span></div><div class="line">&#123;</div><div class="line">	<span class="keyword">int</span> temp_lcm;</div><div class="line">	 <span class="comment">//最小公倍数等于两数之积除以最大公约数</span></div><div class="line">	temp_lcm = a * b /GCD(a,b);</div><div class="line">	<span class="keyword">return</span> temp_lcm;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;GCD最大公约数&quot;&gt;&lt;a href=&quot;#GCD最大公约数&quot; class=&quot;headerlink&quot; title=&quot;GCD最大公约数&quot;&gt;&lt;/a&gt;GCD最大公约数&lt;/h2&gt;&lt;h3 id=&quot;概念&quot;&gt;&lt;a href=&quot;#概念&quot; class=&quot;headerlink&quot; titl
-    
-    </summary>
     
     
   </entry>

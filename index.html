@@ -309,6 +309,24 @@
           </span>
 
           
+            <span class="post-category" >
+              <span class="post-meta-divider">|</span>
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/algorithm/" itemprop="url" rel="index">
+                    <span itemprop="name">algorithm</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
 
           
             
@@ -336,7 +354,8 @@
       
         
           
-            
+            <h2 id="中缀表达式转后缀表达式"><a href="#中缀表达式转后缀表达式" class="headerlink" title="中缀表达式转后缀表达式"></a>中缀表达式转后缀表达式</h2><h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><p>将中缀表达式读入字符串, 不断读入字符。<br>若字符为<strong>数字</strong>, 则<em>直接打印</em>。<br>若字符为<strong>运算符</strong>, 若栈顶元素运算的优先级高于读入的运算符的优先级， 则弹出栈顶元素， 压栈读入的运算符。<br>需要特殊说明的是<strong>括号</strong>的优先级, <strong>左括号</strong>在<strong>压栈之前</strong>的优先级最高(括号的读取不能使任何之前的运算符进行出栈操作, 即所有操作都要等待括号的运算完成)， <strong>在栈中</strong>优先级最低（在括号中, 括号的存在不能影响任何括号内的运算）。</p>
+<h2 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> java.util.HashMap;</div><div class="line"><span class="keyword">import</span> java.util.Scanner;</div><div class="line"><span class="keyword">import</span> java.util.Stack;</div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">infixToSuffixExpresion</span> </span>&#123;</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span></div><div class="line">	&#123;</div><div class="line">		<span class="comment">// (的优先级在栈中最低， 但没必要另建一个表</span></div><div class="line">		HashMap&lt;Character, Integer&gt; priorty = <span class="keyword">new</span> HashMap&lt;Character, Integer&gt;();</div><div class="line">		priorty.put(<span class="string">'('</span>, <span class="number">0</span>);</div><div class="line">		priorty.put(<span class="string">'+'</span>, <span class="number">1</span>); </div><div class="line">		priorty.put(<span class="string">'-'</span>, <span class="number">1</span>); </div><div class="line">		priorty.put(<span class="string">'*'</span>, <span class="number">2</span>); </div><div class="line">		priorty.put(<span class="string">'/'</span>, <span class="number">2</span>); </div><div class="line">		Scanner in = <span class="keyword">new</span> Scanner(System.in);</div><div class="line">		String infix = in.next();</div><div class="line">		StringBuilder ans = <span class="keyword">new</span> StringBuilder();</div><div class="line">		Stack&lt;Character&gt; oper = <span class="keyword">new</span> Stack&lt;Character&gt;();</div><div class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; infix.length(); ++i)</div><div class="line">		&#123;</div><div class="line">			Character c = infix.charAt(i);</div><div class="line">			<span class="keyword">if</span>(c &gt;= <span class="string">'0'</span> &amp;&amp; c &lt;= <span class="string">'9'</span>)</div><div class="line">			&#123;</div><div class="line">				ans.append(c);</div><div class="line">				<span class="keyword">continue</span>;</div><div class="line">			&#125;</div><div class="line">			<span class="keyword">if</span>(<span class="keyword">true</span> == oper.isEmpty())</div><div class="line">			&#123;</div><div class="line">				oper.push(c);</div><div class="line">				<span class="keyword">continue</span>;</div><div class="line">			&#125;</div><div class="line">			</div><div class="line">			<span class="keyword">if</span>(c == <span class="string">'('</span>)</div><div class="line">			&#123;</div><div class="line">				oper.push(c);</div><div class="line">			&#125;</div><div class="line">			<span class="keyword">else</span> <span class="keyword">if</span>(<span class="string">')'</span> == c)</div><div class="line">			&#123;</div><div class="line">				<span class="keyword">while</span>(oper.peek() != <span class="string">'('</span>)</div><div class="line">				&#123;</div><div class="line">					ans.append(oper.peek());</div><div class="line">					oper.pop();</div><div class="line">				&#125;</div><div class="line">				oper.pop();</div><div class="line">			&#125;</div><div class="line">			<span class="keyword">else</span> <span class="keyword">if</span>(priorty.get(oper.peek()) &gt;= priorty.get(c))</div><div class="line">			&#123;</div><div class="line">				ans.append(oper.peek());</div><div class="line">				oper.pop();</div><div class="line">				oper.push(c);</div><div class="line">			&#125;</div><div class="line">			<span class="keyword">else</span> <span class="keyword">if</span>(priorty.get(oper.peek()) &lt; priorty.get(c))</div><div class="line">			&#123;</div><div class="line">				oper.push(c);</div><div class="line">			&#125;</div><div class="line"></div><div class="line">		&#125;</div><div class="line">		<span class="keyword">while</span>(oper.empty() == <span class="keyword">false</span>)</div><div class="line">		&#123;</div><div class="line">			ans.append(oper.peek());</div><div class="line">			oper.pop();</div><div class="line">		&#125;</div><div class="line">		System.out.println(ans);</div><div class="line">		<span class="comment">//System.out.println(oper.toString());</span></div><div class="line">		in.close();</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
           
         
       
@@ -1729,7 +1748,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">32</span>
+                <span class="site-state-item-count">33</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>

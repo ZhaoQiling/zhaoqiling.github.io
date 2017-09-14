@@ -258,6 +258,151 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/16/01package/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="Zhao70">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/uploads/avatar.png">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="Zhao70's Blog">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="Zhao70's Blog" src="">
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/03/16/01package/" itemprop="url">
+                  01package
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-03-16T22:04:45+08:00">
+                2017-03-16
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+              <span class="post-meta-divider">|</span>
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/algorithm/" itemprop="url" rel="index">
+                    <span itemprop="name">algorithm</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>题目链接: <a href="http://poj.org/?id=3624" target="_blank" rel="external">POJ3624</a><br>很经典的01背包问题，不累述了。</p>
+<h2 id="理解"><a href="#理解" class="headerlink" title="理解"></a>理解</h2><p>01背包问题本身代码并不复杂，很难理解的是<strong>状态的转移</strong>，引用Tanky Woo的一句话</p>
+<blockquote>
+<p>首先说下动态规划，动态规划这东西就和递归一样，只能找局部关系，若想全部列出来，是很难的，比如汉诺塔。你可以说先把除最后一层的其他所有层都移动到2，再把最后一层移动到3，最后再把其余的从2移动到3，这是一个直观的关系，但是想列举出来是很难的，也许当层数n=3时还可以模拟下，再大一些就不可能了，所以，诸如递归，动态规划之类的，不能细想，只能找局部关系。</p>
+</blockquote>
+<p>使用01背包问题这类简单的问题来学习动态规划是新手友好的。</p>
+<p>其次，对于01背包进行<strong>一维数组的优化</strong>，以及和<strong>完全背包问题</strong>及其<strong>一维数组优化</strong>的对比， 能够更好的理解<strong>状态</strong>这个概念。</p>
+<h2 id="原始版本"><a href="#原始版本" class="headerlink" title="原始版本"></a>原始版本</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= nItem; i++)</div><div class="line">&#123;</div><div class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">1</span>; j &lt;= nWeight; j++)</div><div class="line">    &#123;</div><div class="line">        <span class="comment">//如果不选一件物品有两种可能：</span></div><div class="line">        <span class="comment">//1. 装不下</span></div><div class="line">        <span class="comment">//2. 不想装</span></div><div class="line">        <span class="keyword">if</span>(j &lt; weight[i])</div><div class="line">            dp[i][j] = dp[i - <span class="number">1</span>][j];</div><div class="line">        <span class="keyword">else</span>&#123;</div><div class="line">            <span class="comment">//注意此处max函数中dp数组无论拿还是不拿都是从[i - 1]的状态转移而来的</span></div><div class="line">            <span class="comment">//[i - 1]保证此处为01背包问题</span></div><div class="line">            <span class="comment">//即保证每个物品只有一个</span></div><div class="line">            dp[i][j] = max(dp[i - <span class="number">1</span>][j], dp[i - <span class="number">1</span>][j - weight[i]] + value[i]);</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="使用一维数据进行优化"><a href="#使用一维数据进行优化" class="headerlink" title="使用一维数据进行优化"></a>使用一维数据进行优化</h2><p>当nItem比较小(例如在1000以内)时，使用二维数组是可以使用的，但当nItem偏大(n为10000)时， 使用二维数组时不可行的， 所以学会使用一维数组是必须的。<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">  <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= nItem; i++)</div><div class="line">  &#123;</div><div class="line"><span class="comment">//此处的j为逆序</span></div><div class="line"><span class="comment">//说明每次计算得出的dp[j]都是从nItem - 1转移(保证每件物品只选一次)而来的</span></div><div class="line"><span class="comment">//完全背包与这个有微小的区别</span></div><div class="line"><span class="comment">//即从nItem转移而来的(每件物品可选任意次)</span></div><div class="line">      <span class="keyword">for</span>(<span class="keyword">int</span> j = nWeight; j &gt;= <span class="number">1</span>; j--)</div><div class="line">      &#123;</div><div class="line">          <span class="keyword">if</span>(weight[i] &gt; j)</div><div class="line">              <span class="keyword">continue</span>;</div><div class="line">          dp[j] = max(dp[j], dp[j - weight[i]] + value[i]);</div><div class="line">      &#125;</div><div class="line">  &#125;</div></pre></td></tr></table></figure></p>
+<h2 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h2><p><a href="http://www.wutianqi.com/?p=539" target="_blank" rel="external">Tanky Woo’s Blog</a><br><a href="https://github.com/tianyicui/pack" target="_blank" rel="external">DD大牛的背包九讲</a><br><a href="http://www.icst.pku.edu.cn/course/cpp/cpp.htm" target="_blank" rel="external">北大动归相关课件</a></p>
+<p>本人文笔略拙，觉得本文晦涩难懂可参考以上大牛的相关文档。</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
   <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/12/next-permutaion-perv-permutation/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1515,148 +1660,6 @@ f(3) = 5     //即 123、132、213、321、231
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/02/11/const关键字及使用/">
-
-  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
-    <meta itemprop="name" content="Zhao70">
-    <meta itemprop="description" content="">
-    <meta itemprop="image" content="/uploads/avatar.png">
-  </span>
-
-  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="Zhao70's Blog">
-    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
-      <img style="display:none;" itemprop="url image" alt="Zhao70's Blog" src="">
-    </span>
-  </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/02/11/const关键字及使用/" itemprop="url">
-                  const关键字及使用
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-02-11T11:26:39+08:00">
-                2017-02-11
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-              <span class="post-meta-divider">|</span>
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/CPP/" itemprop="url" rel="index">
-                    <span itemprop="name">CPP</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-
-          
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="定义常量"><a href="#定义常量" class="headerlink" title="定义常量"></a>定义常量</h2><ul>
-<li>const int MAX_VAL = 23;</li>
-<li>const string SCHOOL_NAME = “QDU”;</li>
-</ul>
-<h2 id="定义常量指针"><a href="#定义常量指针" class="headerlink" title="定义常量指针"></a>定义常量指针</h2><blockquote>
-<p>不可通过常量指针修改其所指向的内容</p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">int n, m;</div><div class="line">const int *p = &amp;n;</div><div class="line">*p = 5;//error</div><div class="line">n = 4; // ok</div><div class="line">p = &amp;m; //ok</div><div class="line">//常量指针可通过强制类型转化 转化为非常量指针</div><div class="line">int * p1 = (int *)p;//ok</div></pre></td></tr></table></figure>
-<h2 id="定义常应用"><a href="#定义常应用" class="headerlink" title="定义常应用"></a>定义常应用</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">int</span> n;</div><div class="line"><span class="keyword">const</span> <span class="keyword">int</span> &amp;r = n;</div><div class="line">r = <span class="number">5</span>;</div><div class="line">n = <span class="number">4</span>;</div></pre></td></tr></table></figure>
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -1702,7 +1705,7 @@ f(3) = 5     //即 123、132、213、321、231
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">44</span>
+              <span class="site-state-item-count">45</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -1719,7 +1722,7 @@ f(3) = 5     //即 123、132、213、321、231
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">37</span>
+                <span class="site-state-item-count">38</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>

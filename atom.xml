@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-09-14T00:52:25.522Z</updated>
+  <updated>2017-09-14T03:42:45.675Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -14,6 +14,36 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>POJ1426 Find The Multiple</title>
+    <link href="http://yoursite.com/2017/09/14/POJ1426-Find-The-Multiple/"/>
+    <id>http://yoursite.com/2017/09/14/POJ1426-Find-The-Multiple/</id>
+    <published>2017-09-14T03:24:19.000Z</published>
+    <updated>2017-09-14T03:42:45.675Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="题目大意"><a href="#题目大意" class="headerlink" title="题目大意"></a>题目大意</h2><p>  给定一个数字 n, 求 n 的一个倍数 m. m 的要求是一个只由 0 和 1 构成的十进制数字.</p>
+<h2 id="题目思路"><a href="#题目思路" class="headerlink" title="题目思路"></a>题目思路</h2><p>  对于一个 m 第一位肯定为 1, 剩下的每一位有 0 和 1 两种情况, 如果进行穷举, 数会变得很大. 因此, 需要运用同余模定理, 减少中间数字规模. </p>
+<h2 id="知识点"><a href="#知识点" class="headerlink" title="知识点"></a>知识点</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">（a*b）%n = （a%n *b%n）%n</div><div class="line">（a+b）%n = （a%n +b%n）%n</div></pre></td></tr></table></figure>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstring&gt;</span></span></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"><span class="keyword">const</span> <span class="keyword">int</span> maxV = <span class="number">999999</span>;</div><div class="line"><span class="keyword">int</span> m[maxV];</div><div class="line"><span class="keyword">int</span> rec[maxV];</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</div><div class="line">	<span class="keyword">int</span> val;</div><div class="line">	<span class="keyword">while</span> (<span class="built_in">cin</span> &gt;&gt; val &amp;&amp; val) &#123;</div><div class="line">		<span class="built_in">memset</span>(m, <span class="number">0</span>, <span class="keyword">sizeof</span>(m));</div><div class="line">		m[<span class="number">1</span>] = <span class="number">1</span>;</div><div class="line">		<span class="keyword">int</span> i;</div><div class="line">		<span class="keyword">for</span> (i = <span class="number">2</span>; m[i - <span class="number">1</span>] != <span class="number">0</span>; i++) &#123;</div><div class="line">			m[i] = (m[i / <span class="number">2</span>] * <span class="number">10</span> + i % <span class="number">2</span>) % val;</div><div class="line">		&#125;</div><div class="line"></div><div class="line">		<span class="keyword">int</span> len = <span class="number">0</span>;</div><div class="line">		i--;</div><div class="line"></div><div class="line">		<span class="keyword">while</span> (i) &#123;</div><div class="line">			rec[len++] = i % <span class="number">2</span>;</div><div class="line">			i /= <span class="number">2</span>;</div><div class="line">		&#125;</div><div class="line">        <span class="keyword">while</span>(len)</div><div class="line">            <span class="built_in">cout</span> &lt;&lt; rec[--len];</div><div class="line">		<span class="built_in">cout</span> &lt;&lt; <span class="built_in">endl</span>;</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h2><p><a href="http://blog.csdn.net/lyy289065406/article/details/6647917" target="_blank" rel="external">POJ1426-Find The Multiple</a><br><a href="http://www.cnblogs.com/crazyapple/archive/2013/06/03/3116169.html" target="_blank" rel="external">poj 1426 Find The Multiple搜索BFS的思想+ 同余模定理+二叉树+01哈夫曼编码</a></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;题目大意&quot;&gt;&lt;a href=&quot;#题目大意&quot; class=&quot;headerlink&quot; title=&quot;题目大意&quot;&gt;&lt;/a&gt;题目大意&lt;/h2&gt;&lt;p&gt;  给定一个数字 n, 求 n 的一个倍数 m. m 的要求是一个只由 0 和 1 构成的十进制数字.&lt;/p&gt;
+&lt;h2 id
+    
+    </summary>
+    
+      <category term="Algorithm" scheme="http://yoursite.com/categories/Algorithm/"/>
+    
+    
+      <category term="BFS" scheme="http://yoursite.com/tags/BFS/"/>
+    
+      <category term="同余模定理" scheme="http://yoursite.com/tags/%E5%90%8C%E4%BD%99%E6%A8%A1%E5%AE%9A%E7%90%86/"/>
+    
+  </entry>
   
   <entry>
     <title>POJ3279 Fliptile</title>
@@ -608,39 +638,6 @@
     
     
       <category term="summarize" scheme="http://yoursite.com/tags/summarize/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>01package</title>
-    <link href="http://yoursite.com/2017/03/16/01package/"/>
-    <id>http://yoursite.com/2017/03/16/01package/</id>
-    <published>2017-03-16T14:04:45.000Z</published>
-    <updated>2017-03-16T14:44:44.856Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>题目链接: <a href="http://poj.org/?id=3624" target="_blank" rel="external">POJ3624</a><br>很经典的01背包问题，不累述了。</p>
-<h2 id="理解"><a href="#理解" class="headerlink" title="理解"></a>理解</h2><p>01背包问题本身代码并不复杂，很难理解的是<strong>状态的转移</strong>，引用Tanky Woo的一句话</p>
-<blockquote>
-<p>首先说下动态规划，动态规划这东西就和递归一样，只能找局部关系，若想全部列出来，是很难的，比如汉诺塔。你可以说先把除最后一层的其他所有层都移动到2，再把最后一层移动到3，最后再把其余的从2移动到3，这是一个直观的关系，但是想列举出来是很难的，也许当层数n=3时还可以模拟下，再大一些就不可能了，所以，诸如递归，动态规划之类的，不能细想，只能找局部关系。</p>
-</blockquote>
-<p>使用01背包问题这类简单的问题来学习动态规划是新手友好的。</p>
-<p>其次，对于01背包进行<strong>一维数组的优化</strong>，以及和<strong>完全背包问题</strong>及其<strong>一维数组优化</strong>的对比， 能够更好的理解<strong>状态</strong>这个概念。</p>
-<h2 id="原始版本"><a href="#原始版本" class="headerlink" title="原始版本"></a>原始版本</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= nItem; i++)</div><div class="line">&#123;</div><div class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">1</span>; j &lt;= nWeight; j++)</div><div class="line">    &#123;</div><div class="line">        <span class="comment">//如果不选一件物品有两种可能：</span></div><div class="line">        <span class="comment">//1. 装不下</span></div><div class="line">        <span class="comment">//2. 不想装</span></div><div class="line">        <span class="keyword">if</span>(j &lt; weight[i])</div><div class="line">            dp[i][j] = dp[i - <span class="number">1</span>][j];</div><div class="line">        <span class="keyword">else</span>&#123;</div><div class="line">            <span class="comment">//注意此处max函数中dp数组无论拿还是不拿都是从[i - 1]的状态转移而来的</span></div><div class="line">            <span class="comment">//[i - 1]保证此处为01背包问题</span></div><div class="line">            <span class="comment">//即保证每个物品只有一个</span></div><div class="line">            dp[i][j] = max(dp[i - <span class="number">1</span>][j], dp[i - <span class="number">1</span>][j - weight[i]] + value[i]);</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h2 id="使用一维数据进行优化"><a href="#使用一维数据进行优化" class="headerlink" title="使用一维数据进行优化"></a>使用一维数据进行优化</h2><p>当nItem比较小(例如在1000以内)时，使用二维数组是可以使用的，但当nItem偏大(n为10000)时， 使用二维数组时不可行的， 所以学会使用一维数组是必须的。<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">  <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= nItem; i++)</div><div class="line">  &#123;</div><div class="line"><span class="comment">//此处的j为逆序</span></div><div class="line"><span class="comment">//说明每次计算得出的dp[j]都是从nItem - 1转移(保证每件物品只选一次)而来的</span></div><div class="line"><span class="comment">//完全背包与这个有微小的区别</span></div><div class="line"><span class="comment">//即从nItem转移而来的(每件物品可选任意次)</span></div><div class="line">      <span class="keyword">for</span>(<span class="keyword">int</span> j = nWeight; j &gt;= <span class="number">1</span>; j--)</div><div class="line">      &#123;</div><div class="line">          <span class="keyword">if</span>(weight[i] &gt; j)</div><div class="line">              <span class="keyword">continue</span>;</div><div class="line">          dp[j] = max(dp[j], dp[j - weight[i]] + value[i]);</div><div class="line">      &#125;</div><div class="line">  &#125;</div></pre></td></tr></table></figure></p>
-<h2 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h2><p><a href="http://www.wutianqi.com/?p=539" target="_blank" rel="external">Tanky Woo’s Blog</a><br><a href="https://github.com/tianyicui/pack" target="_blank" rel="external">DD大牛的背包九讲</a><br><a href="http://www.icst.pku.edu.cn/course/cpp/cpp.htm" target="_blank" rel="external">北大动归相关课件</a></p>
-<p>本人文笔略拙，觉得本文晦涩难懂可参考以上大牛的相关文档。</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;题目描述&quot;&gt;&lt;a href=&quot;#题目描述&quot; class=&quot;headerlink&quot; title=&quot;题目描述&quot;&gt;&lt;/a&gt;题目描述&lt;/h2&gt;&lt;p&gt;题目链接: &lt;a href=&quot;http://poj.org/?id=3624&quot; target=&quot;_blank&quot; rel=&quot;e
-    
-    </summary>
-    
-      <category term="algorithm" scheme="http://yoursite.com/categories/algorithm/"/>
-    
-    
-      <category term="DP" scheme="http://yoursite.com/tags/DP/"/>
     
   </entry>
   

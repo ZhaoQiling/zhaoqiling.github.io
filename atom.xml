@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-07-21T13:22:02.837Z</updated>
+  <updated>2017-09-14T00:35:36.646Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -14,6 +14,20 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>I AM BACK</title>
+    <link href="http://yoursite.com/2017/09/14/I-AM-BACK/"/>
+    <id>http://yoursite.com/2017/09/14/I-AM-BACK/</id>
+    <published>2017-09-14T00:35:36.000Z</published>
+    <updated>2017-09-14T00:35:36.646Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>Pop Sequence</title>
@@ -623,42 +637,6 @@
       &lt;h2 id=&quot;函数声明&quot;&gt;&lt;a href=&quot;#函数声明&quot; class=&quot;headerlink&quot; title=&quot;函数声明&quot;&gt;&lt;/a&gt;函数声明&lt;/h2&gt;&lt;figure class=&quot;highlight c++&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;
     
     </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>CatalanNumber</title>
-    <link href="http://yoursite.com/2017/03/12/CatalanNumber/"/>
-    <id>http://yoursite.com/2017/03/12/CatalanNumber/</id>
-    <published>2017-03-12T03:00:10.000Z</published>
-    <updated>2017-03-12T13:24:46.253Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h2><p>令 h(0) = 1, h(1) = 1, catalan数满足<br>h(n)= h(0)&times;h(n-1)+h(1)&times;h(n-2) + … + h(n-1)&times;h(0) (n&gt;=2)</p>
-<h2 id="通项公式"><a href="#通项公式" class="headerlink" title="通项公式"></a>通项公式</h2><p>h(n) =<strong> C(2n, n) / (n + 1)</strong> = <strong>(2n)! / ((n + 1)! &times; n!)</strong></p>
-<p>##应用</p>
-<h3 id="括号化"><a href="#括号化" class="headerlink" title="括号化"></a>括号化</h3><p>n组括号的<strong>合法运算式</strong>的个数</p>
-<blockquote>
-<p>如((())) ()(()) ()()() (())() (()())</p>
-</blockquote>
-<h3 id="出栈次序"><a href="#出栈次序" class="headerlink" title="出栈次序"></a>出栈次序</h3><blockquote>
-<p>感觉此应用和括号化类似。<br>省去不表，详情见上篇博文。</p>
-</blockquote>
-<h3 id="构建二叉树和满二叉树"><a href="#构建二叉树和满二叉树" class="headerlink" title="构建二叉树和满二叉树"></a>构建二叉树和满二叉树</h3><p>h(n)表示<strong>n个节点</strong>构建<strong>二叉树</strong>的方案数<br>h(n)表示<strong>2n + 1个节点</strong>构建**满二叉树的方案数</p>
-<h3 id="凸多边形的划分"><a href="#凸多边形的划分" class="headerlink" title="凸多边形的划分"></a>凸多边形的划分</h3><blockquote>
-<p>在一个凸多边形中，通过若干条互不相交的对角线，把这个多边形划分成了若干个三角形。任务是键盘上输入凸多边形的边数n，求不同划分的方案数f（n）。</p>
-</blockquote>
-<h2 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h2><p><a href="http://baike.baidu.com/item/%E5%8D%A1%E7%89%B9%E5%85%B0%E6%95%B0?fromtitle=Catalan%E6%95%B0&amp;fromid=7767308&amp;type=syn&amp;sefr=enterbtn" target="_blank" rel="external">百度百科</a></p>
-<p><a href="https://zh.wikipedia.org/wiki/%E5%8D%A1%E5%A1%94%E5%85%B0%E6%95%B0" target="_blank" rel="external">维基百科</a></p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;原理&quot;&gt;&lt;a href=&quot;#原理&quot; class=&quot;headerlink&quot; title=&quot;原理&quot;&gt;&lt;/a&gt;原理&lt;/h2&gt;&lt;p&gt;令 h(0) = 1, h(1) = 1, catalan数满足&lt;br&gt;h(n)= h(0)&amp;times;h(n-1)+h(1)&amp;times
-    
-    </summary>
-    
-      <category term="algorithm" scheme="http://yoursite.com/categories/algorithm/"/>
     
     
   </entry>

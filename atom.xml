@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-09-21T09:47:04.822Z</updated>
+  <updated>2017-09-22T12:41:27.771Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -14,6 +14,30 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>About DEATH</title>
+    <link href="http://yoursite.com/2017/09/22/About-DEATH/"/>
+    <id>http://yoursite.com/2017/09/22/About-DEATH/</id>
+    <published>2017-09-22T12:40:57.000Z</published>
+    <updated>2017-09-22T12:41:27.771Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote>
+<p>#若无牵无挂, 我宁愿迎接的是死亡, 而非自由. ​​​​</p>
+</blockquote>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;#若无牵无挂, 我宁愿迎接的是死亡, 而非自由. ​​​​&lt;/p&gt;
+&lt;/blockquote&gt;
+
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>POJ2253 Frogger</title>
@@ -596,45 +620,6 @@
     
     
       <category term="math" scheme="http://yoursite.com/tags/math/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>printf和scanf的一些用法</title>
-    <link href="http://yoursite.com/2017/03/21/printf%E5%92%8Cscanf%E7%9A%84%E4%B8%80%E4%BA%9B%E7%94%A8%E6%B3%95/"/>
-    <id>http://yoursite.com/2017/03/21/printf和scanf的一些用法/</id>
-    <published>2017-03-21T11:50:25.000Z</published>
-    <updated>2017-03-21T13:26:29.852Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="printf-函数"><a href="#printf-函数" class="headerlink" title="printf()函数"></a>printf()函数</h2><blockquote>
-<p>%%打印一个百分号<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">printf</span>(<span class="string">"%%\n"</span>);</div><div class="line">\\输出结果</div><div class="line">\\%</div></pre></td></tr></table></figure></p>
-</blockquote>
-<h2 id="printf-的转换说明修饰符"><a href="#printf-的转换说明修饰符" class="headerlink" title="printf()的转换说明修饰符"></a>printf()的转换说明修饰符</h2><h3 id="数字"><a href="#数字" class="headerlink" title=".数字"></a>.数字</h3><p>%5.2f打印一个浮点数， 字段宽度为5， 其中小数点后有两位<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">double</span> per = <span class="number">4.23</span>;</div><div class="line"><span class="built_in">printf</span>(<span class="string">"%5.2f\n"</span>, per);</div></pre></td></tr></table></figure></p>
-<h3 id=""><a href="#" class="headerlink" title="-"></a>-</h3><p>待打印项向左对齐<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">printf</span>(<span class="string">"%-10d"</span>, val);</div></pre></td></tr></table></figure></p>
-<h3 id="-1"><a href="#-1" class="headerlink" title="+"></a>+</h3><p>若符号值为正， 则在值前面显示加号; 若为负，则在值前面显示减号<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">    <span class="built_in">printf</span>(<span class="string">"%+5.2f\n"</span>, per);</div><div class="line">    <span class="built_in">printf</span>(<span class="string">"%+5.2f\n"</span>, <span class="number">-1</span> * per);</div><div class="line">\\output</div><div class="line">\\+<span class="number">4.23</span></div><div class="line">\\<span class="number">-4.23</span></div></pre></td></tr></table></figure></p>
-<h3 id="空格"><a href="#空格" class="headerlink" title="空格"></a>空格</h3><p>若符号值为正，则显示前导空格; 若为负，则在值前面显示减号<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">    <span class="built_in">printf</span>(<span class="string">"% 5.2f\n"</span>, per);</div><div class="line">    <span class="built_in">printf</span>(<span class="string">"% 5.2f\n"</span>, <span class="number">-1</span> * per);</div><div class="line">\\output</div><div class="line">\\ <span class="number">4.23</span></div><div class="line">\\<span class="number">-4.23</span></div></pre></td></tr></table></figure></p>
-<h2 id="printf-的返回值"><a href="#printf-的返回值" class="headerlink" title="printf()的返回值"></a>printf()的返回值</h2><blockquote>
-<p>printf()的返回值为打印字符的个数<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">    <span class="keyword">int</span> num = <span class="built_in">printf</span>(<span class="string">"Hello World\n"</span>);</div><div class="line">    <span class="built_in">printf</span>(<span class="string">"%d\n"</span>, num);</div><div class="line">\\output</div><div class="line">\\<span class="number">12</span></div></pre></td></tr></table></figure></p>
-</blockquote>
-<h2 id="scanf-的返回值"><a href="#scanf-的返回值" class="headerlink" title="scanf()的返回值"></a>scanf()的返回值</h2><blockquote>
-<p>scanf()函数返回成功读取的项数</p>
-</blockquote>
-<h2 id="printf-和scanf-的-修饰符"><a href="#printf-和scanf-的-修饰符" class="headerlink" title="printf()和scanf()的*修饰符"></a>printf()和scanf()的*修饰符</h2><h3 id="printf-中的"><a href="#printf-中的" class="headerlink" title="printf()中的*"></a>printf()中的*</h3><blockquote>
-<p>用 * 修饰符代替字符宽度</p>
-</blockquote>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">double</span> per = <span class="number">4.23</span>;</div><div class="line">   <span class="keyword">int</span> width = <span class="number">5</span>;</div><div class="line">   <span class="keyword">int</span> percent = <span class="number">2</span>;</div><div class="line">   <span class="built_in">printf</span>(<span class="string">"%*.*f\n"</span>, width, percent, per);</div></pre></td></tr></table></figure>
-<h3 id="scanf-中的"><a href="#scanf-中的" class="headerlink" title="scanf()中的*"></a>scanf()中的*</h3><blockquote>
-<p>将 * 放在% 和 转换字符之间会使得scanf()跳过相应的输入项</p>
-</blockquote>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">    <span class="built_in">scanf</span>(<span class="string">"%*d%*d%d"</span>, &amp;val);</div><div class="line">    <span class="built_in">printf</span>(<span class="string">"%d\n"</span>, val);</div><div class="line">\\input</div><div class="line">\\<span class="number">4</span> <span class="number">5</span> <span class="number">6</span></div><div class="line">\\output</div><div class="line">\\<span class="number">6</span></div></pre></td></tr></table></figure>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;printf-函数&quot;&gt;&lt;a href=&quot;#printf-函数&quot; class=&quot;headerlink&quot; title=&quot;printf()函数&quot;&gt;&lt;/a&gt;printf()函数&lt;/h2&gt;&lt;blockquote&gt;
-&lt;p&gt;%%打印一个百分号&lt;br&gt;&lt;figure class=
-    
-    </summary>
-    
     
   </entry>
   

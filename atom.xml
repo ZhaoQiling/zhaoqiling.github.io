@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-09-25T02:58:57.489Z</updated>
+  <updated>2017-09-26T10:18:34.169Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -16,11 +16,47 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>PAT1021 Deepest Root</title>
+    <link href="http://yoursite.com/2017/09/26/PAT1021-Deepest-Root/"/>
+    <id>http://yoursite.com/2017/09/26/PAT1021-Deepest-Root/</id>
+    <published>2017-09-26T08:36:03.000Z</published>
+    <updated>2017-09-26T10:18:34.169Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="题目大意"><a href="#题目大意" class="headerlink" title="题目大意"></a>题目大意</h2><p>  <a href="https://www.patest.cn/contests/pat-a-practise/1021" target="_blank" rel="external">PAT1021 Deepest Root</a></p>
+<p>  给定一个图, 问是否为连通图, 若不是, 则输出连通分量的数目. 否则, 以任一个点为根, 求树的最大深度, 输出这些根节点.</p>
+<h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><ol>
+<li>用<strong>并查集</strong>检查图是否的连通图.</li>
+<li>从<strong>任意一点</strong>进行dfs, 得到一个集合, <em>该集合的点即为 deepest root 的一部分</em>.</li>
+<li>从上一步的集合中<strong>任意一点</strong>进行dfs, 得到一个集合.</li>
+<li>答案集合 即为 2, 3步的合集.</li>
+</ol>
+<h2 id="证明"><a href="#证明" class="headerlink" title="证明"></a>证明</h2><p>  设任一点为 A , 从点 A 到其他点的最大距离为 Lx, Lx 为局部最优解答, 由于图是连通的, 图中任意一点都可以到达点 A , 且距离 Ly &lt; Lx. 因此 第一次 dfs 得到的解 为 最终解 的 部分解.</p>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;vector&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;set&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"><span class="keyword">int</span> nNode;</div><div class="line"><span class="keyword">struct</span> Node&#123;</div><div class="line">    <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; nodeList;</div><div class="line">&#125;;</div><div class="line"><span class="keyword">const</span> <span class="keyword">int</span> arrSize = <span class="number">10100</span>;</div><div class="line"><span class="keyword">int</span> arr[arrSize];</div><div class="line"><span class="keyword">bool</span> isVis[arrSize];</div><div class="line"><span class="built_in">vector</span>&lt;Node&gt; edge(arrSize);</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">getFather</span><span class="params">(<span class="keyword">int</span> loc)</span></span>&#123;</div><div class="line">    <span class="keyword">if</span>(arr[loc] == loc)</div><div class="line">        <span class="keyword">return</span> loc;</div><div class="line">    loc = getFather(arr[loc]);</div><div class="line">    <span class="keyword">return</span> loc;</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">merge</span><span class="params">(<span class="keyword">int</span> a, <span class="keyword">int</span> b)</span></span>&#123;</div><div class="line">    a = getFather(a);</div><div class="line">    b = getFather(b);</div><div class="line">    <span class="keyword">if</span>(a &lt; b)</div><div class="line">        arr[b] = a;</div><div class="line">    <span class="keyword">else</span></div><div class="line">        arr[a] = b;</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">init</span><span class="params">()</span></span>&#123;</div><div class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt;= nNode + <span class="number">1</span>; i++)&#123;</div><div class="line">        arr[i] = i;</div><div class="line">        isVis[i] = <span class="literal">false</span>;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">getComponents</span><span class="params">()</span></span>&#123;</div><div class="line">    <span class="keyword">int</span> cnt = <span class="number">0</span>;</div><div class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= nNode; i++)&#123;</div><div class="line">        <span class="keyword">if</span>(arr[i] == i)</div><div class="line">            cnt++;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> cnt;</div><div class="line">&#125;</div><div class="line"><span class="built_in">set</span> &lt;<span class="keyword">int</span>&gt; ans;</div><div class="line"><span class="keyword">int</span> maxD = <span class="number">0</span>;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">dfs</span><span class="params">(<span class="keyword">int</span> vertex, <span class="keyword">int</span> depth)</span></span>&#123;</div><div class="line">    <span class="keyword">if</span>(depth &gt; maxD)&#123;</div><div class="line">        ans.clear();</div><div class="line">        maxD = depth;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">if</span>(depth == maxD)</div><div class="line">        ans.insert(vertex);</div><div class="line"></div><div class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; edge[vertex].nodeList.size(); i++)&#123;</div><div class="line">        <span class="keyword">if</span>(isVis[edge[vertex].nodeList[i]])</div><div class="line">            <span class="keyword">continue</span>;</div><div class="line">        isVis[edge[vertex].nodeList[i]] = <span class="literal">true</span>;</div><div class="line">        dfs(edge[vertex].nodeList[i], depth + <span class="number">1</span>);</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</div><div class="line">    <span class="built_in">cin</span> &gt;&gt;  nNode;</div><div class="line">    <span class="keyword">if</span>(nNode == <span class="number">1</span>)&#123;</div><div class="line">        <span class="built_in">cout</span> &lt;&lt; <span class="number">1</span> &lt;&lt; <span class="built_in">endl</span>;</div><div class="line">        <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">    &#125;</div><div class="line">    init();</div><div class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; nNode - <span class="number">1</span>; ++i)&#123;</div><div class="line">        <span class="keyword">int</span> a, b;</div><div class="line">        <span class="built_in">cin</span> &gt;&gt; a &gt;&gt; b;</div><div class="line">        merge(a, b);</div><div class="line">        edge[a].nodeList.push_back(b);</div><div class="line">        edge[b].nodeList.push_back(a);</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">int</span> cs = getComponents();</div><div class="line">    <span class="keyword">if</span>(cs != <span class="number">1</span>)&#123;</div><div class="line">        <span class="built_in">cout</span> &lt;&lt; <span class="string">"Error: "</span> &lt;&lt; cs &lt;&lt; <span class="string">" components"</span> &lt;&lt; <span class="built_in">endl</span>;</div><div class="line">        <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    init();</div><div class="line">    isVis[<span class="number">1</span>] = <span class="literal">true</span>;</div><div class="line">    dfs(<span class="number">1</span>, <span class="number">0</span>);</div><div class="line"></div><div class="line">    init();</div><div class="line">    isVis[*ans.begin()] = <span class="literal">true</span>;</div><div class="line">    <span class="built_in">set</span>&lt;<span class="keyword">int</span>&gt; temp = ans;</div><div class="line">    ans.clear();</div><div class="line">    dfs(*temp.begin(), <span class="number">0</span>);</div><div class="line"></div><div class="line">    <span class="keyword">for</span>(<span class="built_in">set</span>&lt;<span class="keyword">int</span>&gt;::iterator it = temp.begin(); it != temp.end(); it++)&#123;</div><div class="line">        ans.insert(*it);</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">for</span>(<span class="built_in">set</span>&lt;<span class="keyword">int</span>&gt;::iterator it = ans.begin(); it != ans.end(); it++)&#123;</div><div class="line">        <span class="built_in">cout</span> &lt;&lt; *it &lt;&lt; <span class="built_in">endl</span>;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div><div class="line"><span class="comment">// 6</span></div><div class="line"><span class="comment">// 1 2</span></div><div class="line"><span class="comment">// 5 4</span></div><div class="line"><span class="comment">// 2 4</span></div><div class="line"><span class="comment">// 2 3</span></div><div class="line"><span class="comment">// 3 6</span></div></pre></td></tr></table></figure>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;题目大意&quot;&gt;&lt;a href=&quot;#题目大意&quot; class=&quot;headerlink&quot; title=&quot;题目大意&quot;&gt;&lt;/a&gt;题目大意&lt;/h2&gt;&lt;p&gt;  &lt;a href=&quot;https://www.patest.cn/contests/pat-a-practise/1021&quot;
+    
+    </summary>
+    
+      <category term="algorithm" scheme="http://yoursite.com/categories/algorithm/"/>
+    
+    
+      <category term="树的遍历" scheme="http://yoursite.com/tags/%E6%A0%91%E7%9A%84%E9%81%8D%E5%8E%86/"/>
+    
+      <category term="PAT" scheme="http://yoursite.com/tags/PAT/"/>
+    
+      <category term="并查集" scheme="http://yoursite.com/tags/%E5%B9%B6%E6%9F%A5%E9%9B%86/"/>
+    
+  </entry>
+  
+  <entry>
     <title>PAT1020 Tree Traversals</title>
     <link href="http://yoursite.com/2017/09/25/PAT1020-Tree-Traversals/"/>
     <id>http://yoursite.com/2017/09/25/PAT1020-Tree-Traversals/</id>
     <published>2017-09-25T02:44:27.000Z</published>
-    <updated>2017-09-25T02:58:57.489Z</updated>
+    <updated>2017-09-26T08:36:36.036Z</updated>
     
     <content type="html"><![CDATA[<h2 id="题目大意"><a href="#题目大意" class="headerlink" title="题目大意"></a>题目大意</h2><p>  <a href="https://www.patest.cn/contests/pat-a-practise/1020" target="_blank" rel="external">PAT1020</a></p>
 <p>  给定一棵树的后序和前序遍历, 求树的层序遍历.</p>
@@ -41,6 +77,8 @@
       <category term="二叉树" scheme="http://yoursite.com/tags/%E4%BA%8C%E5%8F%89%E6%A0%91/"/>
     
       <category term="树的遍历" scheme="http://yoursite.com/tags/%E6%A0%91%E7%9A%84%E9%81%8D%E5%8E%86/"/>
+    
+      <category term="PAT" scheme="http://yoursite.com/tags/PAT/"/>
     
   </entry>
   
@@ -582,34 +620,6 @@
     
     </summary>
     
-    
-  </entry>
-  
-  <entry>
-    <title>欧拉回路</title>
-    <link href="http://yoursite.com/2017/03/27/%E6%AC%A7%E6%8B%89%E5%9B%9E%E8%B7%AF/"/>
-    <id>http://yoursite.com/2017/03/27/欧拉回路/</id>
-    <published>2017-03-27T14:43:26.000Z</published>
-    <updated>2017-03-27T14:52:20.893Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="分类"><a href="#分类" class="headerlink" title="分类"></a>分类</h2><p>欧拉环：图中经过<em>每条边一次且仅一次</em>的<strong>环</strong>；<br>欧拉路径：图中经过<em>每条边一次且仅一次</em>的<strong>路径</strong>；<br>欧拉图：有<strong>至少一个欧拉环</strong>的图；<br>半欧拉图：<strong>没有欧拉环</strong>，但有<strong>至少一条欧拉路径</strong>的图。</p>
-<h2 id="无向图"><a href="#无向图" class="headerlink" title="无向图"></a>无向图</h2><p>一个无向图是<strong>欧拉图</strong>当且仅当该图是连通的（注意，不考虑图中度为0的点，因为它们的存在对于图中是否存在欧拉环、欧拉路径没有影响）且<strong>所有点的度数都是偶数</strong>；一个无向图是<strong>半欧拉图</strong>当且仅当该图是连通的且<strong>有且只有2个点的度数是奇数</strong>（此时这两个点只能作为欧拉路径的起点和终点）；</p>
-<h3 id="证明"><a href="#证明" class="headerlink" title="证明"></a>证明</h3><p>因为任意一个点，欧拉环（或欧拉路径）从它这里进去多少次就要出来多少次，故(进去的次数+出来的次数)为偶数，又因为(进去的次数+出来的次数)=该点的度数（根据定义），所以该点的度数为偶数。</p>
-<h2 id="有向图"><a href="#有向图" class="headerlink" title="有向图"></a>有向图</h2><p>一个有向图是<strong>欧拉图</strong>当且仅当该图的基图（将所有有向边变为无向边后形成的无向图，这里同样不考虑度数为0的点）是连通的且<strong>所有点的入度等于出度</strong>；一个有向图是<strong>半欧拉图</strong>当且仅当该图的基图是连通的且<strong>有且只有一个点的入度比出度少1</strong>（作为欧拉路径的起点），<strong>有且只有一个点的入度比出度多1</strong>（作为终点），其余点的入度等于出度。</p>
-<h3 id="证明-1"><a href="#证明-1" class="headerlink" title="证明"></a>证明</h3><p>与无向图证明类似，一个点进去多少次就要出来多少次。</p>
-<h2 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h2><p><a href="http://blog.chinaunix.net/uid-26380419-id-3164913.html" target="_blank" rel="external">dingchao</a></p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;分类&quot;&gt;&lt;a href=&quot;#分类&quot; class=&quot;headerlink&quot; title=&quot;分类&quot;&gt;&lt;/a&gt;分类&lt;/h2&gt;&lt;p&gt;欧拉环：图中经过&lt;em&gt;每条边一次且仅一次&lt;/em&gt;的&lt;strong&gt;环&lt;/strong&gt;；&lt;br&gt;欧拉路径：图中经过&lt;em&gt;每条边一次且仅
-    
-    </summary>
-    
-      <category term="algorithm" scheme="http://yoursite.com/categories/algorithm/"/>
-    
-    
-      <category term="欧拉回路" scheme="http://yoursite.com/tags/%E6%AC%A7%E6%8B%89%E5%9B%9E%E8%B7%AF/"/>
     
   </entry>
   

@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-09-27T05:31:07.128Z</updated>
+  <updated>2017-10-02T15:46:49.470Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -14,6 +14,49 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>PAT1030. Travel Plan</title>
+    <link href="http://yoursite.com/2017/10/02/PAT1030-Travel-Plan/"/>
+    <id>http://yoursite.com/2017/10/02/PAT1030-Travel-Plan/</id>
+    <published>2017-10-02T15:29:43.000Z</published>
+    <updated>2017-10-02T15:46:49.470Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="题目大意"><a href="#题目大意" class="headerlink" title="题目大意"></a>题目大意</h2><p>  <a href="https://www.patest.cn/contests/pat-a-practise/1030" target="_blank" rel="external">PAT1030</a></p>
+<p>  给定一个图, 图中边有<strong>两类边权</strong>, <em>路径长度</em> 和 <em>花费</em>, 选择<strong>路径长度最短</strong>的路线, 并保存. 当<strong>存在相同长度</strong>的最优解, <strong>花费最小</strong>的解.</p>
+<h2 id="题目分析"><a href="#题目分析" class="headerlink" title="题目分析"></a>题目分析</h2><p>  按照<strong>路径长度</strong>进行边的松弛, 此时不要忘记<strong>对花费进行松弛</strong>.<br>  当<strong>路径长度相同</strong>时, 按照花费进行松弛.</p>
+<p>  <strong>保存图中最短路径时, 记录当前结点的前一个结点. 输出答案时, 回溯即可.</strong></p>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stack&gt;</span></span></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"><span class="keyword">const</span> <span class="keyword">int</span> arrSize = <span class="number">510</span>;</div><div class="line"><span class="keyword">const</span> <span class="keyword">int</span> INF = <span class="number">9999999</span>;</div><div class="line"></div><div class="line"><span class="keyword">int</span> dist[arrSize][arrSize];</div><div class="line"><span class="keyword">int</span> cost[arrSize][arrSize];</div><div class="line"><span class="keyword">int</span> path[arrSize];</div><div class="line"><span class="keyword">int</span> disCost[arrSize];</div><div class="line"><span class="keyword">int</span> disDist[arrSize];</div><div class="line"><span class="keyword">bool</span> isVis[arrSize];</div><div class="line"><span class="keyword">int</span> nVertex, nEdge, srcCity, tarCity;</div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">init</span><span class="params">()</span></span>&#123;</div><div class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; nVertex; i++)&#123;</div><div class="line">        path[i] = <span class="number">-1</span>;</div><div class="line">        disCost[i] = INF;</div><div class="line">        disDist[i] = INF;</div><div class="line">        isVis[i] = <span class="literal">false</span>;</div><div class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; nVertex; j++)&#123;</div><div class="line">            dist[i][j] = cost[i][j] = INF;</div><div class="line">            <span class="keyword">if</span>(i == j)&#123;</div><div class="line">                dist[i][i] = cost[i][i] = <span class="number">0</span>;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</div><div class="line">    <span class="built_in">cin</span> &gt;&gt; nVertex &gt;&gt; nEdge &gt;&gt; srcCity &gt;&gt; tarCity;</div><div class="line">    init();</div><div class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; nEdge; i++)&#123;</div><div class="line">        <span class="keyword">int</span> a, b;</div><div class="line">        <span class="built_in">cin</span> &gt;&gt; a &gt;&gt; b;</div><div class="line">        <span class="built_in">cin</span> &gt;&gt; dist[a][b] &gt;&gt; cost[a][b];</div><div class="line">        dist[b][a] = dist[a][b];</div><div class="line">        cost[b][a] = cost[a][b];</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; nVertex; i++)&#123;</div><div class="line">        disDist[i] = dist[srcCity][i];</div><div class="line">        disCost[i] = cost[srcCity][i];</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    isVis[srcCity] = <span class="literal">true</span>;</div><div class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; nVertex - <span class="number">1</span>; ++i)&#123;</div><div class="line">        <span class="keyword">int</span> u;</div><div class="line">        <span class="keyword">int</span> minV = INF;</div><div class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; nVertex; j++)&#123;</div><div class="line">            <span class="keyword">if</span>(isVis[j])</div><div class="line">                <span class="keyword">continue</span>;</div><div class="line">            <span class="keyword">if</span>(disDist[j] &lt; minV)&#123;</div><div class="line">                minV = disDist[j];</div><div class="line">                u = j;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        isVis[u] = <span class="literal">true</span>;</div><div class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> v = <span class="number">0</span>; v &lt; nVertex; v++)&#123;</div><div class="line">            <span class="keyword">if</span>(disDist[u] + dist[u][v] &lt; disDist[v])&#123;</div><div class="line">                disDist[v] = disDist[u] + dist[u][v];</div><div class="line">                disCost[v] = disCost[u] + cost[u][v];</div><div class="line">                path[v] = u;</div><div class="line">            &#125;</div><div class="line">            <span class="keyword">else</span> <span class="keyword">if</span>(disDist[u] + dist[u][v] == disDist[v])&#123;</div><div class="line">                <span class="keyword">if</span>(disCost[u] + cost[u][v] &lt; disCost[v])&#123;</div><div class="line">                    disCost[v] = disCost[u] + cost[u][v];</div><div class="line">                    path[v] = u;</div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="built_in">stack</span>&lt;<span class="keyword">int</span>&gt; sav;</div><div class="line">    <span class="keyword">int</span> p = tarCity;</div><div class="line">    <span class="keyword">while</span>(p != <span class="number">-1</span>)&#123;</div><div class="line">        sav.push(p);</div><div class="line">        p = path[p];</div><div class="line">    &#125;</div><div class="line">    sav.push(srcCity);</div><div class="line">    <span class="keyword">while</span>(!sav.empty())&#123;</div><div class="line">        <span class="built_in">cout</span> &lt;&lt; sav.top() &lt;&lt; <span class="string">" "</span>;</div><div class="line">        sav.pop();</div><div class="line">    &#125;</div><div class="line">    <span class="built_in">cout</span> &lt;&lt; disDist[tarCity] &lt;&lt; <span class="string">" "</span> &lt;&lt; disCost[tarCity];</div><div class="line">    <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;题目大意&quot;&gt;&lt;a href=&quot;#题目大意&quot; class=&quot;headerlink&quot; title=&quot;题目大意&quot;&gt;&lt;/a&gt;题目大意&lt;/h2&gt;&lt;p&gt;  &lt;a href=&quot;https://www.patest.cn/contests/pat-a-practise/1030&quot;
+    
+    </summary>
+    
+      <category term="algorithm" scheme="http://yoursite.com/categories/algorithm/"/>
+    
+    
+      <category term="Dijkstra" scheme="http://yoursite.com/tags/Dijkstra/"/>
+    
+      <category term="保存路径" scheme="http://yoursite.com/tags/%E4%BF%9D%E5%AD%98%E8%B7%AF%E5%BE%84/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>PAT1026 Table Tennis</title>
+    <link href="http://yoursite.com/2017/09/30/PAT1026-Table-Tennis/"/>
+    <id>http://yoursite.com/2017/09/30/PAT1026-Table-Tennis/</id>
+    <published>2017-09-30T02:57:29.000Z</published>
+    <updated>2017-09-30T02:57:29.564Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>POJ3660 Cow Contest</title>
@@ -78,9 +121,9 @@
     
       <category term="树的遍历" scheme="http://yoursite.com/tags/%E6%A0%91%E7%9A%84%E9%81%8D%E5%8E%86/"/>
     
-      <category term="PAT" scheme="http://yoursite.com/tags/PAT/"/>
-    
       <category term="并查集" scheme="http://yoursite.com/tags/%E5%B9%B6%E6%9F%A5%E9%9B%86/"/>
+    
+      <category term="PAT" scheme="http://yoursite.com/tags/PAT/"/>
     
   </entry>
   
@@ -107,11 +150,11 @@
       <category term="algorithm" scheme="http://yoursite.com/categories/algorithm/"/>
     
     
-      <category term="二叉树" scheme="http://yoursite.com/tags/%E4%BA%8C%E5%8F%89%E6%A0%91/"/>
-    
       <category term="树的遍历" scheme="http://yoursite.com/tags/%E6%A0%91%E7%9A%84%E9%81%8D%E5%8E%86/"/>
     
       <category term="PAT" scheme="http://yoursite.com/tags/PAT/"/>
+    
+      <category term="二叉树" scheme="http://yoursite.com/tags/%E4%BA%8C%E5%8F%89%E6%A0%91/"/>
     
   </entry>
   
@@ -557,88 +600,6 @@
       <category term="DP" scheme="http://yoursite.com/tags/DP/"/>
     
       <category term="博弈论" scheme="http://yoursite.com/tags/%E5%8D%9A%E5%BC%88%E8%AE%BA/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>C++产生随机数</title>
-    <link href="http://yoursite.com/2017/03/29/C-%E4%BA%A7%E7%94%9F%E9%9A%8F%E6%9C%BA%E6%95%B0/"/>
-    <id>http://yoursite.com/2017/03/29/C-产生随机数/</id>
-    <published>2017-03-29T13:14:26.000Z</published>
-    <updated>2017-03-29T13:47:58.967Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="前-tu-言-cao"><a href="#前-tu-言-cao" class="headerlink" title="前(tu)言(cao)"></a>前(tu)言(cao)</h2><blockquote>
-<p>在做蓝桥2012预赛试题的时候， 做到“夺冠概率”这道题， 明明可以用数学上的方法求解。 结果，必须使用随机数，因为三次运行程序结果相同不给分。。。</p>
-</blockquote>
-<h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><blockquote>
-<p>足球比赛具有一定程度的偶然性，弱队也有战胜强队的可能。<br>假设有甲、乙、丙、丁四个球队。根据他们过去比赛的成绩，得出每个队与另一个队对阵时取胜的概率表:<br>    &nbsp;    &nbsp;    &nbsp;    &nbsp;甲  乙  丙  丁<br>甲   -  0.1 0.3 0.5<br>乙 0.9  -   0.7 0.4<br>丙 0.7  0.3 -   0.2<br>丁 0.5  0.6 0.8 -<br>数据含义：甲对乙的取胜概率为0.1，丙对乙的胜率为0.3，…<br>现在要举行一次锦标赛。双方抽签，分两个组比，获胜的两个队再争夺冠军。（参见【1.jpg】）<br>请你进行10万次模拟，计算出甲队夺冠的概率。</p>
-</blockquote>
-<p><img src="\img\championships.jpg" alt="&quot;图一&quot;"></p>
-<h2 id="评测标准"><a href="#评测标准" class="headerlink" title="评测标准"></a>评测标准</h2><p>满分17分</p>
-<p>编译选手提供的源代码，运行看结果</p>
-<p>!! 至少运行3次，如果结果相同则不能得分！ 说明选手是用理论推算而非模拟方法。</p>
-<p>输出四舍五入后为： 0.075  或  0.076 即可满分17分</p>
-<p>如果输出 7.5 或 7.6 是采用了百分数的形式，也认为正确。</p>
-<p>多次运行结果为：0.074 或 0.077 表明存在设计上的系统误差，可以给 5 分</p>
-<h2 id="如何产生随机数"><a href="#如何产生随机数" class="headerlink" title="如何产生随机数"></a>如何产生随机数</h2><ol>
-<li>添加头文件stdlib.h</li>
-<li>由于rand()返回的是伪随机数字， 每次执行时结果是相同的</li>
-<li><p>为了避免每次生成固定的随机数，引进srand()函数</p>
-<blockquote>
-<p>用法：srand(unsigned int seed)</p>
-</blockquote>
-</li>
-<li><p>可以利用<time.h>中的随机函数初始化, 产生不同的随机种子</time.h></p>
-</li>
-<li>srand((unsigned)time(NULL))</li>
-</ol>
-<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;time.h&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdlib.h&gt;</span></span></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></div><div class="line">&#123;</div><div class="line">    <span class="keyword">double</span> arr[<span class="number">3</span>] = &#123;<span class="number">0.046</span>, <span class="number">0.102</span>, <span class="number">0.08</span>&#125;;</div><div class="line">    <span class="keyword">double</span> sum = <span class="number">0</span>;</div><div class="line">	<span class="comment">//这里srand只能写在for循环外侧，否则会WA</span></div><div class="line">	<span class="comment">//看来srand的seed整个程序运行时只执行一次即可</span></div><div class="line">    srand(time(<span class="literal">NULL</span>));</div><div class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt;= <span class="number">100000</span> ; i++)</div><div class="line">    &#123;</div><div class="line">        <span class="keyword">int</span> val = rand() % <span class="number">3</span>;</div><div class="line">        sum = sum + arr[val];</div><div class="line">    &#125;</div><div class="line">    <span class="built_in">cout</span> &lt;&lt; sum / <span class="number">100000</span>;</div><div class="line">    <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;前-tu-言-cao&quot;&gt;&lt;a href=&quot;#前-tu-言-cao&quot; class=&quot;headerlink&quot; title=&quot;前(tu)言(cao)&quot;&gt;&lt;/a&gt;前(tu)言(cao)&lt;/h2&gt;&lt;blockquote&gt;
-&lt;p&gt;在做蓝桥2012预赛试题的时候， 做到“夺冠概
-    
-    </summary>
-    
-      <category term="CPP" scheme="http://yoursite.com/categories/CPP/"/>
-    
-    
-      <category term="随机数" scheme="http://yoursite.com/tags/%E9%9A%8F%E6%9C%BA%E6%95%B0/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>微生物增殖</title>
-    <link href="http://yoursite.com/2017/03/29/%E5%BE%AE%E7%94%9F%E7%89%A9%E5%A2%9E%E6%AE%96/"/>
-    <id>http://yoursite.com/2017/03/29/微生物增殖/</id>
-    <published>2017-03-29T12:42:06.000Z</published>
-    <updated>2017-03-29T13:12:57.409Z</updated>
-    
-    <content type="html"><![CDATA[<blockquote>
-<p>题目来源<br>2012年蓝桥杯预赛</p>
-</blockquote>
-<h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><blockquote>
-<p>假设有两种微生物 X 和 Y<br>X出生后每隔3分钟分裂一次（数目加倍），Y出生后每隔2分钟分裂一次（数目加倍）。<br>一个新出生的X，半分钟之后吃掉1个Y，并且，从此开始，每隔1分钟吃1个Y。<br>现在已知有新出生的 X=10, Y=89，求60分钟后Y的数目。<br>如果X=10，Y=90  呢？<br>本题的要求就是写出这两种初始条件下，60分钟后Y的数目。<br>题目的结果令你震惊吗？这不是简单的数字游戏！真实的生物圈有着同样脆弱的性质！也许因为你消灭的那只 Y 就是最终导致 Y 种群灭绝的最后一根稻草！<br>请忍住悲伤，把答案写在“解答.txt”中，不要写在这里！</p>
-</blockquote>
-<h2 id="思路与感悟"><a href="#思路与感悟" class="headerlink" title="思路与感悟"></a>思路与感悟</h2><p>遇到这种模拟类的题目，最好还是不要随意更改题目，先<strong>按照0.5秒来模拟</strong>一下， <strong>打表</strong>， <strong>找出规律</strong>后再为了<strong>计算的精确性</strong>， <strong>更改时间周期</strong>。</p>
-<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></div><div class="line">&#123;</div><div class="line">    <span class="keyword">int</span> nX, nY;</div><div class="line">    nX = <span class="number">10</span>;</div><div class="line">    nY = <span class="number">90</span>;</div><div class="line">    <span class="comment">// i 为 0.5分钟</span></div><div class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= <span class="number">120</span>; i++)</div><div class="line">    &#123;</div><div class="line">        <span class="keyword">if</span>(i % <span class="number">2</span> == <span class="number">1</span>)</div><div class="line">            nY = nY - nX;</div><div class="line">        <span class="keyword">if</span>(i % <span class="number">4</span> == <span class="number">0</span>)</div><div class="line">            nY = nY * <span class="number">2</span>;</div><div class="line">        <span class="keyword">if</span>(i % <span class="number">6</span> == <span class="number">0</span>)</div><div class="line">            nX = nX * <span class="number">2</span>;</div><div class="line">    &#125;</div><div class="line">    <span class="built_in">cout</span> &lt;&lt; nX &lt;&lt; <span class="string">" "</span> &lt;&lt; nY;</div><div class="line">    <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h2 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h2><p><a href="http://blog.csdn.net/qsyzb/article/details/19156551?utm_source=tuicool&amp;utm_medium=referral" target="_blank" rel="external">丁棒儿的博客</a></p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;blockquote&gt;
-&lt;p&gt;题目来源&lt;br&gt;2012年蓝桥杯预赛&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h2 id=&quot;题目描述&quot;&gt;&lt;a href=&quot;#题目描述&quot; class=&quot;headerlink&quot; title=&quot;题目描述&quot;&gt;&lt;/a&gt;题目描述&lt;/h2&gt;&lt;blockquote&gt;
-    
-    </summary>
-    
-      <category term="algorithm" scheme="http://yoursite.com/categories/algorithm/"/>
-    
-    
-      <category term="模拟算法" scheme="http://yoursite.com/tags/%E6%A8%A1%E6%8B%9F%E7%AE%97%E6%B3%95/"/>
     
   </entry>
   

@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-10-12T12:23:26.271Z</updated>
+  <updated>2017-10-12T12:25:53.774Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -16,11 +16,11 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>PAT1045. Favorite Color Stripe</title>
+    <title>PAT1045. Favorite Color Stripe</title>
     <link href="http://yoursite.com/2017/10/12/PAT%C2%961045-Favorite-Color-Stripe/"/>
     <id>http://yoursite.com/2017/10/12/PAT1045-Favorite-Color-Stripe/</id>
     <published>2017-10-12T11:54:50.000Z</published>
-    <updated>2017-10-12T12:23:26.271Z</updated>
+    <updated>2017-10-12T12:25:53.774Z</updated>
     
     <content type="html"><![CDATA[<h2 id="题目大意"><a href="#题目大意" class="headerlink" title="题目大意"></a>题目大意</h2><p>  <a href="https://www.patest.cn/contests/pat-a-practise/1045" target="_blank" rel="external">1045. Favorite Color Stripe</a></p>
 <p>  给定两个序列 a 和 b, 求 <strong>b 中元素</strong>按照 a 的<strong>子序列</strong>中元素出现的<strong>次序</strong> 的 最大公共序列长度.</p>
@@ -226,9 +226,9 @@
     
       <category term="树的遍历" scheme="http://yoursite.com/tags/%E6%A0%91%E7%9A%84%E9%81%8D%E5%8E%86/"/>
     
-      <category term="并查集" scheme="http://yoursite.com/tags/%E5%B9%B6%E6%9F%A5%E9%9B%86/"/>
-    
       <category term="PAT" scheme="http://yoursite.com/tags/PAT/"/>
+    
+      <category term="并查集" scheme="http://yoursite.com/tags/%E5%B9%B6%E6%9F%A5%E9%9B%86/"/>
     
   </entry>
   
@@ -255,11 +255,11 @@
       <category term="algorithm" scheme="http://yoursite.com/categories/algorithm/"/>
     
     
+      <category term="二叉树" scheme="http://yoursite.com/tags/%E4%BA%8C%E5%8F%89%E6%A0%91/"/>
+    
       <category term="树的遍历" scheme="http://yoursite.com/tags/%E6%A0%91%E7%9A%84%E9%81%8D%E5%8E%86/"/>
     
       <category term="PAT" scheme="http://yoursite.com/tags/PAT/"/>
-    
-      <category term="二叉树" scheme="http://yoursite.com/tags/%E4%BA%8C%E5%8F%89%E6%A0%91/"/>
     
   </entry>
   

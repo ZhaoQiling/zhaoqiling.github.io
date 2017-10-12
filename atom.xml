@@ -304,9 +304,9 @@
     
       <category term="Dijkstra" scheme="http://yoursite.com/tags/Dijkstra/"/>
     
-      <category term="Floyd" scheme="http://yoursite.com/tags/Floyd/"/>
-    
       <category term="Dijkstra变形" scheme="http://yoursite.com/tags/Dijkstra%E5%8F%98%E5%BD%A2/"/>
+    
+      <category term="Floyd" scheme="http://yoursite.com/tags/Floyd/"/>
     
       <category term="Floyd变形" scheme="http://yoursite.com/tags/Floyd%E5%8F%98%E5%BD%A2/"/>
     
